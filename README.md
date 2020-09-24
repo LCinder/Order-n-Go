@@ -1,8 +1,5 @@
 # NoSeQueHacer-Alpha
-***
-
-***
->>>>>>> README.md cambiado
+---
 ### Proyecto asignatura Infraestructura Virtual de la UGR.
 
 1. Crear repositorio
