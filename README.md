@@ -5,9 +5,10 @@
 API que gestiona los pedidos y la cuenta de y en cada mesa en un restaurante.
 
 ***
- ## :pencil2: Descripción
 
- En plena era COVID-19 muchos restaurantes se han visto abocados al cierre debido a la incapacidad de mantener a sus empleados ante la crisis venidera y guardar las distancias.
+## :pencil2: Descripción
+
+En plena era COVID-19 muchos restaurantes se han visto abocados al cierre debido a la incapacidad de mantener a sus empleados ante la crisis venidera y guardar las distancias.
 Pero ¿y si solo requiriésemos de un dispositivo en cada mesa (de cada persona, en principio) en el cual hicieramos nosotros mismos el pedido?
 ¿Cuantas veces tenias prisa por que te atendieran o para pedirle al camarero saturado la cuenta?
 ¿Cuantas veces te has puesto nervioso/a y querias cambiar de eleccion justo cuando el camarero esta tomando nota?
