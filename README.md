@@ -29,7 +29,10 @@ El lenguaje a usar en principio será **Node.js** debido a la gran variedad de b
 
 Enlace para acceder a las [HU](https://github.com/LCinder/Order-Go/issues) establecidas como *issues*
 
-## :memo: Informacion Adicional
+---
+
+## :information_source: Informacion Adicional :information_source: 
+
 Enlace al fichero *doc* con [informacion adicional](https://github.com/LCinder/Order-Go/tree/master/doc)
 
 ---
