@@ -40,7 +40,7 @@ Enlace al fichero *doc* con [informacion adicional](https://github.com/LCinder/O
 
 ## :memo: Documentación :memo:
 
-Página de github a añadir...
+Página de github a añadir....
 
 ---
 
