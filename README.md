@@ -34,7 +34,7 @@ Enlace para acceder a las [HU](https://github.com/LCinder/Order-Go/issues) estab
 
 ## :information_source: Informacion Adicional :information_source: 
 
-Enlace al fichero *doc* con [informacion adicional](https://github.com/LCinder/Order-Go/tree/master/doc)
+Enlace al fichero *doc* con [informacion adicional](https://github.com/LCinder/Order-Go/tree/master/docs)
 
 ---
 
