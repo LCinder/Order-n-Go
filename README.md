@@ -46,4 +46,4 @@ Enlace para acceder a [todas las ideas](https://github.com/LCinder/Order-Go/blob
 
 ## :chart_with_upwards_trend: Codigo :chart_with_upwards_trend:
 Enlace para acceder al [codigo](https://github.com/LCinder/Order-Go/blob/master/src/index.js) del *microservicio* y
-enla ce para acceder a la carpeta [sources](https://github.com/LCinder/Order-Go/tree/master/src) que contiene todos los archivos necesarios para el mismo.
+enlace para acceder a la carpeta [sources](https://github.com/LCinder/Order-Go/tree/master/src) que contiene todos los archivos necesarios para el mismo.
