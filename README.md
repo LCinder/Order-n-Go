@@ -21,8 +21,7 @@ Con Order&Go tu mismo haras el pedido en tu mesa cambiando los platos en el mome
 
 ## :globe_with_meridians: Elaboración del proyecto :globe_with_meridians:
 
-El lenguaje a usar en principio será **Node.js** debido a la gran variedad de bibliotecas que tiene, la comunidad tan activa que posee ya la importancia del mismo en el mundo de desarrolladores actual. Además servirá para aprender **Javascript** que se trata del lenguaje más usado del mundo.
-Como base de datos se probará una BBDD **NOSQL** pero es posible la migracion a tablas relacionales y el uso de *SQL* para mejorar el servicio.
+Enlace para acceder a la [elaboracion del proyecto](https://github.com/LCinder/Order-Go/blob/master/docs/elaboracionProyecto.md) donde se incluye tanto el lenguaje a usar como las BBDD, etc.
 
 ---
 
