@@ -6,7 +6,7 @@ API que gestiona los pedidos y la cuenta de y en cada mesa en un restaurante.
 
 ***
 
-## :pencil2: Descripción :pencil2: 
+## :pencil2: Descripción :pencil2:
 
 En plena era COVID-19 muchos restaurantes se han visto abocados al cierre debido a la incapacidad de mantener a sus empleados ante la crisis venidera y guardar las distancias.
 Pero ¿y si solo requiriésemos de un dispositivo en cada mesa (de cada persona, en principio) en el cual hicieramos nosotros mismos el pedido?
@@ -19,7 +19,7 @@ Con Order&Go tu mismo haras el pedido en tu mesa cambiando los platos en el mome
 
 ---
 
-## :globe_with_meridians: Elaboración del proyecto :globe_with_meridians: 
+## :globe_with_meridians: Elaboración del proyecto :globe_with_meridians:
 
 El lenguaje a usar en principio será **Node.js** debido a la gran variedad de bibliotecas que tiene, la comunidad tan activa que posee ya la importancia del mismo en el mundo de desarrolladores actual. Además servirá para aprender **Javascript** que se trata del lenguaje más usado del mundo.
 Como base de datos se probará una BBDD **NOSQL** pero es posible la migracion a tablas relacionales y el uso de *SQL* para mejorar el servicio.
@@ -32,14 +32,18 @@ Enlace para acceder a las [HU](https://github.com/LCinder/Order-Go/issues) estab
 
 ---
 
-## :information_source: Informacion Adicional :information_source: 
+## :information_source: Informacion Adicional :information_source:
 
 Enlace al fichero *doc* con [informacion adicional](https://github.com/LCinder/Order-Go/tree/master/docs)
 
 ---
 
 
-## :thought_balloon: Ideas :thought_balloon: 
+## :thought_balloon: Ideas :thought_balloon:
 Enlace para acceder a [todas las ideas](https://github.com/LCinder/Order-Go/blob/master/docs/ideas.md) que se me ocurren para el servicio, tanto las realizables como las descartables
 
+---
 
+## Codigo
+Enlace para acceder al [codigo](https://github.com/LCinder/Order-Go/blob/master/src/index.js) del *microservicio* y
+enla ce para acceder a la carpeta [sources](https://github.com/LCinder/Order-Go/tree/master/src) que contiene todos los archivos necesarios para el mismo.

@@ -45,11 +45,12 @@ class Pedido {
 
 class Mesa {
 
-	constructor(mesaArg, personasArg, cuentaArg, pedidosArg) {
-		this.mesa = mesaArg;
+	constructor(mesaArg, personasArg, cuentaArg, pedidosArg, ocupadaArg) {
+		this.mesa = mesaArg;						// N mesa (1, 2, 3...)
 		this.personas = personasArg;
 		this.cuenta = cuentaArg;
-		this.pedidos = pedidosArg;
+		this.pedidos = pedidosArg;		// Array de objetos 'pedidos'
+		this.ocupada = ocupadaArg;	 // boolean para mesa ocupada o no
 	}
 
 	/***** Gets *****/
@@ -69,6 +70,10 @@ class Mesa {
 		return this.pedidos;
 	}
 
+	function getOcupada() {
+		return this.ocupada;
+	}
+
 	/***** Sets *****/
 	function setMesa(mesaArg) {
 		this.mesa = mesaArg;
@@ -84,6 +89,10 @@ class Mesa {
 
 	function setPedidos(pedidosArg) {
 		this.pedidos = pedidosArg;
+	}
+
+	function setOcupada(ocupadaArg) {
+		this.ocupada = ocupadaArg;
 	}
 
 }
