@@ -1,4 +1,4 @@
-# :mag: Order&Go :mag:
+# :mag: Order'n'Go :mag:
 ---
 ### Proyecto asignatura Infraestructura Virtual de la UGR.
 
