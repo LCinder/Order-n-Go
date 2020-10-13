@@ -15,28 +15,28 @@ class Pedido {
 	}
 
 	/***** Gets *****/
-	function getPlato() {
+	getPlato() {
 		return this.plato;
 	}
 
-	function getTipoPlato() {
+	getTipoPlato() {
 		return this.tipoPlato;
 	}
 
-	function getCantidadArg() {
+	getCantidadArg() {
 		return this.cantidadArg;
 	}
 
 	/***** Sets *****/
-	function setPlato(platoArg) {
+	setPlato(platoArg) {
 		this.plato = platoArg;
 	}
 
-	function setTipoPlato(tipoPlatoArg) {
+	setTipoPlato(tipoPlatoArg) {
 		this.tipoPlato = tipoPlatoArg;
 	}
 
-	function setCantidad(cantidadArg) {
+	setCantidad(cantidadArg) {
 		this.cantidad = cantidadArg;
 	}
 
@@ -45,53 +45,53 @@ class Pedido {
 
 class Mesa {
 
-	constructor(mesaArg, personasArg, cuentaArg, pedidosArg, ocupadaArg) {
+	constructor(mesaArg, personasArg, cuentaArg, ocupadaArg) {
 		this.mesa = mesaArg;						// N mesa (1, 2, 3...)
 		this.personas = personasArg;
 		this.cuenta = cuentaArg;
-		this.pedidos = pedidosArg;		// Array de objetos 'pedidos'
+		this.pedidos = [];		// Array de objetos 'pedidos'
 		this.ocupada = ocupadaArg;	 // boolean para mesa ocupada o no
 	}
 
 	/***** Gets *****/
-	function getMesa() {
+	getMesa() {
 		return this.mesa;
 	}
 
-	function getPersonas() {
+	getPersonas() {
 		return this.personas;
 	}
 
-	function getCuenta() {
+	getCuenta() {
 		return this.cuenta;
 	}
 
-	function getPedidos() {
+	getPedidos() {
 		return this.pedidos;
 	}
 
-	function getOcupada() {
+	getOcupada() {
 		return this.ocupada;
 	}
 
 	/***** Sets *****/
-	function setMesa(mesaArg) {
+	setMesa(mesaArg) {
 		this.mesa = mesaArg;
 	}
 
-	function setPersonas(personasArg) {
+	setPersonas(personasArg) {
 		this.personas = personasArg;
 	}
 
-	function setCuenta(cuentaArg) {
+	setCuenta(cuentaArg) {
 		this.cuenta = cuentaArg;
 	}
 
-	function setPedidos(pedidosArg) {
+	setPedidos(pedidosArg) {
 		this.pedidos = pedidosArg;
 	}
 
-	function setOcupada(ocupadaArg) {
+	setOcupada(ocupadaArg) {
 		this.ocupada = ocupadaArg;
 	}
 
