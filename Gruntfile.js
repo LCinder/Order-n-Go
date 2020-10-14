@@ -1,13 +1,19 @@
 
-module.exports = function(grunt) {
+require('load-grunt-tasks')(grunt);
 
-  grunt.initConfig({
-    pkg: grunt.file.readJSON("package.json"),
+grunt.initConfig({
+    ava: {
+        test: ['test/index.test.js'],
+        nycTest: {
+            options: {
+                verbose: true,
+                nyc: true
+            },
+            files: {
+                src: ['test/index.test.js']
+            }
+        }
+    }
+});
 
-  });
-
-  grunt.loadNpmTasks();
-
-  grunt.registerTask();
-
-};
+grunt.registerTask('default', ['ava']);
