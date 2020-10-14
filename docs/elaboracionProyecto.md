@@ -6,4 +6,4 @@
   - **BBDD:**  Como base de datos se probará una BBDD NOSQL pero es posible la migracion a tablas relacionales y el uso de SQL para mejorar el servicio.
 Investigando me ha atraido la atencion BBDD NoSQL como **Cassandra** pero esta un poco desactualizada, la que posee la empresa **Apache**, **MySQL** o incluso una un poco desconocida llamada **Proyecto Voldemort**. Ya solo por el nombre me atrae y dentro de estas BBDD tendre que elegir la que a corto plazo encaje mejor con el proyecto.
 
- - **Framework Test:** Se usará **AVA** que es un *test runner* para *Node.js* sencillo de usar, frecuentemente actualizado y mucho más rápido que otros como *Mocha* o *Chai* ya que éstos usan *globales implícitos* sin aislamiento de procesos, lo que lo hace lento.
+ - **Framework Test:** Se usará **AVA,** que es un *test runner* para *Node.js* sencillo de usar, frecuentemente actualizado y mucho más rápido que otros como *Mocha* o *Chai* ya que éstos usan *globales implícitos* sin aislamiento de procesos, lo que los hace lentos.
