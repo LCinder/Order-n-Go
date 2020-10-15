@@ -1,1 +1,4 @@
 entidad: src/index.js
+lenguaje: Node.js
+taskfile: Gruntfile.js
+test: tests/index.test.js
