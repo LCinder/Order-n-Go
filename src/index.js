@@ -40,7 +40,11 @@ class Pedido {
 		this.cantidad = cantidadArg;
 	}
 
-}
+	toString() {
+		return "Plato: " + this.plato + " Tipo Plato: " + this.tipoPlato + " Cantidad: " + this.cantidad;
+	}
+
+};
 
 
 class Mesa {
@@ -64,6 +68,10 @@ class Mesa {
 
 	getCuenta() {
 		return this.cuenta;
+	}
+
+	getPedidosToString() {
+		return this.pedidos.forEach(elemento => console.log(elemento.toString() + "\n"));
 	}
 
 	getPedidos() {
@@ -95,4 +103,22 @@ class Mesa {
 		this.ocupada = ocupadaArg;
 	}
 
+	toString() {
+		return "Mesa: " + this.mesa + " Personas: " + this.personas + " Cuenta: " + this.cuenta +
+		" Pedidos: " + this.pedidos.forEach(elemento => console.log(elemento.toString() + "\n")) + " Ocupada: " + this.ocupada;
+	}
+
+	incluirPedido(platoArg, tipoPlatoArg, cantidadArg) {
+		let pedidoNuevo = new Pedido(platoArg, tipoPlatoArg, cantidadArg)
+		this.pedidos.push(pedidoNuevo);
+	}
+
+	borrarPedido(numeroPedido) {
+		this.pedidos.splice(numeroPedido)
+	}
+
+};
+
+module.exports = {
+	Mesa, Pedido
 }
