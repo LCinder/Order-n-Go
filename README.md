@@ -57,5 +57,5 @@ enlace para acceder a la carpeta [sources](https://github.com/LCinder/Order-Go/t
 
 ## :hammer: Tests :hammer:
 Enlace para acceder al fichero [index.test.js](https://github.com/LCinder/Order-Go/tree/master/tests/index.test.js) que contiene los tests iniciales del *microservicio* y
-enlace para acceder a la carpeta [test](https://github.com/LCinder/Order-Go/tree/master/tests) con el fichero  donde se han realizado los mismos.
+enlace para acceder a la carpeta [test](https://github.com/LCinder/Order-Go/tree/master/tests) con el fichero  donde se han realizado los mismos e [imagen](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/tests1.PNG) que demustra que los tests se ejecutan y funcionan.
 
