@@ -56,6 +56,6 @@ enlace para acceder a la carpeta [sources](https://github.com/LCinder/Order-Go/t
 ---
 
 ## :hammer: Tests :hammer:
-Enlace para acceder a los [tests](https://github.com/LCinder/Order-Go/blob/master/src/index.js) correspondientes al hito 3 del *microservicio* y
+Enlace para acceder a los [tests](https://github.com/LCinder/Order-Go/blob/master/src/index.js) iniciales del *microservicio* y
 enlace para acceder a la carpeta [test](https://github.com/LCinder/Order-Go/tree/master/tests) con el fichero [index.test.js](https://github.com/LCinder/Order-Go/tree/master/tests/index.test.js) donde se han realizado los mismos
 
