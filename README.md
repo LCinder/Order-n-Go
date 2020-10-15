@@ -31,9 +31,9 @@ Enlace para acceder a las [HU](https://github.com/LCinder/Order-Go/issues) estab
 
 ---
 
-## :information_source: Informacion Adicional :information_source:
+## :information_source: Documentación :information_source:
 
-Enlace al fichero *doc* con [información adicional](https://github.com/LCinder/Order-Go/tree/master/docs)
+Enlace a la carpeta *docs* con [información adicional](https://github.com/LCinder/Order-Go/tree/master/docs) que contiene entre otros los [pasos a seguir en el proyecto](https://github.com/LCinder/Order-n-Go/blob/master/docs/stepsProyecto.md)
 
 ---
 
