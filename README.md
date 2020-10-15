@@ -15,7 +15,7 @@ Pero ¿y si sólo requiriésemos de un dispositivo en cada mesa (de cada persona
 
 ---
 
-Con Order&Go tu mismo haras el pedido en tu mesa cambiando los platos en el momento que quieras, pedirás tu cuenta cuando quieras y manteniendo las distancias en este año de paranoia 2020 que a saber que más nos trae. El camarero solo tendrá que traer/recoger los platos con lo cual el restaurante sera mas eficiente pudiendo gestionar las mesas más rápido, con la consiguiente mejora del servicio y las ganancias.
+Con Order'n'Go tu mismo haras el pedido en tu mesa cambiando los platos en el momento que quieras, pedirás tu cuenta cuando quieras y manteniendo las distancias en este año de paranoia 2020 que a saber que más nos trae. El camarero solo tendrá que traer/recoger los platos con lo cual el restaurante sera mas eficiente pudiendo gestionar las mesas más rápido, con la consiguiente mejora del servicio y las ganancias.
 
 ---
 
