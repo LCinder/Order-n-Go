@@ -58,6 +58,12 @@ enlace para acceder a la carpeta [sources](https://github.com/LCinder/Order-Go/t
 ## :hammer: Tests :hammer:
 Enlace para acceder al fichero [index.test.js](https://github.com/LCinder/Order-Go/tree/master/tests/index.test.js) que contiene los tests iniciales del *microservicio* y
 enlace para acceder a la carpeta [test](https://github.com/LCinder/Order-Go/tree/master/tests) con el fichero  donde se han realizado los mismos e [imagen](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/tests1.PNG) que demustra que los tests se ejecutan y funcionan.
+
+La aplicación se ejecuta con :
+
+`node src/index.js`
+Aunque por ahora no realiza ninguna funcionalidad, se irá mejorando.
+
 Los test se ejecutan con el comando:
 `npm test`
 
