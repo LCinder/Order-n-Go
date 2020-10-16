@@ -62,6 +62,7 @@ enlace para acceder a la carpeta [test](https://github.com/LCinder/Order-Go/tree
 La aplicación se ejecuta con :
 
 `node src/index.js`
+
 Aunque por ahora no realiza ninguna funcionalidad, se irá mejorando.
 
 Los test se ejecutan con el comando:
