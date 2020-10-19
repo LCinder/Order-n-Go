@@ -75,11 +75,7 @@ enlace para acceder a la carpeta [test](https://github.com/LCinder/Order-Go/tree
 
 Como herramienta de automatización de tareas he usado **Grunt** y la explicación se incluye [aquí](https://github.com/LCinder/Order-Go/blob/master/docs/elaboracionProyecto.md)
 
-La aplicación se ejecuta con :
-
-`node src/index.js`
-
-Aunque por ahora no realiza ninguna funcionalidad, se irá mejorando.
+En este caso los test no se ejecutan con *Grunt.js* sino con el comando que aparece más abajo. Esto se explica en el siguiente [enlace en el apartado Tareas](https://github.com/LCinder/Order-n-Go/blob/master/docs/elaboracionProyecto.md).
 
 Los test se ejecutan con el comando:
 `npm test`
