@@ -1,4 +1,6 @@
-entidad: src/index.js
+entidad: 
+ - src/mesa.js
+ - src/pedido.js
 lenguaje: Node.js
 test: tests/index.test.js
 taskfile: Gruntfile.js
