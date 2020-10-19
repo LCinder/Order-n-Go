@@ -10,7 +10,7 @@ test ("Creacion mesa", t => {
 
 test ("Creacion pedido", t => {
 	let mesa1 = new mesa.Mesa(1, 5, false, true)
-	let plato1 = new pedido.Pedido(10, "Postre", 1)
+	let plato1 = new pedido.Pedido(10, "Postre", 1, 5)
 	t.is((typeof plato1), "object")
 })
 
@@ -36,15 +36,15 @@ test ("Cambiar cuenta", t => {
 
 test ("Incluir pedido", t => {
 	let mesa2 = new mesa.Mesa(1, 10, false, true);
-	mesa2.incluirPedido(54, "Postre", 1)
+	mesa2.incluirPedido(54, "Postre", 1, 5)
 	t.is(mesa2.getPedidos().length, 1)
 })
 
 
 test ("Borrar pedido", t => {
 	let mesa2 = new mesa.Mesa(1, 10, false, true);
-	mesa2.incluirPedido(54, "Postre", 1)
-	mesa2.incluirPedido(4, "Principal", 2)
+	mesa2.incluirPedido(54, "Postre", 1, 5)
+	mesa2.incluirPedido(4, "Principal", 2, 7)
 	mesa2.borrarPedido(1)
 	t.is(mesa2.getPedidos().length, 1)
 })

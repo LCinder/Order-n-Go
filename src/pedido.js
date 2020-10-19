@@ -3,10 +3,11 @@
 
 class Pedido {
 
-	constructor(platoArg, tipoPlatoArg, cantidadArg) {
+	constructor(platoArg, tipoPlatoArg, cantidadArg, precioArg) {
 		this.plato = platoArg;
 		this.tipoPlato = tipoPlatoArg;
 		this.cantidad = cantidadArg;
+		this.precio = precioArg;
 	}
 
 	/***** Gets *****/
@@ -18,8 +19,12 @@ class Pedido {
 		return this.tipoPlato;
 	}
 
-	getCantidadArg() {
-		return this.cantidadArg;
+	getCantidad() {
+		return this.cantidad;
+	}
+
+	getPrecio() {
+		return this.precio;
 	}
 
 	/***** Sets *****/
@@ -33,6 +38,10 @@ class Pedido {
 
 	setCantidad(cantidadArg) {
 		this.cantidad = cantidadArg;
+	}
+
+	setPrecio(precioArg) {
+		this.precio = precioArg;
 	}
 
 	toString() {
