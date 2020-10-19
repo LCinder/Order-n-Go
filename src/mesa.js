@@ -1,51 +1,11 @@
 /******************************************************************************/
 /******************************************************************************/
-/********************Order'n'Go************************************************/
+/********************Mesa******************************************************/
 /******************************************************************************/
 /******************************************************************************/
 
 
-
-class Pedido {
-
-	constructor(platoArg, tipoPlatoArg, cantidadArg) {
-		this.plato = platoArg;
-		this.tipoPlato = tipoPlatoArg;
-		this.cantidad = cantidadArg;
-	}
-
-	/***** Gets *****/
-	getPlato() {
-		return this.plato;
-	}
-
-	getTipoPlato() {
-		return this.tipoPlato;
-	}
-
-	getCantidadArg() {
-		return this.cantidadArg;
-	}
-
-	/***** Sets *****/
-	setPlato(platoArg) {
-		this.plato = platoArg;
-	}
-
-	setTipoPlato(tipoPlatoArg) {
-		this.tipoPlato = tipoPlatoArg;
-	}
-
-	setCantidad(cantidadArg) {
-		this.cantidad = cantidadArg;
-	}
-
-	toString() {
-		return "Plato: " + this.plato + " Tipo Plato: " + this.tipoPlato + " Cantidad: " + this.cantidad;
-	}
-
-};
-
+const pedido = require("./pedido.js")
 
 class Mesa {
 
@@ -109,7 +69,7 @@ class Mesa {
 	}
 
 	incluirPedido(platoArg, tipoPlatoArg, cantidadArg) {
-		let pedidoNuevo = new Pedido(platoArg, tipoPlatoArg, cantidadArg)
+		let pedidoNuevo = new pedido.Pedido(platoArg, tipoPlatoArg, cantidadArg)
 		this.pedidos.push(pedidoNuevo);
 	}
 
@@ -120,5 +80,11 @@ class Mesa {
 };
 
 module.exports = {
-	Mesa, Pedido
+	Mesa
 }
+//
+//
+// let mesa = new Mesa(2, 3, false, true)
+// mesa.incluirPedido(1, "Postre", 3)
+//
+// console.log(mesa.toString())

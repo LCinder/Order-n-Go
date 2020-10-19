@@ -2,7 +2,7 @@
   "name": "OrderNGo",
   "version": "1.0.0",
   "description": "---\r ### Proyecto asignatura Infraestructura Virtual de la UGR.",
-  "main": "index.js",
+  "main": "mesa.js",
   "directories": {
     "doc": "docs"
   },
@@ -21,8 +21,7 @@
   "homepage": "https://github.com/LCinder/Order-n-Go#readme",
   "dependencies": {
     "assert": "^2.0.0",
-    "grunt-cli": "^1.3.2",
-    "mocha": "^8.1.3"
+    "grunt-cli": "^1.3.2"
   },
   "devDependencies": {
     "ava": "^3.13.0",

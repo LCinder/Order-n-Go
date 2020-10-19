@@ -1,6 +1,7 @@
 
 const test = require("ava")
-const order = require("./../src/index.js")
+const mesa = require("./../src/mesa.js")
+const pedido = require("./../src/pedido.js")
 
 test ("Creacion mesa", t => {
 	let mesa1 = new order.Mesa(1, 5, false, true)
