@@ -22,7 +22,7 @@ Con Order'n'Go tú mismo harás el pedido en tu mesa cambiando los platos en el 
 
 ## :cyclone: Historias de Usuario :cyclone:
 
-Enlace para acceder a las [HU](https://github.com/LCinder/Order-Go/issues) establecidas como *issues*.
+Enlace para acceder a las [HU](https://github.com/LCinder/Order-n-Go/issues) establecidas como *issues*.
 - [|HU1| - Seleccionar nº personas en mesa](https://github.com/LCinder/Order-n-Go/issues/1) - Como usuario quiero seleccionar el nº de personas a comer en una mesa (y poder modificarlo)
 - [|HU2| - Pedir platos](https://github.com/LCinder/Order-n-Go/issues/2) - Como usuario quiero poder realizar cualquier pedido en cualquier momento sin esperas.
 - [|HU3| - Pedir cuenta](https://github.com/LCinder/Order-n-Go/issues/3) - Como usuario quiero pagar la cuenta de manera eficiente y rapida.
@@ -39,39 +39,43 @@ Enlace para acceder a todos los [issues cerrados (ya realizados)](https://github
 
 ---
 
-## :information_source: Documentación y herramientas :information_source:
+## :information_source: Documentación y lenguajes a usar :information_source:
 
-- Enlace a la carpeta [docs](https://github.com/LCinder/Order-Go/tree/master/docs) con todos los documentos que contiene entre otros los [pasos a seguir en el proyecto](https://github.com/LCinder/Order-n-Go/blob/master/docs/stepsProyecto.md) y toda la información de las [herramientas necesarias para la creación del servicio](https://github.com/LCinder/Order-n-Go/blob/master/docs/elaboracionProyecto.md) (BBDD, framework test, lenguaje, etc)
+- Enlace a la carpeta [docs](https://github.com/LCinder/Order-n-Go/tree/master/docs) con todos los documentos que contiene entre otros los [pasos a seguir en el proyecto](https://github.com/LCinder/Order-n-Go/blob/master/docs/stepsProyecto.md) y toda la información de las [herramientas necesarias para la creación del servicio](https://github.com/LCinder/Order-n-Go/blob/master/docs/elaboracionProyecto.md) (BBDD, framework test, lenguaje, etc)
 
-- Enlace para acceder a la [elaboración del proyecto](https://github.com/LCinder/Order-Go/blob/master/docs/elaboracionProyecto.md) donde se incluye tanto el lenguaje a usar como las BBDD, frameworks a usar, herramientas de test, etc.
+- Lenguaje a usar: Se usará *Node.js* debido a las [siguientes razones](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/nodejs.md)
+- Gestor de paquetes: Se usará *npm* como gestor debido a las razones que se [detallan aquí](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/npm.md)
+- Test: Para la realización de los *test* se ha usado [AVA](https://github.com/avajs/ava), un *framework* poco conocido que supera en tiempo de ejecución a los frameworks de *Node.js* más usados y además permite ejecución asíncrona y está especialmente destinada a proyectos no muy grandes, como es el caso.
+
+
 
 ---
 
 
 ## :triangular_flag_on_post: Archivo iv.yaml :triangular_flag_on_post:
 
-Enlace al archivo [iv.yaml](https://github.com/LCinder/Order-Go/blob/master/iv.yaml)
+Enlace al archivo [iv.yaml](https://github.com/LCinder/Order-n-Go/blob/master/iv.yaml)
 
 ---
 
 ## :thought_balloon: Ideas :thought_balloon:
-Enlace para acceder a [todas las ideas](https://github.com/LCinder/Order-Go/blob/master/docs/ideas.md) que se me ocurren para el servicio, tanto las realizables como las descartables
+Enlace para acceder a [todas las ideas](https://github.com/LCinder/Order-n-Go/blob/master/docs/ideas.md) que se me ocurren para el servicio, tanto las realizables como las descartables
 
 ---
 
 ## :chart_with_upwards_trend: Código :chart_with_upwards_trend:
-- Enlace para acceder a la clase  [Mesa](https://github.com/LCinder/Order-Go/blob/master/src/mesa.js) 
-- Enlace para acceder a la clase  [Pedido](https://github.com/LCinder/Order-Go/blob/master/src/pedido.js) 
-- Enlace para acceder a la carpeta [sources](https://github.com/LCinder/Order-Go/tree/master/src) que contiene todos los archivos necesarios para el mismo.
+- Enlace para acceder a la clase  [Mesa](https://github.com/LCinder/Order-n-Go/blob/master/src/mesa.js) 
+- Enlace para acceder a la clase  [Pedido](https://github.com/LCinder/Order-n-Go/blob/master/src/pedido.js) 
+- Enlace para acceder a la carpeta [sources](https://github.com/LCinder/Order-n-Go/tree/master/src) que contiene todos los archivos necesarios para el mismo.
 
 ---
 
 ## :hammer: Tests :hammer:
-Para la realización de los *test* se ha usado [AVA](https://github.com/avajs/ava), un *framework* poco conocido que supera en tiempo de ejecución a los frameworks de *Node.js* más usados y además permite ejecución asíncrona y está especialmente destinada a proyectos no muy grandes, como es el caso.
 
+Como se ha comentado anteriormente, se ha usado [AVA](https://github.com/avajs/ava) para la realización de los test. Se indica además la explicación de [por qué se ha usado AVA](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/avatest.md)
 
-Enlace para acceder al fichero [index.test.js](https://github.com/LCinder/Order-Go/tree/master/tests/index.test.js) que contiene los tests iniciales del *microservicio* y
-enlace para acceder a la carpeta [test](https://github.com/LCinder/Order-Go/tree/master/tests) con el fichero  donde se han realizado los mismos e [imagen](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/tests1.PNG) que demuestra que los tests se ejecutan y funcionan.
+Se incluye el enlace para acceder al fichero [index.test.js](https://github.com/LCinder/Order-Go/tree/master/tests/index.test.js) que contiene los tests iniciales del *microservicio* y
+enlace para acceder a la carpeta [test](https://github.com/LCinder/Order-n-Go/tree/master/tests) con el fichero  donde se han realizado los mismos e [imagen](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/tests1.PNG) que demuestra que los tests se ejecutan y funcionan.
 
 En este caso los test no se ejecutan con *Grunt.js* sino con el comando que aparece más abajo. Esto se explica en el siguiente [enlace en el apartado Tareas](https://github.com/LCinder/Order-n-Go/blob/master/docs/elaboracionProyecto.md).
 
