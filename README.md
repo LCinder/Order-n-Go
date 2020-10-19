@@ -73,8 +73,6 @@ Para la realización de los *test* se ha usado **AVA,** un *framework* poco cono
 Enlace para acceder al fichero [index.test.js](https://github.com/LCinder/Order-Go/tree/master/tests/index.test.js) que contiene los tests iniciales del *microservicio* y
 enlace para acceder a la carpeta [test](https://github.com/LCinder/Order-Go/tree/master/tests) con el fichero  donde se han realizado los mismos e [imagen](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/tests1.PNG) que demuestra que los tests se ejecutan y funcionan.
 
-Como herramienta de automatización de tareas he usado **Grunt** y la explicación se incluye [aquí](https://github.com/LCinder/Order-Go/blob/master/docs/elaboracionProyecto.md)
-
 En este caso los test no se ejecutan con *Grunt.js* sino con el comando que aparece más abajo. Esto se explica en el siguiente [enlace en el apartado Tareas](https://github.com/LCinder/Order-n-Go/blob/master/docs/elaboracionProyecto.md).
 
 Los test se ejecutan con el comando:
