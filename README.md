@@ -15,25 +15,35 @@ Pero ¿y si sólo requiriésemos de un dispositivo en cada mesa (de cada persona
 
 ---
 
-Con Order'n'Go tu mismo haras el pedido en tu mesa cambiando los platos en el momento que quieras, pedirás tu cuenta cuando quieras y manteniendo las distancias en este año de paranoia 2020 que a saber que más nos trae. El camarero solo tendrá que traer/recoger los platos con lo cual el restaurante sera mas eficiente pudiendo gestionar las mesas más rápido, con la consiguiente mejora del servicio y las ganancias.
+Con Order'n'Go tú mismo harás el pedido en tu mesa cambiando los platos en el momento que quieras, pedirás tu cuenta cuando quieras y manteniendo las distancias en este año de paranoia 2020 que a saber que más nos trae. El camarero solo tendrá que traer/recoger los platos con lo cual el restaurante sera mas eficiente pudiendo gestionar las mesas más rápido, con la consiguiente mejora del servicio y las ganancias.
 
 ---
 
-## :globe_with_meridians: Elaboración del proyecto :globe_with_meridians:
-
-Enlace para acceder a la [elaboracion del proyecto](https://github.com/LCinder/Order-Go/blob/master/docs/elaboracionProyecto.md) donde se incluye tanto el lenguaje a usar como las BBDD, etc.
-
----
 
 ## :cyclone: Historias de Usuario :cyclone:
 
-Enlace para acceder a las [HU](https://github.com/LCinder/Order-Go/issues) establecidas como *issues*
+Enlace para acceder a las [HU](https://github.com/LCinder/Order-Go/issues) establecidas como *issues*.
+- [|HU1| - Seleccionar nº personas en mesa](https://github.com/LCinder/Order-n-Go/issues/1) - Como usuario quiero seleccionar el nº de personas a comer en una mesa (y poder modificarlo)
+- [|HU2| - Pedir platos](https://github.com/LCinder/Order-n-Go/issues/2) - Como usuario quiero poder realizar cualquier pedido en cualquier momento sin esperas.
+- [|HU3| - Pedir cuenta](https://github.com/LCinder/Order-n-Go/issues/3) - Como usuario quiero pagar la cuenta de manera eficiente y rapida.
+- [|HU4| - Cambio en el pedido](https://github.com/LCinder/Order-n-Go/issues/4) - Como usuario quiero poder cambiar los platos una vez realizado el pedido (con un breve margen de tiempo).
+- [|HU5| - Seleccionar cantidad platos ](https://github.com/LCinder/Order-n-Go/issues/26) - Como usuario quiero cambiar la cantidad de platos a elegir
+- [|HU6| - Dar propina](https://github.com/LCinder/Order-n-Go/issues/27) - Como usuario quiero dar propina una vez terminado el servicio
+- [|HU7| - Eliminar platos](https://github.com/LCinder/Order-n-Go/issues/28) - Como usuario quiero eliminar pedidos (platos) incluso después de haberlos seleccionado
+
+---
+
+## :globe_with_meridians: Issues y Milestones :globe_with_meridians:
+
+Enlace para acceder a todos los [issues cerrados (ya realizados)](https://github.com/LCinder/Order-n-Go/issues?q=is%3Aissue+is%3Aclosed) y a los [milestones](https://github.com/LCinder/Order-n-Go/milestones) que se dividen en diferentes versiones del proyecto a lo largo de la asignatura
 
 ---
 
 ## :information_source: Documentación :information_source:
 
-Enlace a la carpeta *docs* con [información adicional](https://github.com/LCinder/Order-Go/tree/master/docs) que contiene entre otros los [pasos a seguir en el proyecto](https://github.com/LCinder/Order-n-Go/blob/master/docs/stepsProyecto.md)
+- Enlace a la carpeta [docs](https://github.com/LCinder/Order-Go/tree/master/docs) con todos los documentos que contiene entre otros los [pasos a seguir en el proyecto](https://github.com/LCinder/Order-n-Go/blob/master/docs/stepsProyecto.md) y todas las [herrami](https://github.com/LCinder/Order-n-Go/blob/master/docs/elaboracionProyecto.md)
+
+- Enlace para acceder a la [elaboración del proyecto](https://github.com/LCinder/Order-Go/blob/master/docs/elaboracionProyecto.md) donde se incluye tanto el lenguaje a usar como las BBDD, frameworks a usar, herramientas de test, etc.
 
 ---
 
@@ -56,8 +66,13 @@ enlace para acceder a la carpeta [sources](https://github.com/LCinder/Order-Go/t
 ---
 
 ## :hammer: Tests :hammer:
+Para la realización de los *test* se ha usado **AVA,** un *framework *poco conocido que supera en tiempo de ejecución a los frameworks de *Node.js* más usados y además permite ejecución asíncrona y está especialmente destinada a proyectos no muy grandes, como es el caso.
+
+
 Enlace para acceder al fichero [index.test.js](https://github.com/LCinder/Order-Go/tree/master/tests/index.test.js) que contiene los tests iniciales del *microservicio* y
-enlace para acceder a la carpeta [test](https://github.com/LCinder/Order-Go/tree/master/tests) con el fichero  donde se han realizado los mismos e [imagen](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/tests1.PNG) que demustra que los tests se ejecutan y funcionan.
+enlace para acceder a la carpeta [test](https://github.com/LCinder/Order-Go/tree/master/tests) con el fichero  donde se han realizado los mismos e [imagen](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/tests1.PNG) que demuestra que los tests se ejecutan y funcionan.
+
+Como herramienta de automatización de tareas he usado **Grunt** y la explicación se incluye [aquí](https://github.com/LCinder/Order-Go/blob/master/docs/elaboracionProyecto.md)
 
 La aplicación se ejecuta con :
 
