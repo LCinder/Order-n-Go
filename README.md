@@ -39,9 +39,9 @@ Enlace para acceder a todos los [issues cerrados (ya realizados)](https://github
 
 ---
 
-## :information_source: Documentación :information_source:
+## :information_source: Documentación y herramientas :information_source:
 
-- Enlace a la carpeta [docs](https://github.com/LCinder/Order-Go/tree/master/docs) con todos los documentos que contiene entre otros los [pasos a seguir en el proyecto](https://github.com/LCinder/Order-n-Go/blob/master/docs/stepsProyecto.md) y todas las [herrami](https://github.com/LCinder/Order-n-Go/blob/master/docs/elaboracionProyecto.md)
+- Enlace a la carpeta [docs](https://github.com/LCinder/Order-Go/tree/master/docs) con todos los documentos que contiene entre otros los [pasos a seguir en el proyecto](https://github.com/LCinder/Order-n-Go/blob/master/docs/stepsProyecto.md) y toda la información de las [herramientas necesarias para la creación del servicio](https://github.com/LCinder/Order-n-Go/blob/master/docs/elaboracionProyecto.md) (BBDD, framework test, lenguaje, etc)
 
 - Enlace para acceder a la [elaboración del proyecto](https://github.com/LCinder/Order-Go/blob/master/docs/elaboracionProyecto.md) donde se incluye tanto el lenguaje a usar como las BBDD, frameworks a usar, herramientas de test, etc.
 
@@ -60,8 +60,9 @@ Enlace para acceder a [todas las ideas](https://github.com/LCinder/Order-Go/blob
 ---
 
 ## :chart_with_upwards_trend: Código :chart_with_upwards_trend:
-Enlace para acceder al [código](https://github.com/LCinder/Order-Go/blob/master/src/index.js) del *microservicio* y
-enlace para acceder a la carpeta [sources](https://github.com/LCinder/Order-Go/tree/master/src) que contiene todos los archivos necesarios para el mismo.
+- Enlace para acceder a la clase  [Mesa](https://github.com/LCinder/Order-Go/blob/master/src/mesa.js) 
+- Enlace para acceder a la clase  [Pedido](https://github.com/LCinder/Order-Go/blob/master/src/pedido.js) 
+- Enlace para acceder a la carpeta [sources](https://github.com/LCinder/Order-Go/tree/master/src) que contiene todos los archivos necesarios para el mismo.
 
 ---
 
