@@ -67,7 +67,7 @@ Enlace para acceder a [todas las ideas](https://github.com/LCinder/Order-Go/blob
 ---
 
 ## :hammer: Tests :hammer:
-Para la realización de los *test* se ha usado **AVA,** un *framework *poco conocido que supera en tiempo de ejecución a los frameworks de *Node.js* más usados y además permite ejecución asíncrona y está especialmente destinada a proyectos no muy grandes, como es el caso.
+Para la realización de los *test* se ha usado **AVA,** un *framework* poco conocido que supera en tiempo de ejecución a los frameworks de *Node.js* más usados y además permite ejecución asíncrona y está especialmente destinada a proyectos no muy grandes, como es el caso.
 
 
 Enlace para acceder al fichero [index.test.js](https://github.com/LCinder/Order-Go/tree/master/tests/index.test.js) que contiene los tests iniciales del *microservicio* y
