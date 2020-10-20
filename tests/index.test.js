@@ -48,3 +48,9 @@ test ("Borrar pedido", t => {
 	mesa2.borrarPedido(1)
 	t.is(mesa2.getPedidos().length, 1)
 })
+
+test ("Incluir ingredientes a evitar", t => {
+	let mesa2 = new mesa.Mesa(1, 10, false, true);
+	mesa2.incluirPedido(54, "Postre", 1, 5)
+	t.is(mesa2.getPedidos().length, 1)
+})

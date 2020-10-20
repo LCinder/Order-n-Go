@@ -85,8 +85,8 @@ class Mesa {
 		" Pedidos: " + this.pedidos.forEach(elemento => console.log(elemento.toString() + "\n")) + " Ocupada: " + this.ocupada;
 	}
 
-	incluirPedido(platoArg, tipoPlatoArg, cantidadArg, precioArg) {
-		let pedidoNuevo = new pedido.Pedido(platoArg, tipoPlatoArg, cantidadArg, precioArg)
+	incluirPedido(platoArg, tipoPlatoArg, cantidadArg, precioArg, ingredientesEvitarArg) {
+		let pedidoNuevo = new pedido.Pedido(platoArg, tipoPlatoArg, cantidadArg, precioArg, ingredientesEvitarArg)
 		this.pedidos.push(pedidoNuevo);
 	}
 
