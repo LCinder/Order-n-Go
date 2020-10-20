@@ -70,7 +70,7 @@ Enlace para acceder a [todas las ideas](https://github.com/LCinder/Order-n-Go/bl
 
 ---
 
-## :hammer: Tests :hammer:
+## :hammer: Tests y Gestor de Tareas :hammer:
 
 - Como se ha comentado anteriormente, se ha usado [AVA](https://github.com/avajs/ava) para la realización de los test. Se indica además la explicación de [por qué se ha usado AVA](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/avatest.md)
 
