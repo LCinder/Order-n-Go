@@ -74,7 +74,7 @@ Enlace para acceder a [todas las ideas](https://github.com/LCinder/Order-n-Go/bl
 
 - Como se ha comentado anteriormente, se ha usado [AVA](https://github.com/avajs/ava) para la realización de los test y para las aserciones. Se indica además la explicación de [por qué se ha usado AVA](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/avatest.md)
 
-- Se incluye el enlace para acceder al fichero [index.test.js](https://github.com/LCinder/Order-Go/tree/master/tests/index.test.js) que contiene los tests iniciales del *microservicio*
+- Se incluye el enlace para acceder al fichero [index.test.js](https://github.com/LCinder/Order-Go/tree/master/tests/index.test.js) que contiene los tests iniciales del *microservicio* 
 - [Enlace para acceder a la carpeta test](https://github.com/LCinder/Order-n-Go/tree/master/tests) con el fichero  donde se han realizado los mismos e [imagen que demuestra](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/tests1.PNG) que los tests se ejecutan y funcionan.
 
 - En este caso los test no se ejecutan con *Grunt.js* sino con el comando que aparece más abajo. Esto se [explica en el siguiente enlace](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/gestorTareas.md)
