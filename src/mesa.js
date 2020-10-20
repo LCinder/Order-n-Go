@@ -56,6 +56,11 @@ class Mesa {
 		this.personas = personasArg;
 	}
 
+	darPropina(propinaArg) {
+		this.propina.haypropina = true;
+		this.propina.propinaCantidad = propinaArg;
+	}
+
 	setCuenta(cuentaArg) {
 		this.cuenta = cuentaArg;
 	}
@@ -95,11 +100,11 @@ class Mesa {
 	}
 
 	sumaPrecioTotal() {
-		precio = 0;
+		let precio = 0;
 		this.pedidos.forEach(e => precio += e.getPrecio());
 
 		if(this.hayPropina())
-			precio += getPropina()
+			precio += this.getPropina()
 
 		return precio;
 	}
