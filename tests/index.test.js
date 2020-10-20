@@ -55,6 +55,7 @@ test ("Incluir ingredientes a evitar", t => {
 	t.is(mesa2.getPedidos()[0].getIngredientesEvitar().length, 2)
 })
 
+
 test ("Dar propina al finalizar servicio", t => {
 	let mesa2 = new mesa.Mesa(1, 10, false, true);
 	mesa2.incluirPedido(54, "Postre", 1, 5, ["Ingrediente1", "Ingrediente2"])
