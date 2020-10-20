@@ -3,11 +3,12 @@
 
 class Pedido {
 
-	constructor(platoArg, tipoPlatoArg, cantidadArg, precioArg) {
+	constructor(platoArg, tipoPlatoArg, cantidadArg, precioArg, ingredientesEvitarArg) {
 		this.plato = platoArg;
 		this.tipoPlato = tipoPlatoArg;
 		this.cantidad = cantidadArg;
 		this.precio = precioArg;
+		this.ingredientesEvitar = ingredientesEvitarArg;
 	}
 
 	/***** Gets *****/
@@ -27,6 +28,10 @@ class Pedido {
 		return this.precio;
 	}
 
+	getIngredientesEvitar() {
+		return this.ingredientesEvitar;
+	}
+
 	/***** Sets *****/
 	setPlato(platoArg) {
 		this.plato = platoArg;
@@ -44,8 +49,13 @@ class Pedido {
 		this.precio = precioArg;
 	}
 
+	setIngredientesEvitar(ingredientesEvitarArg) {
+		this.ingredientesEvitar = ingredientesEvitarArg;
+	}
+
 	toString() {
-		return "Plato: " + this.plato + " Tipo Plato: " + this.tipoPlato + " Cantidad: " + this.cantidad;
+		return "Plato: " + this.plato + " Tipo Plato: " + this.tipoPlato + " Cantidad: " + this.cantidad
+		+ " Ingredientes a Evitar: " + this.ingredientesEvitar.forEach(elemento => console.log(elemento.toString() + "\n"));
 	}
 
 };
