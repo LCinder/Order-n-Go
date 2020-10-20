@@ -51,6 +51,6 @@ test ("Borrar pedido", t => {
 
 test ("Incluir ingredientes a evitar", t => {
 	let mesa2 = new mesa.Mesa(1, 10, false, true);
-	mesa2.incluirPedido(54, "Postre", 1, 5)
-	t.is(mesa2.getPedidos().length, 1)
+	mesa2.incluirPedido(54, "Postre", 1, 5, ["Ingrediente1", "Ingrediente2"])
+	t.is(mesa2.getPedidos()[0].getIngredientesEvitar().length, 2)
 })
