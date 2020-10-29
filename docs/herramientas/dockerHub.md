@@ -17,3 +17,10 @@ A continuación se demuestra cómo se despliega nuestro contenedor a *DockerHub:
 - Como se ve en la siguiente imagen, la automatización de actualizaciones funciona, ya que al cambiar el repositorio en *GitHub* a la derecha se ve cómo en está construyendo automáticamente la nueva imagen de *Docker.*
 
 ![Automatizacion Docker](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/automatizacionDocker.PNG)
+
+---
+
+Aquí se demuestra que el repositorio está bien subido y que no hay problemas en DockerHub
+
+![DockerHub](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/dockerHub.PNG)
+
