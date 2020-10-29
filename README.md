@@ -90,6 +90,8 @@ Ejecución y creación de un contenedor en *Docker:*
 - Primero se valoran las imágenes del contenedor para *Node.js* y elegimos cuál es mejor [en este enlace](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/imagenesContenedor.md)
 - Se crea el [Dockerfile](https://github.com/LCinder/Order-n-Go/blob/master/Dockerfile) y se explican [los comandos y las buenas prácticas a seguir](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/comandosDocker.md) para la creación del mismo
 - Se crea perfil en *DockerHub* y se explica [cómo conectar GitHub con el mismo](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/dockerHub.md)
+- Para ejecutar los test se utilzia el comando:
 
+`docker run -t -v `pwd`:/test lcinder/order-n-go`
 
 

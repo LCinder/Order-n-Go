@@ -42,10 +42,10 @@ Se probará también una image no oficial de *Node.js* en su versión más actua
 
 Una vez instalados los 6, comprobamos el tamaño que ocupan:
 
-![Imagen tamaño archivos](https://github.com/LCinder/Order-n-Go/tree/master/docs/img/tests1.PNG)
+![Imagen tamaño archivos](https://github.com/LCinder/Order-n-Go/tree/master/docs/img/imagenesDocker.PNG)
 
 
-Como se puede observar, la versión de *node normal* ocupa casi 1Gb, lo cuál no tiene ningún tipo de sentido mantener una imagen de ese tamaño únicamente para pasar en este caso unos *tests.* Pasamos a la versión *node slim* y nos damos cuenta que no es tan *slim,* pero ya mejora a la anterior en gran medida, pero aún así la versión *node-alpine* es mucho más liviana que todas las anteriores además de ser la más "personalizable", por lo que por ahora es nuestra candidata como imagen para ejecutar los test.
+Como se puede observar, la versión de *node normal* y la *node-stretch* ocupan casi 1Gb, lo cuál no tiene ningún tipo de sentido mantener una imagen de ese tamaño únicamente para pasar en este caso unos *tests.* Pasamos a la versión *node slim* y nos damos cuenta que no es tan *slim,* pero ya mejora a la anterior en gran medida, pero aún así la versión *node-alpine* es mucho más liviana que todas las anteriores además de ser la más "personalizable." Sin embargo la versión *alpine* sin incluir *node* pesa un **0,59%** de lo que pesa la versión normal, lo cuál nos hace descartar por completo todas las anteriores y quedarnos sólo con las 2 versiones *alpine.* Investigando en internet descubro que para poder utilizar la versión *alpine* sin *node* sería necesario instalar varios módulos, entre ellos *npm* para poder ejecutar los test, lo cuál añadiría tiempo en construcción y muchas más instrucciones en el *Dockerfile*, por tanto por ahora *node alpine* es nuestra candidata como imagen para ejecutar los test.
 
 ---
 
