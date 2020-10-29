@@ -94,7 +94,6 @@ Ejecución y creación de un contenedor en *Docker:*
 `docker pull lcinder/order-n-go`
 
 - Para ejecutar los test se utiliza el comando:
-
- `docker run -t -v `pwd`:/test lcinder/order-n-go`
+`docker run -t -v `pwd`:/test lcinder/order-n-go`
 
 
