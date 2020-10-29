@@ -7,34 +7,34 @@
 Existen diferentes tipos de imágenes a usar, depende de el uso que queramos hacer, el tamaño, el tiempo de ejecución, los módulos a incluir y a usar, etc. Por eso debemos testear y probar diferentes tipos de imágenes para ver cuál es la que mejor se ajusta a nuestro objetivo a realizar.
 
 
-Podemos encontrarnos varias imágenes, pero usaremos las**5** tipos de imágenes diferentes más comunes o más actualizadas para *Node.js.* Vamos a analizarlas y detectar cuál es la que necesitamos y por qué:
+Podemos encontrarnos varias imágenes, pero usaremos las **5** tipos de imágenes diferentes más comunes o más actualizadas para *Node.js.* Vamos a analizarlas y detectar cuál es la que necesitamos y por qué:
 
 ---
 
 
-##node:<version>
+## node:<version>
 Es la imagen por defecto. Puede ser usada tanto como contenedor como base para crear otras imágenes.  SI vamos a incluir paquetes para nuestra aplicación tenemos que indicarlos explícitamente para minimizar errores, aunque por defecto trae *paquetes Debian comunes* ya incluidos.
 
 ---
 
-##node:<version>-alpine
+## node:<version>-alpine
 Ésta imagen está basada en el *proyecto Alpine de Linux* que tiene un tamaño muy inferior a muchas imágenes y nos permite crear contenedores extremadamente ligeros. Sólamente tenemos que indicar las cosas que necesitamos en el *Dockerfile* para poder usarla sin problemas. Incluye tanto *Node.js* como *npm* como gestor de paquetes.
 
 ---
 
-##node:<version>-slim
+## node:<version>-slim
 Ésta imagen no contiene nigún paquete común incluido. trae lo mínimo imprescindible para ejecutar *node.* Está dirigida a entornos en los que la restricción de espacio es extremadamente importante, lo cuál no es el caso.
 
 ---
 
-##node:<version>-stretch y node:<version>-buster
+## node:<version>-stretch y node:<version>-buster
 La primera imagen se trata de una versión de *Debian 9.* Contiene todo lo necesario para un contenedor, estando más enfocada a las pruebas de seguridad, firewalls, etc. Es un poco más pesada.
 
 La segunda es conocida también como *Debian 10* y es básicamente una versión más moderna de *stretch.*
 
 En todos los casos se usará la versión **15.0.1.** debido a que se trata de la más actualizada hasta el momento.
 
-##Imagen No Oficial del lenguaje: Alpine
+## Imagen No Oficial del lenguaje: Alpine
 
 Se probará también una image no oficial de *Node.js* en su versión más actualizada, la *3.12.1,* siendo un SO completamente personalizable que permite la realización de cualquier instalación que queramos además de ser la más recomendada por muchos usuarios.
 
