@@ -64,3 +64,10 @@ test ("Dar propina al finalizar servicio", t => {
 	mesa2.darPropina(5)
 	t.is(mesa2.sumaPrecioTotal(), 25)
 })
+
+
+test ("Incluir comentario opcional plato", t => {
+	let mesa2 = new mesa.Mesa(1, 10, false, true);
+	mesa2.incluirPedido(54, "Postre", 1, 5, ["Ingrediente1", "Ingrediente2"], "Para compartir")
+	t.is(mesa2.getPedidos()[0].getComentarioOpcionalPlato(), "Para compartir")
+})
