@@ -70,26 +70,15 @@ Enlace para acceder a [todas las ideas](https://github.com/LCinder/Order-n-Go/bl
 
 ---
 
-## :hammer: Tests y Gestor de Tareas :hammer:
-
-- Como se ha comentado anteriormente, se ha usado [AVA](https://github.com/avajs/ava) para la realización de los test y para las aserciones. Se indica además la explicación de [por qué se ha usado AVA](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/avatest.md)
-
-- Se incluye el enlace para acceder al fichero [index.test.js](https://github.com/LCinder/Order-Go/tree/master/tests/index.test.js) que contiene los tests iniciales del *microservicio* 
-- [Enlace para acceder a la carpeta test](https://github.com/LCinder/Order-n-Go/tree/master/tests) con el fichero  donde se han realizado los mismos e [imagen que demuestra](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/tests1.PNG) que los tests se ejecutan y funcionan.
-
-- En este caso los test no se ejecutan con *Grunt.js* sino con el comando que aparece más abajo. Esto se [explica en el siguiente enlace](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/gestorTareas.md)
-
-- Los test se ejecutan con el comando:
-`npm test`
-
----
-
 ## :whale2: Docker :whale2: 
 Ejecución y creación de un contenedor en *Docker:*
 
 - Primero se valoran las imágenes del contenedor para *Node.js* y elegimos cuál es mejor [en este enlace](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/imagenesContenedor.md)
 - Se crea el [Dockerfile](https://github.com/LCinder/Order-n-Go/blob/master/Dockerfile) y se explican [los comandos y las buenas prácticas a seguir](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/comandosDocker.md) para la creación del mismo
 - Se crea perfil en *DockerHub* y se explica [cómo conectar GitHub con el mismo](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/dockerHub.md) y se incluye el [enlace al repositorio en DockerHub](https://hub.docker.com/repository/docker/lcinder/order-n-go)
+
+- Además se ha subido el contenedor a un registro alternativo en este caso GitHub Container Registry, y [aquí se indica](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/ghcr.md) cómo se ha realizado y cómo se ha subido.
+
 - Para descargar el contenedor se realiza:
 `docker pull lcinder/order-n-go`
 
