@@ -84,9 +84,11 @@ Ejecución y creación de un contenedor en *Docker:*
 - [Enlace al paquete](https://github.com/LCinder/Order-n-Go/packages/482554) del proyecto.
 
 - Para descargar el contenedor se realiza:
-`docker pull lcinder/order-n-go`
+`docker pull lcinder/order-n-go:3.0`
 
 - Para ejecutar los test se utiliza el comando:
-`docker run -t -v `pwd`:/test lcinder/order-n-go`
+~~~
+docker run -t -v `pwd`:/test lcinder/order-n-go:3.0
+~~~
 
 
