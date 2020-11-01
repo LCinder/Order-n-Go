@@ -81,6 +81,8 @@ Ejecución y creación de un contenedor en *Docker:*
 
 - Además se ha subido el contenedor a un registro alternativo, en este caso GitHub Container Registry, y [aquí se indica](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/ghcr.md) cómo se ha realizado y cómo se ha subido.
 
+- [Enlace al paquete](https://github.com/LCinder/Order-n-Go/packages/482554) del proyecto.
+
 - Para descargar el contenedor se realiza:
 `docker pull lcinder/order-n-go`
 
