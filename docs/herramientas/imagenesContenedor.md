@@ -65,6 +65,9 @@ Como se puede observar, la versión de *node normal* y la *node-stretch* ocupan 
 
 Viendo las imágenes anteriores, no hay mucha diferencia entre la ejecución más rápida y la más lenta, que son la versión **node:alpine** y la versión **node:slim** respectivamente, en donde la diferencia de tiempo de las 2 es un **32%.** Atendiendo a ésto, y debido a que sólo hay 2 segundos de diferencia, creo que es mejor elegir la imagen más ligera, en este caso **alpine** y que sólo es un **11%** más lenta que la mas´rápida pero ya hemos visto lo poco que pesa, por lo que opto por elegir **alpine** como imagen.
 
+Ahora ejecutamos el contenedor con la imagen elegida **alpine** y comprobamos que funciona:
+
+![Imagen contenedor funciona](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/testFunciona.PNG)
 
 ---
 
