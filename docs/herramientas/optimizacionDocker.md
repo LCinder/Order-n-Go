@@ -6,7 +6,7 @@
 ---
 
 Dentro de las buenas prácticas a realizar en contenedores en la de **optimizar** tanto en velocidad como en tamaño el contenedor. 
-Trataremos de optimizar en tamaño ya que la imagen se va a varios cientos de MB y creo que es posible tratar de reducirl mediante una serie de pasos, primero a incluir dentro del *Dockerfile:*
+Trataremos de optimizar en tamaño ya que la imagen se va a varios cientos de MB y creo que es posible tratar de reducirl mediante una serie de pasos, primero a incluir dentro del *Dockerfile.* Ésto se realiza **al crear el contenedor, y no después** para que la optimización sea desde el inicio.
 
 - Instalar sólo lo necesario: Instalar los módulos incluye todas las dependencias de desarrollo y todas las dependencias de tiempo de ejecución, pudiendo ser un costo importante. Como la app no necesita precompilación (es JavaScript simple que Node puede ejecutar directamente), incluímos `--only=production` que reducirá el tamaño.
 
