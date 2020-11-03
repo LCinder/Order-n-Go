@@ -10,4 +10,4 @@ node_js:
   - 15
 before_install:
   - docker pull lcinder/order-n-go:3.0
-  - docker -t -v `pwd`:/test lcinder/order-n-go:3.0 
+  - docker run -t -v `pwd`:/test lcinder/order-n-go:3.0 
