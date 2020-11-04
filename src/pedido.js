@@ -76,7 +76,6 @@ class Pedido {
 		+ " Ingredientes a Evitar: " + this.ingredientesEvitar.forEach(elemento => console.log(elemento.toString() + "\n"))
 		+ " Comentario Opcional Plato: " + this.comentarioOpcionalPlato;
 	}
-
 };
 
 module.exports = {
