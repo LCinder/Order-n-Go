@@ -91,4 +91,15 @@ Ejecución y creación de un contenedor en *Docker:*
 docker run -t -v `pwd`:/test lcinder/order-n-go:3.0
 ~~~
 
+---
+
+## :scroll: Inegración Continua CI :scroll: 
+
+- Primero realizamoa [registro en *TravisCi*] (https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/signUpTravis.md)
+
+- Luego realizamos [explicación de cómo funciona y se ejecuta *Travis*](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/travisEx.md)
+
+- Se comparan diferentes [plataformas de CI](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/comparacionPlataformasCI.md) adicionales a *Travis*
+
+- Se elige la plataforma [Shippable y se explica el registro y la ejecución](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/shippableEx.md) adicionales a *Travis*
 

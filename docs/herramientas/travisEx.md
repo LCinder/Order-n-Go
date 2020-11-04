@@ -5,7 +5,7 @@
 
 ---
 
-Una vez ya instalado todo lo necesario y preparado el repositorio, podemos ejecutar *Travis,* no sin antes ver qué contiene el archivo [.travis.yml]()
+Una vez ya instalado todo lo necesario y preparado el repositorio, podemos ejecutar *Travis,* no sin antes ver qué contiene el archivo [.travis.yml](https://github.com/LCinder/Order-n-Go/blob/master/.travis.yml)
 
  - En el apartado `language` indicamos el lenguaje de programación que vamos a usar, en este caso *Node.js*
 
