@@ -1,6 +1,4 @@
 
-
-
 # :scroll: Ejecución Travis :scroll:
 
 ---
