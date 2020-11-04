@@ -95,7 +95,7 @@ docker run -t -v `pwd`:/test lcinder/order-n-go:3.0
 
 ## :scroll: Integración Continua CI :scroll: 
 
-- Primero realizamos [registro en TravisCi] (https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/signUpTravis.md)
+- Primero realizamos [registro en *TravisCI*](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/signUpTravis.md)
 
 - Luego realizamos [explicación de cómo funciona y se ejecuta *Travis*](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/travisEx.md)
 
