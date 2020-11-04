@@ -3,13 +3,14 @@
 
 class Pedido {
 
-	constructor(platoArg, tipoPlatoArg, cantidadArg, precioArg, ingredientesEvitarArg, comentarioOpcionalPlatoArg) {
+	constructor(platoArg, tipoPlatoArg, cantidadArg, precioArg, ingredientesEvitarArg, comentarioOpcionalPlatoArg, usuarioArg) {
 		this.plato = platoArg;
 		this.tipoPlato = tipoPlatoArg;
 		this.cantidad = cantidadArg;
 		this.precio = precioArg;
 		this.ingredientesEvitar = ingredientesEvitarArg;
 		this.comentarioOpcionalPlato = comentarioOpcionalPlatoArg;
+		this.usuario = usuarioArg;
 	}
 
 	/***** Gets *****/
@@ -37,6 +38,10 @@ class Pedido {
 		return this.comentarioOpcionalPlato;
 	}
 
+	getUsuario() {
+		return this.usuario;
+	}
+
 	/***** Sets *****/
 	setPlato(platoArg) {
 		this.plato = platoArg;
@@ -60,6 +65,10 @@ class Pedido {
 
 	setComentarioOpcionalPlato(comentarioOpcionalPlatoArg) {
 		this.comentarioOpcionalPlato = comentarioOpcionalPlatoArg;
+	}
+
+	setUsuario(usuarioArg) {
+		this.usuario = usuarioArg;
 	}
 
 	toString() {

@@ -16,6 +16,7 @@ class Mesa {
 		this.pedidos = [];		// Array de objetos 'pedidos'
 		this.ocupada = ocupadaArg;	 // boolean para mesa ocupada o no
 		this.propina = {"haypropina": false, propinaCantidad: 0};
+		this.pagarSeparado = false;
 	}
 
 	/***** Gets *****/
@@ -45,6 +46,14 @@ class Mesa {
 
 	getOcupada() {
 		return this.ocupada;
+	}
+
+	getPropina() {
+		return this.propina.propinaCantidad;
+	}
+
+	getPagarSeparado() {
+		return this.pagarSeparado;
 	}
 
 	/***** Sets *****/
@@ -77,12 +86,24 @@ class Mesa {
 		this.precioTotal = precioTotalArg;
 	}
 
-	hayPropina() {
-		return this.propina.haypropina;
+	setPagarSeparado(pagarSeparadoArg) {
+		this.pagarSeparado = pagarSeparadoArg;
 	}
 
-	getPropina() {
-		return this.propina.propinaCantidad;
+
+	/****************************************************************************/
+	/****************************************************************************/
+	/****************************************************************************/
+	/****************************************************************************/
+	/****************************************************************************/
+	/****************************************************************************/
+
+	getValuesUnique(v) {
+			return v.filter((a, i, j) => j.indexOf(a) === i)
+	}
+
+	hayPropina() {
+		return this.propina.haypropina;
 	}
 
 	toString() {
@@ -90,8 +111,8 @@ class Mesa {
 		" Pedidos: " + this.pedidos.forEach(elemento => console.log(elemento.toString() + "\n")) + " Ocupada: " + this.ocupada;
 	}
 
-	incluirPedido(platoArg, tipoPlatoArg, cantidadArg, precioArg, ingredientesEvitarArg, comentarioOpcionalPlatoArg) {
-		let pedidoNuevo = new pedido.Pedido(platoArg, tipoPlatoArg, cantidadArg, precioArg, ingredientesEvitarArg, comentarioOpcionalPlatoArg)
+	incluirPedido(platoArg, tipoPlatoArg, cantidadArg, precioArg, ingredientesEvitarArg, comentarioOpcionalPlatoArg, usuarioArg) {
+		let pedidoNuevo = new pedido.Pedido(platoArg, tipoPlatoArg, cantidadArg, precioArg, ingredientesEvitarArg, comentarioOpcionalPlatoArg, usuarioArg)
 		this.pedidos.push(pedidoNuevo);
 	}
 
@@ -109,14 +130,38 @@ class Mesa {
 		return precio;
 	}
 
+	pagarPorSeparado() {
+		let v = [], total = [], precioUsuario = 0;
+		let pedidos = this.getPedidos();
+
+		pedidos.forEach(e => (v.push(e.getUsuario())))
+
+
+		let usuarios = this.getValuesUnique(v);
+
+		for (let i=0; i < usuarios.length; i++) {
+			for (let j=0; j < pedidos.length; j++) {
+				if(usuarios[i] == pedidos[j].getUsuario())
+						precioUsuario += pedidos[j].getPrecio()
+			}
+			total.push({usuario: i, precioTotal: precioUsuario});
+			precioUsuario = 0;
+		}
+
+		return total;
+	}
+
 };
 
 module.exports = {
 	Mesa
 }
 //
-//
-// let mesa = new Mesa(2, 3, false, true)
-// mesa.incluirPedido(1, "Postre", 3)
-//
-// console.log(mesa.toString())
+// let mesa2 = new Mesa(1, 10, false, true);
+// mesa2.incluirPedido(54, "Plato1", 1, 5, ["Ingrediente1", "Ingrediente2"], "Vacio", 1)
+// mesa2.incluirPedido(4, "Plato2", 2, 15, ["Ingrediente1", "Ingrediente2"], "Vacio", 2)
+// mesa2.incluirPedido(34, "Plato3", 1, 3, ["Ingrediente1", "Ingrediente2"], "Vacio", 1)
+// mesa2.incluirPedido(78, "Plato4", 1, 2, ["Ingrediente1", "Ingrediente2"], "Vacio", 1)
+// mesa2.incluirPedido(98, "Postre", 2, 1.2, ["Ingrediente1", "Ingrediente2"], "Vacio", 1)
+// mesa2.incluirPedido(33, "Postre", 1, 5, ["Ingrediente1"], "Vacio", 1)
+// console.log(mesa2.pagarPorSeparado()[1].precioTotal)
