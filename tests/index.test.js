@@ -73,6 +73,7 @@ test ("Incluir comentario opcional plato", t => {
 })
 
 
+
 test ("Pagar por separado", t => {
 	let mesa2 = new mesa.Mesa(1, 10, false, true);
 	// Usuario 1 Precio = 15
