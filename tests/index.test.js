@@ -92,8 +92,25 @@ test ("Incluir comentario opcional plato", t => {
 })
 
 
+test("Comprueba lo que tiene que pagar cada persona", t=> {
+	let mesa2 = new mesa.Mesa(1, 10, false, true);
+	mesa2.incluirPedido(54, "Plato1", 1, 5, ["Ingrediente1", "Ingrediente2"], "Vacio", 1)
+	mesa2.incluirPedido(4, "Plato2", 2, 15, ["Ingrediente1", "Ingrediente2"], "Vacio", 2)
+	mesa2.incluirPedido(98, "Postre", 2, 1.2, ["Ingrediente1", "Ingrediente2"], "Vacio", 1)
+	mesa2.incluirPedido(33, "Postre", 1, 5, ["Ingrediente1"], "Vacio", 1)
+	total = [ { usuario: 1, precioTotal: 11.2 }, { usuario: 2, precioTotal: 15 } ];
+	resultado=JSON.stringify(total)==JSON.stringify(mesa2.pagarPorSeparado())
+	t.is(resultado,true)
+})
 
-test ("Pagar por separado", t => {
+test ("Comprobar el número de usuarios que hay en una mesa", t=> {
+	let mesa2 = new mesa.Mesa(1, 10, false, true);
+	mesa2.incluirPedido(34, "Plato3", 1, 3, ["Ingrediente1", "Ingrediente2"], "Vacio", 1)
+	mesa2.incluirPedido(98, "Postre", 2, 1.2, ["Ingrediente1", "Ingrediente2"], "Vacio", 2)
+	t.is(mesa2.pagarPorSeparado().length, 2)
+})
+
+test ("Calcula el precio que tiene que pagar uno de los usuarios", t => {
 	let mesa2 = new mesa.Mesa(1, 10, false, true);
 	// Usuario 1 Precio = 15
 	mesa2.incluirPedido(54, "Plato1", 1, 5, ["Ingrediente1", "Ingrediente2"], "Vacio", 1)
