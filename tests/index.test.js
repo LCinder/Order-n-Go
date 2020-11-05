@@ -40,6 +40,13 @@ test ("Incluir pedido", t => {
 	t.is(mesa2.getPedidos().length, 1)
 })
 
+test ("Cambiar Pedido", t => {
+	let mesa2 = new mesa.Mesa(1, 5, false, true)
+	let plato1 = new pedido.Pedido(10, "Postre", 1, 5)
+	mesa2.setPedidos([])
+	resultado=JSON.stringify([])==JSON.stringify(mesa2.getPedidos())
+	t.is(resultado, true)
+})
 
 test ("Borrar pedido", t => {
 	let mesa2 = new mesa.Mesa(1, 10, false, true);
