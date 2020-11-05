@@ -144,7 +144,7 @@ class Mesa {
 				if(usuarios[i] == pedidos[j].getUsuario())
 						precioUsuario += pedidos[j].getPrecio()
 			}
-			total.push({usuario: i, precioTotal: precioUsuario});
+			total.push({usuario: i+1, precioTotal: precioUsuario});
 			precioUsuario = 0;
 		}
 
