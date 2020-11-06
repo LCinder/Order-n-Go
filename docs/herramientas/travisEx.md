@@ -9,9 +9,7 @@ Una vez ya instalado todo lo necesario y preparado el repositorio, podemos ejecu
 
 - Como vamos a ejecutar el contenedor desarrollado en el hito anterior, indicamos que suaremos como servicios o `services` *docker*
 
-- Indicamos las versiones de *Node.js* que queremos testear con *Travis* lo cuál nos ahorra mucho tiempo probando una y otra hasta ver cuál es la que funciona, ya que como veremos luego nos realiza una descripción de con cuál versión ha funcionado y con cuál no
-
-- En este caso el *gestor de tareas* ya indicamos en hitos anteriores que se usaría el mismo *tester* como *gestor de tareas,* en este caso *AVA* y se usa dentro del contenedor como podemos ver en el archivo [Dockerfile](https://github.com/LCinder/Order-n-Go/blob/master/Dockerfile) justamente en la última línea donde `CMD ["npm", "test"]` se indica en el [package.json](https://github.com/LCinder/Order-n-Go/blob/master/package.json) que ejecuta *AVA* en modo *verbose.*
+- Indicmos las versiones de *Node.js* que queremos testear con *Travis* lo cuál nos ahorra mucho tiempo probando una y otra hasta ver cuál es la que funciona, ya que como veremos luego nos realiza una descripción de con cuál versión ha funcionado y con cuál no
 
 - En el apartado `before_install` indicamos todo lo necesario antes de realizar la ejecución del contenedor y finalmente en `script` establecemos la ejecución del mismo
 
