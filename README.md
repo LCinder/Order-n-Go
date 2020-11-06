@@ -60,11 +60,6 @@ Enlace al archivo [iv.yaml](https://github.com/LCinder/Order-n-Go/blob/master/iv
 
 ---
 
-## :thought_balloon: Ideas :thought_balloon:
-Enlace para acceder a [todas las ideas](https://github.com/LCinder/Order-n-Go/blob/master/docs/ideas.md) que se me ocurren para el servicio, tanto las realizables como las descartables
-
----
-
 ## :chart_with_upwards_trend: Código :chart_with_upwards_trend:
 - Enlace para acceder a la clase  [Mesa](https://github.com/LCinder/Order-n-Go/blob/master/src/mesa.js) 
 - Enlace para acceder a la clase  [Pedido](https://github.com/LCinder/Order-n-Go/blob/master/src/pedido.js) 
