@@ -17,4 +17,8 @@ Comparando con una de las plataformas de *Integración continua* más famosas co
 
 - Tiene soporte para *GHCR* y *CircleCI* no.
 
+- Como se indica [aquí](https://www.slant.co/versus/625/632/~circleci_vs_shippable) las builds son más rápidas, es fácil de iniciarse en la plataforma, ofrece visualización de resultados de test, entre otros
+
+- Porque es más conocido *CircleCI* y quiero probar otras plataformas que no sean tan conocidaspara ver las diferencias y las razones
+
 - Tiene documentación específica para *Node.js*
