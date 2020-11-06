@@ -8,6 +8,7 @@ Una vez ya instalado todo lo necesario y preparado el repositorio, podemos ejecu
  - En el apartado `language` indicamos el lenguaje de programación que vamos a usar, en este caso *Node.js.*
 
 Podemos probar diferentes versiones *generales* de lenguaje como por ejemplo `language:minimal` que incluye lo mínimo indispensable, como las herramientas de red esenciales y Docker entre otros. Como el contenedor que creamos en el hito anterior usaba la imagen *alpine* y luego instalábamos el gestor de paquetes *npm* entre otros para que la imagen con *Node.js* funcionase, realmente ¿es necesario instalar más cosas de las necesarias e incluso que se repitan? La respuesta es que no, no tiene absolutamente ningún tipo de sentido, simplemente indicando el lenguaje `minimal` nos ahorramos **bastante** tiempo en la ejecución de los test, además de que sólo ejecutamos 1 versión del lenguaje como explicaremos posteriormente.
+Existen otros lenguajes como *generic* que contiene todo lo necesario y genérico para diferentes lenguajes, lo que lo hace más lento al incluir mayor variedad, por lo que no se ha incluído.
 
 - Como vamos a ejecutar el contenedor desarrollado en el hito anterior, indicamos que suaremos como servicios o `services` *docker*
 
