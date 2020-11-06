@@ -30,6 +30,8 @@ Enlace para acceder a las [HU](https://github.com/LCinder/Order-n-Go/issues) est
 - [|HU5| -Como usuario quiero cambiar los ingredientes de los platos a elegir](https://github.com/LCinder/Order-n-Go/issues/26)
 - [|HU6| - Como usuario quiero poder dar propina al finalizar el servicio](https://github.com/LCinder/Order-n-Go/issues/27)
 - [|HU7| - Como usuario quiero eliminar pedidos (platos) incluso después de haberlos seleccionado](https://github.com/LCinder/Order-n-Go/issues/28)
+- [|HU8| - Como usuario quiero pagar por separado](https://github.com/LCinder/Order-n-Go/issues/68)
+
 
 ---
 
