@@ -21,7 +21,11 @@ En cuanto realizamos cualquier cambio en el repositorio aparecerá lo siguiente
 
 ![Travis Build](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/travisBuild.PNG)
 
-Que nos indica que se está ejecutando lo establecido en el archivo anterior, y una vez realizada la *build* nos reporta un *log* con la información de los trabajos realizados, en este caso todos funcionan con las distintas versiones de *Node.js* pero en el caso de que no funcionase se indica explícitamente lo que falla en el *log* creado.
+Que nos indica que se está ejecutando lo establecido en el archivo anterior, y una vez realizada la *build* nos reporta un *log* con la información de los trabajos realizados como se ve a continuación:
+
+![Travis Log](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/travisLog.PNG)
+
+En este caso todos funcionan con las distintas versiones de *Node.js* pero en el caso de que no funcionase se indica explícitamente lo que falla en el *log* creado.
 
 ![Travis Funciona](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/travisBuildFunciona.PNG)
 
