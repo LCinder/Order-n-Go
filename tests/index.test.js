@@ -72,7 +72,17 @@ test ("Incluir comentario opcional plato", t => {
 	t.is(mesa2.getPedidos()[0].getComentarioOpcionalPlato(), "Para compartir")
 })
 
+test ("Consulta si una mesa está ocupada", t => {
+	let mesa2 = new mesa.Mesa(1, 5, false, true)
+	mesa2.setOcupada(true)
+	t.is(mesa2.getOcupada(), true)
+})
 
+test ("Comprobar que hay propina", t => {
+	let mesa2 = new mesa.Mesa(1, 10, false, true);
+	mesa2.incluirPedido(4, "Postre", 1, 10)
+	t.is(mesa2.hayPropina(), false)
+})
 
 test ("Pagar por separado", t => {
 	let mesa2 = new mesa.Mesa(1, 10, false, true);
