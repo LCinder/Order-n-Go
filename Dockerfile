@@ -27,7 +27,7 @@ WORKDIR /test
 
 #El tester AVA no puede trabajar sin permisos de superusuario
 #por tanto una vez instalamos todo cambiamos al user root
-#USER root
+USER root
 
 CMD ["npm", "test"]
 
