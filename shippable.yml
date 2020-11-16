@@ -1,7 +1,4 @@
 language: node_js
-build:
-  - image_name: lcinder/order-n-go
-  - image_tag: 3.0
 node_js:
   - 10
   - 11
@@ -10,5 +7,7 @@ node_js:
   - 14
   - 15
 build:
+  - image_name: lcinder/order-n-go
+  - image_tag: 3.0
   ci:
     - npm test
