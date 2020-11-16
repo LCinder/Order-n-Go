@@ -10,5 +10,6 @@ build:
   pre_ci_boot:
     - image_name: lcinder/order-n-go
     - image_tag: 3.0
+    - pull:true
   ci:
     - npm test
