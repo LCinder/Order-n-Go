@@ -1,5 +1,5 @@
 language: minimal
 docker:
- - image: lcinder/order-n-go:3.0
+  - image: lcinder/order-n-go:3.0
 script:
- - npm test
+  - npm test
