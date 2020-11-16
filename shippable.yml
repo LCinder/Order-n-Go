@@ -8,9 +8,7 @@ node_js:
   - 15
 build:
   pre_ci_boot:
-    - image_name: lcinder/order-n-go
-    - image_tag: 3.0
+    - image_name: lcinder/order-n-go:3.0
     - pull: true
-jobs:
-  steps:
+  ci:
     - npm test
