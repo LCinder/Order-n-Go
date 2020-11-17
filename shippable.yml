@@ -6,9 +6,7 @@ node_js:
   - 13
   - 14
   - 15
-build:
-  pre_ci_boot:
-    - image_name: lcinder/order-n-go:3.0
-    - pull: true
-  ci:
-    - npm test
+jobs:
+  steps:
+  TASK:
+    - script: docker build -t lcinder/order-n-go:3.0
