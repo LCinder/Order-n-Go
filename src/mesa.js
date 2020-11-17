@@ -136,8 +136,11 @@ class Mesa {
 
 		pedidos.forEach(e => (v.push(e.getUsuario())))
 
-
 		let usuarios = this.getValuesUnique(v);
+
+		//evitamos pasar por el for
+		if(usuarios.length <= 1)
+			return total;
 
 		for (let i=0; i < usuarios.length; i++) {
 			for (let j=0; j < pedidos.length; j++) {
@@ -147,7 +150,6 @@ class Mesa {
 			total.push({usuario: i, precioTotal: precioUsuario});
 			precioUsuario = 0;
 		}
-
 		return total;
 	}
 
