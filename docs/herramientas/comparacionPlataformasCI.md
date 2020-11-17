@@ -1,6 +1,5 @@
 
 
-
 # :scroll: Comparación Plataformas CI Docker :scroll:
 
 ---
