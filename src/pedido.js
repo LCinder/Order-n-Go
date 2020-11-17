@@ -60,7 +60,8 @@ class Pedido {
 	}
 
 	setIngredientesEvitar(ingredientesEvitarArg) {
-		this.ingredientesEvitar = ingredientesEvitarArg;
+		if(ingredientesEvitarArg.length > 0)
+			this.ingredientesEvitar = ingredientesEvitarArg;
 	}
 
 	setComentarioOpcionalPlato(comentarioOpcionalPlatoArg) {
