@@ -1,6 +1,10 @@
-language: minimal
-
-before install:
-  - apk add --update nodejs npm
+language: node_js
+node_js:
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
 script:
   - npm test
