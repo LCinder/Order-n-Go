@@ -1,4 +1,6 @@
 language: minimal
 
+before install:
+  - apk add --update nodejs npm
 script:
   - npm test
