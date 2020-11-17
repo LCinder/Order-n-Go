@@ -22,3 +22,5 @@ Comparando con una de las plataformas de *Integración continua* más famosas co
 - Porque es más conocido *CircleCI* y quiero probar otras plataformas que no sean tan conocidaspara ver las diferencias y las razones
 
 - Tiene documentación específica para *Node.js*
+
+- A parte de la elección de *shippable* como plataforma adicional de *CI,* hemos de tener en cuenta que será bastante más lenta que *TravisCI* ya que no se ejecutan concurrentemente como  en esta última sino una a una, por lo que es un punto a tener en cuenta ya que si podemos usar *docker* sacrificando el tiempo.
