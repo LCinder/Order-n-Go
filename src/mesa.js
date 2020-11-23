@@ -116,6 +116,12 @@ class Mesa {
 		this.pedidos.push(pedidoNuevo);
 	}
 
+	mostrarPedidos() {
+		cad = ""
+		this.pedidos.forEach(elemento => cad+= elemento.toString() + "\n"))
+		returnc ad;
+	}
+
 	borrarPedido(numeroPedido) {
 		this.pedidos.splice(numeroPedido)
 	}
