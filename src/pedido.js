@@ -8,7 +8,10 @@ class Pedido {
 		this.tipoPlato = tipoPlatoArg;
 		this.cantidad = cantidadArg;
 		this.precio = precioArg;
-		this.ingredientesEvitar = ingredientesEvitarArg;
+		if(ingredientesEvitarArg != null && ingredientesEvitarArg != "")
+			this.ingredientesEvitar = ingredientesEvitarArg;
+		else
+			this.ingredientesEvitar = []
 		this.comentarioOpcionalPlato = comentarioOpcionalPlatoArg;
 		this.usuario = usuarioArg;
 	}
