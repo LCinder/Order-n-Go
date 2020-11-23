@@ -117,7 +117,7 @@ class Mesa {
 	}
 
 	mostrarPedidos() {
-		cad = ""
+		let cad = ""
 		this.pedidos.forEach(elemento => cad+= elemento.toString() + "\n")
 		return cad;
 	}
