@@ -14,5 +14,5 @@ for (let i=0; i < datos.pedidos.length; i++) {
 
 
 module.exports = (req, res) => {
-	res.send("Los pedidos para la mesa" + mesa.getMesa() + " son: " + mesa.mostrarPedidos())
+	res.send("Los pedidos para la mesa")
 }
