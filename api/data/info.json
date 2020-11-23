@@ -1,0 +1,29 @@
+
+{
+	"mesa": {
+		"mesaN": "1",
+		"personas": "2",
+		"cuenta": "false",
+		"ocupada": "true"
+	},
+	"pedidos": [
+		{
+			"plato": "10",
+			"tipoPlato": "Principal",
+			"cantidad": "1",
+			"precio": "20",
+			"ingredientesEvitar": "",
+			"comentarioOpcionalPlato": "Para compartir",
+			"usuario": "1"
+		},
+		{
+			"plato": "53",
+			"tipoPlato": "Secundario",
+			"cantidad": "2",
+			"precio": "10",
+			"ingredientesEvitar": "",
+			"comentarioOpcionalPlato": "",
+			"usuario": "1"
+		}
+	]
+}
