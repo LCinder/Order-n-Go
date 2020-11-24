@@ -13,7 +13,7 @@ Como se ha indicado en ese documento, lo bueno de conectar el repositorio con *G
 Además en la propia plataforma de *Vercel* nos muestra cómo se actualiza, el tiempo que ha pasado desde que se ha actualizado, los *logs* de la construcción, y la *url* para poder acceder a la *API*, todo en el *dashboard* como sale a continuación:
 
 
-![Vercel DashBoard](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/vercelDashBoard.PNG)
+![Vercel DashBoard](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/vercelDashboard.PNG)
 
 ---
 
@@ -37,12 +37,3 @@ Por último lo **exportamos** y lo enviamos como **respuesta** en forma de caden
 
 
 ![API Vercel Funciona](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/apiVercelFunciona.PNG)
-
-
-
-
-
-
-
-
-s
