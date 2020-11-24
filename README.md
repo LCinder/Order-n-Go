@@ -74,7 +74,7 @@ Archivo con [todo lo relacionado a Docker](https://github.com/LCinder/Order-n-Go
 
 ## :scroll: Integración Continua CI :scroll: 
 
-Archivo con [todo lo relacionado a Docker](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/integracionContinuaCI.md)
+Archivo con [todo lo relacionado a Integración Continua](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/integracionContinuaCI.md)
 
 ---
 
