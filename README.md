@@ -74,15 +74,16 @@ Archivo con [todo lo relacionado a Docker](https://github.com/LCinder/Order-n-Go
 
 ## :scroll: Integración Continua CI :scroll: 
 
-- Primero realizamos [registro en *TravisCI*](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/signUpTravis.md)
+Archivo con [todo lo relacionado a Docker](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/integracionContinuaCI.md)
 
-- Luego realizamos [explicación de cómo funciona y se ejecuta *Travis*](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/travisEx.md)
+---
 
-- Acceso a archivo [shippable.yml](https://github.com/LCinder/Order-n-Go/blob/master/shippable.yml) y a [.travis.yml](https://github.com/LCinder/Order-n-Go/blob/master/.travis.yml)
-
-- Se comparan diferentes [plataformas de CI](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/comparacionPlataformasCI.md) adicionales a *Travis*
-
-- Se elige la plataforma [Shippable y se explica el registro y la ejecución](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/shippableEx.md) adicionales a *Travis*
+## :satellite: Serverless :satellite: 
 
 
+- Se incluye todo lo relacionado con el [despliegue y conexión enre GitHub y Vercel](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/despliegueServerless.md) y la integración con el proyecto general.
 
+
+- Creación de [un bot de Telegram y despliegue en una plataforma diferente.](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/botServerless.md)
+
+- Repositorio donde se encuentra el [bot de Telegram](https://github.com/LCinder/bot-Order-n-Go)
