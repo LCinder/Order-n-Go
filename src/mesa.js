@@ -118,7 +118,14 @@ class Mesa {
 
 	mostrarPedidos() {
 		let cad = ""
-		this.pedidos.forEach(elemento => cad+= elemento.toString() + " ")
+		let n = 1;
+
+		this.pedidos.forEach(elemento => {
+			if(elemento != null && elemento != undefined) {
+				cad += "Plato " + n + "\n---------------------\n" + elemento.toString() + "\n\n";
+				n++;
+			}
+		});
 		return cad;
 	}
 
