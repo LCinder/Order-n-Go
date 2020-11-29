@@ -4,7 +4,7 @@
 
 ---
 
-Para registrarnos en *Vercel,* seguiremos los pasos que se nos indican en la página principal. Lo mejor es vincular la cueta de *GitHub* permitiendo el acceso en la misma de *Vercel* para que se puedapermitir el **despliegue continuo** posteriormente, es decir que al hacer *push* al repositorio se auto-despliegue el nuevo proyecto en *Vercel.*
+Para registrarnos en *Vercel,* seguiremos los pasos que se nos indican en la página principal. Lo mejor es vincular la cueta de *GitHub* permitiendo el acceso en la misma de *Vercel* para que se pueda permitir el **despliegue continuo** posteriormente, es decir que al hacer *push* al repositorio se auto-despliegue el nuevo proyecto en *Vercel.*
 
 ![Vercel Registro](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/vercelSignUp.PNG)
 
@@ -73,7 +73,7 @@ Que básicamente lo que realiza es asignar a una variable *name* el nombre desno
 
 Vamos a explicar qué es lo que hace nuestra función desplegada en *vercel.* Antes de nada es necesario saber qué hay en el directorio *api/:*
 - Tenemos un archivo `test.js` desde donde se realiza toda la funcionalidad de la *API.*
-- En relación a lo anterior, tenemos el archivo `info.json` dentro de *data* que contiene los datos a usar, en este caso los datos del objeto a crear *mesa* con sus argumentos y los *pedidos* realacionados con la misma, siendo éste un array donde tendremos objetos de tipo *pedido* con los datos de para la creación del mismo.
+- En relación a lo anterior, tenemos el archivo [info.json](https://github.com/LCinder/Order-n-Go/blob/master/api/data/info.json) dentro de *data* que contiene los datos a usar, en este caso los datos del objeto a crear *mesa* con sus argumentos y los *pedidos* realacionados con la misma, siendo éste un array donde tendremos objetos de tipo *pedido* con los datos de para la creación del mismo.
 
 Ésto hace que surja un problema: No existen peticiones a otras *API's,* ni funcionalidades tipo *web scrapping,* sino que la funcionalidad principal de la aplicación es que el usuario debería indicar lo que quiere pedir, por lo que necesitaríamos de una interfaz gráfica para lo mismo y a partir de ahí se crearía el archivo *.json* correspondiente para poder operar con sentido. Para la demostración de la funcionalidad por tanto supondremos que un usuario *x* ha realizado el pedido indicado en el archivo `info.json` y ha sido almacenado exitosamente.
 
