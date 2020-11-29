@@ -4,6 +4,10 @@
 
 ---
 
+El *bot* se creará para satisfacer, entre otros, la [HU9](https://github.com/LCinder/Order-n-Go/issues/74) para lo cuál se ha creado la [issue](https://github.com/LCinder/Order-n-Go/issues/75) para crear una función específica que ayude al usuario a saber los pedidos que lleva adjudicados a su mesa.
+Como se ha querido logram independencia entre el *bot* y el proyecto en sí y están ubicados en repositorios diferentes, no es posible relacionas las *HU's* de uno con las de otro ni los *issues,* por lo que intenté unirlos mediante *submódulos* con *git submodule* pero debido a bastantes fallos que tuve y que veía que todo mi proyecto iba a acabar mal mejor pensé en dejarlo como está y establecer el mismo [issue](https://github.com/LCinder/bot-Order-n-Go/issues/2) en el repositorio del [bot.](https://github.com/LCinder/bot-Order-n-Go)
+
+
 Para la creación del bot se pensó en desplegarlo en **Google Firebase,** pero últimamente Google prefiere cobrar por todos sus servicios y al igual que ha pasado en otras asignaturas ya te piden la tarjeta para cualquier cosa. Me di cuenta de esto cando ya estaba todo preparado e incluso desplegado, pero justo en el último paso necesitábamos una URL que nos proporcionaría, pero claro para acceder a esa función, **tarjetazo.** Debido a mi reticencia a dar mi tarjeta en cualquier lado para que luego me cobren por a saber qué, pensé en desplegarlo en **Netlify.** El lenguaje a usar será el qe hemos venido usando, **Node.js** ya que es uno de los lenguajes más usados para crear bots y ya que estoy intentando aprenderlo, quiero poder relacionarlo en conjunto con todo el proyecto, ya que aprender muchos lenguajes de golpe podría hacer que colapsase, prefiero centarme en uno sólo y aprenderlo bien, además de que la plataforma a usar *Netlify* soporta muy pocos lenguajes, entre ellos *Node.js* por lo tanto contianuamos con el mismo.
 
 Para ello, se ha creado un nuevo repositorio [bot-order-n-go](https://github.com/LCinder/bot-Order-n-Go) para incluir aquí todo lo relacionado al bot y que sea de alguna manera independiente al proyecto general, aunque luego podremos vincularlos.
