@@ -76,9 +76,21 @@ class Pedido {
 	}
 
 	toString() {
-		return "Plato: " + this.plato + " Tipo Plato: " + this.tipoPlato + " Cantidad: " + this.cantidad
-		+ " Ingredientes a Evitar: " + this.ingredientesEvitar.forEach(elemento => console.log(elemento.toString() + "\n"))
-		+ " Comentario Opcional Plato: " + this.comentarioOpcionalPlato;
+		const cad = "";
+		let res = "";
+
+		res += "Id Plato: " + this.plato + "\nTipo Plato: " + this.tipoPlato + "\nCantidad: " + this.cantidad;
+
+		if(this.ingredientesEvitar.length != 0) {
+			res += "\nIngredientes a Evitar: " + this.ingredientesEvitar.forEach(elemento => {
+					cad += elemento + ", ";
+			});
+		}
+
+		if(this.comentarioOpcionalPlato  != 0)
+			res += "\nComentario Opcional Plato: " + this.comentarioOpcionalPlato;
+
+		return res;
 	}
 };
 
