@@ -14,7 +14,7 @@ for (let i=0; i < datos.pedidos.length; i++) {
 
 module.exports = (req, res) => {
 	if(req.query == "mesa")
-		res.send(mesa.toString())
+		res.send("Hola" + mesa.toString())
 
 	else
 		res.send("Los pedidos para la mesa: " + mesa.getMesa() + " son: \n" + mesa.mostrarPedidos())
