@@ -102,13 +102,29 @@ class Mesa {
 			return v.filter((a, i, j) => j.indexOf(a) === i)
 	}
 
+	hayCuenta() {
+		if(this.cuenta)
+			return "Cuenta pedida";
+		else
+			return "Cuenta no pedida";
+	}
+
+	estaOcupada() {
+		if(this.ocupada)
+			return "Mesa ocupada";
+		else
+			return "Mesa no ocupada";
+	}
+
 	hayPropina() {
 		return this.propina.haypropina;
 	}
 
 	toString() {
-		return "Mesa: " + this.mesa + " Personas: " + this.personas + " Cuenta: " + this.cuenta +
-		" Pedidos: " + this.pedidos.forEach(elemento => console.log(elemento.toString() + "\n")) + " Ocupada: " + this.ocupada;
+		return "Mesa: " + this.mesa + "\n---------------------\n"
+		+ "\nPersonas: " + this.personas + "\nCuenta: " + hayCuenta()
+		// + "\nPedidos: " + this.pedidos.forEach(elemento => console.log(elemento.toString() + "\n"))
+		+ "\nOcupada: " + estaOcupada();
 	}
 
 	incluirPedido(platoArg, tipoPlatoArg, cantidadArg, precioArg, ingredientesEvitarArg, comentarioOpcionalPlatoArg, usuarioArg) {
