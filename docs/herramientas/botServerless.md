@@ -8,16 +8,17 @@ Para la creación del bot se pensó en desplegarlo en **Google Firebase,** pero 
 
 Para ello, se ha creado un nuevo repositorio [bot-order-n-go](https://github.com/LCinder/bot-Order-n-Go) para incluir aquí todo lo relacionado al bot y que sea de alguna manera independiente al proyecto general, aunque luego podremos vincularlos.
 
-Estableceremos *funciones* en la plataforma para que el bot pueda funcionar, ésto se puede realizar desde la propia interfaz web de la forma:
+
+
+
+Estableceremos, después de haber realizado el *deploy* y previamente habiendo creado la carpeta *functions* y dentro de ella el archivo *index.js* que contiene la funcionalidad del bot, como *función* el archivo *index.js.* Ésto se puede realizar desde la propia interfaz web de la forma:
 
 ![Functions Netlify](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/functionsNetlify.PNG)
-
-Previamente habiendo creado la carpeta *functions* y dentro de ella el archivo *index.js* que contiene la funcionalidad del bot.
 
 
 Nos dirigimos a Telegram y mediante *@botFather* podemos crear en 3 sencillos pasos un bot, donde al finalizar  se nos dará una clave que servirá para poder manejar a nuestro bot y que debemos guardar con mucho cuidado.
 
-Para ello nos vamos a *netlify* y como variable de entorno establecemos la clave que nos ha dado *bot Father* y que debe estar lo más protegida posible:
+Para ello nos vamos a *Netlify* y como variable de entorno establecemos la clave que nos ha dado *bot Father* y que debe estar lo más protegida posible:
 
 ![Bot KEY](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/netlifyENVVariable.PNG)
 
@@ -31,3 +32,76 @@ Y si todo ha salido bien deberíamos obtener un mensaje como el siguiente:
 
 
 ![Bot Funciona](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/botFunciona.PNG)
+
+
+
+
+
+
+En este  punto el *bot* está funcionando, pero ¿qué hace y cómo lo hace?
+
+Para saber qué hace previamente tenemos que saber que la estructura básica de un *bot* en *Telegram* es responder a los comandos que indica el usuario, ésto se realiza con la función `command` mientras que dentro de la misma responderemos al usuario con llamando a la función `reply` para indicar qué mensaje queremos enviarle. Esto se usa por ejemplo para el comando `help` para indicar qué opciones existen.
+
+
+Pasamos a la funcionalidad importante del *bot,* y es que habiendo realizado la función *serverless* del proyecto y la *API* de la misma, desde el *bot* realizaremos peticiones a esa *API* mediante el módulo *node-fetch* para que nos devuelva una respuesta en formato *JSON* que luego *parsearemos* para devolver una cadena de texto (aplicando `.text` a la respuesta obtenida antes) al usuario, todo esto dentro de un `try catch` para evitar errores.
+
+
+~~~
+
+bot.command("pedido", (ctx) => {
+	const getData = async url => {
+		try {
+			const response = await fetch(url);
+			const json = await response.text();
+			ctx.reply(json);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	getData(url);
+
+});
+~~~
+
+
+
+ De esta manera estamos consiguiendo 3 cosas importantes:
+- Poder **independizar** el *bot* del proyecto general para que los cambios en uno no afecte a los del otro.
+- Realizar peticiones a una *API* independiente y **olvidarnos de toda la lógica detrás de la misma,** sólo nos interesa el resultado.
+- Aprender a manejar el fichero pedido mediante **peticiones asíncronas.**
+
+La *url* la guardamos al igual que el *token* en una variable de entorno, cuanta menos información demos a gente desconocida mejor.
+
+De esta manera cuando el usuario escribe `/pedido` el *bot* realiza una petición a la *API* del proyecto general desplegado en *Vercel,* obtiene el archivo *JSON* respuesta y lo muestra al usuario.
+
+
+El bot es accesible [desde el siguiente enlace](https://t.me/orderngobot) y a continuación podemos ver cómo funciona:
+
+
+
+
+![Bot Chat](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/botChat.PNG)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+s
