@@ -12,7 +12,7 @@ for (let i=0; i < datos.pedidos.length; i++) {
 	datos.pedidos[i].precio, datos.pedidos[i].ingredientesEvitar, datos.pedidos[i].comentarioOpcionalPlato, datos.pedidos[i].usuario)
 }
 
-console.log("Los pedidos para la mesa: " + mesa.getMesa() + " son: \n" + mesa.mostrarPedidos())
 module.exports = (req, res) => {
+	res.send(mesa.toString());
 	res.send("Los pedidos para la mesa: " + mesa.getMesa() + " son: \n" + mesa.mostrarPedidos())
 }
