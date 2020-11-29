@@ -82,26 +82,3 @@ El bot es accesible [desde el siguiente enlace](https://t.me/orderngobot) y a co
 
 
 ![Bot Chat](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/botChat.PNG)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-s
