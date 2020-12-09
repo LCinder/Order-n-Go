@@ -5,7 +5,7 @@ class Pedido {
 
 	constructor(platoIdArg, tipoPlatoArg, cantidadArg, precioArg, ingredientesEvitarArg, comentarioOpcionalPlatoArg, usuarioArg) {
 		this.platoId = platoIdArg;
-		this.platoNombre = "";
+		this.platoNombre = this.getNombreForId(platoIdArg);
 		this.tipoPlato = tipoPlatoArg;
 		this.cantidad = cantidadArg;
 		this.precio = precioArg;
@@ -88,7 +88,7 @@ class Pedido {
 		const cad = "";
 		let res = "";
 
-		res += "Id Plato: " + this.platoId + "Nombre  Plato: " + this.platoNombre
+		res += "Id Plato: " + this.platoId + "\nNombre  Plato: " + this.platoNombre
 		+ "\nTipo Plato: " + this.tipoPlato + "\nCantidad: " + this.cantidad;
 
 		if(this.ingredientesEvitar.length != 0 && this.ingredientesEvitar != undefined)
@@ -102,6 +102,36 @@ class Pedido {
 
 		return res;
 	}
+
+	getIdForNombre(nombrePlato) {
+		let nombres = [];
+		nombres.push({plato: "Plato 1", id: 1})
+		nombres.push({plato: "Plato 2", id: 2})
+		nombres.push({plato: "Plato 3", id: 3})
+		nombres.push({plato: "Plato 4", id: 4})
+		nombres.push({plato: "Plato 5", id: 5})
+		nombres.push({plato: "Plato 6", id: 6})
+		nombres.push({plato: "Plato 7", id: 7})
+
+		return nombres.find(key => nombres[key].plato === nombrePlato)
+	}
+
+	getNombreForId(id) {
+		let nombres = [];
+		nombres.push({plato: "Plato 1", id: 1})
+		nombres.push({plato: "Plato 2", id: 2})
+		nombres.push({plato: "Plato 3", id: 3})
+		nombres.push({plato: "Plato 4", id: 4})
+		nombres.push({plato: "Plato 5", id: 5})
+		nombres.push({plato: "Plato 6", id: 6})
+		nombres.push({plato: "Plato 7", id: 7})
+
+		if(nombres[id] == undefined)
+			return "Plato " + id
+
+		return "nombres[id].plato";// nombres.find(key => nombres[id].plato === nombrePlato)
+	}
+
 };
 
 module.exports = {
