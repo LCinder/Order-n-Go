@@ -3,8 +3,9 @@
 
 class Pedido {
 
-	constructor(platoArg, tipoPlatoArg, cantidadArg, precioArg, ingredientesEvitarArg, comentarioOpcionalPlatoArg, usuarioArg) {
-		this.plato = platoArg;
+	constructor(platoIdArg, tipoPlatoArg, cantidadArg, precioArg, ingredientesEvitarArg, comentarioOpcionalPlatoArg, usuarioArg) {
+		this.platoId = platoIdArg;
+		this.platoNombre = "";
 		this.tipoPlato = tipoPlatoArg;
 		this.cantidad = cantidadArg;
 		this.precio = precioArg;
@@ -17,8 +18,12 @@ class Pedido {
 	}
 
 	/***** Gets *****/
-	getPlato() {
-		return this.plato;
+	getPlatoId() {
+		return this.platoId;
+	}
+
+	getPlatoNombre() {
+		return this.platoNombre;
 	}
 
 	getTipoPlato() {
@@ -46,8 +51,12 @@ class Pedido {
 	}
 
 	/***** Sets *****/
-	setPlato(platoArg) {
-		this.plato = platoArg;
+	setPlatoId(platoIdArg) {
+		this.platoId = platoIdArg;
+	}
+
+	setPlatoNombre(platoNombreArg) {
+		this.platoNombre = platoNombreArg;
 	}
 
 	setTipoPlato(tipoPlatoArg) {
@@ -79,15 +88,16 @@ class Pedido {
 		const cad = "";
 		let res = "";
 
-		res += "Id Plato: " + this.plato + "\nTipo Plato: " + this.tipoPlato + "\nCantidad: " + this.cantidad;
+		res += "Id Plato: " + this.platoId + "Nombre  Plato: " + this.platoNombre
+		+ "\nTipo Plato: " + this.tipoPlato + "\nCantidad: " + this.cantidad;
 
-		if(this.ingredientesEvitar.length != 0) {
-			res += "\nIngredientes a Evitar: " + this.ingredientesEvitar.forEach(elemento => {
+		if(this.ingredientesEvitar.length != 0 && this.ingredientesEvitar != undefined)
+			res += "\nIngredientes a Evitar: "
+			+ this.ingredientesEvitar.forEach(elemento => {
 					cad += elemento + ", ";
 			});
-		}
 
-		if(this.comentarioOpcionalPlato  != 0)
+		if(this.comentarioOpcionalPlato  != 0 && this.comentarioOpcionalPlato != undefined)
 			res += "\nComentario Opcional Plato: " + this.comentarioOpcionalPlato;
 
 		return res;
