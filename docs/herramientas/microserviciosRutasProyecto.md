@@ -47,7 +47,7 @@ Para todos los ejemplos se usará la **mesa 2** que contiene:
 - No hay comentarios ni ingredientes opcionales
 
 
-Historia de Usuario 1:
+**Historia de Usuario 1:** Como usuario, quiero seleccionar el nº de personas a ocupar en mesa
 
 En clase *routes.js:*
 
@@ -90,7 +90,7 @@ Abajo se muestra cómo funciona el realizar la petición:
 ---
 
 
-Historia de Usuario 2: Como usuario quiero poder realizar cualquier pedido
+**Historia de Usuario 2:** Como usuario quiero poder realizar cualquier pedido
 
 `curl --request PUT http://localhost:5000/mesa/2/nuevopedido/5/8`
 
@@ -98,7 +98,7 @@ Historia de Usuario 2: Como usuario quiero poder realizar cualquier pedido
 
 ---
 
-Historia de Usuario 3: Como usuario quiero pagar la cuenta
+**Historia de Usuario 3:** Como usuario quiero pagar la cuenta
 
 `curl --request PUT http://localhost:5000/mesa/2/pedirCuenta`
 
@@ -106,7 +106,7 @@ Historia de Usuario 3: Como usuario quiero pagar la cuenta
 
 ---
 
-Historia de Usuario 4: Como usuario quiero poder cambiar los platos una vez realizado el pedido
+**Historia de Usuario 4:** Como usuario quiero poder cambiar los platos una vez realizado el pedido
 
 Para los platos pueden cambiarse diferentes características, como:
 - ID del pedido (es decir se cambia el plato entero): `curl --request PUT http://localhost:5000/mesa/2/pedido/1/id/10`
@@ -118,7 +118,7 @@ Para los platos pueden cambiarse diferentes características, como:
 
 ---
 
-Historia de Usuario 5: Como usuario quiero cambiar los ingredientes de los platos a elegir
+**Historia de Usuario 5:** Como usuario quiero cambiar los ingredientes de los platos a elegir
 
 `curl --request PUT http://localhost:5000/mesa/2/pedido/1/ingredientes/Curry,Otro`
 
@@ -134,15 +134,15 @@ Historia de Usuario 7: Como usuario quiero eliminar pedidos (platos) incluso des
 
 ---
 
-Historia de Usuario 8: Como usuario quiero pagar por separado
+**Historia de Usuario 8:** Como usuario quiero pagar por separado
 
-``
+`curl --request PUT http://localhost:5000/mesa/2/pagarPorSeparado`
 
 ![microserviciosHU8](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/microserviciosHU8.PNG)
 
 ---
 
-Historia de Usuario 9: Como usuario quiero saber qué pedidos he realizado
+**Historia de Usuario 9:** Como usuario quiero saber qué pedidos he realizado
 
 Para los pedidos se pueden solicitar:
 - todos los pedidos (es decir se cambia el plato entero): `curl --request GET http://localhost:5000/mesa/2`
