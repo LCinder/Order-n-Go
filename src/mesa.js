@@ -183,6 +183,15 @@ class Mesa {
 		return cad;
 	}
 
+	borrarPedido(numeroPedido) {
+		for (let i=0; i < this.pedidos.length; i++) {
+			if(this.pedidos[i].getPlatoId() == numeroPedido) {
+				this.pedidos.splice(i)
+				break;
+			}
+		}
+	}
+
 	sumaPrecioTotal() {
 		let precio = 0;
 		this.pedidos.forEach(e => precio += e.getPrecio());
