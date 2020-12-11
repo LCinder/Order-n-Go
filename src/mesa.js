@@ -12,12 +12,17 @@ class Mesa {
 	constructor(mesaArg, personasArg, cuentaArg, ocupadaArg) {
 		this.mesa = mesaArg;						// N mesa (1, 2, 3...)
 		this.personas = personasArg;
-		this.cuenta = cuentaArg;
-		this.pedidos = [];		// Array de objetos 'pedidos'
-		this.ocupada = ocupadaArg;	 // boolean para mesa ocupada o no
-		this.propina = {"haypropina": false, propinaCantidad: 0};
-		this.pagarSeparado = false;
-	}
+
+		if(cuentaArg == undefined)
+			this.cuenta = false;
+		else {
+			if(cuentaArg == "true")
+				this.cuenta = true
+			else if(cuentaArg == "false")
+				this.cuenta = false
+			else
+				this.cuenta = cuentaArg
+		}
 
 	/***** Gets *****/
 	getMesa() {
