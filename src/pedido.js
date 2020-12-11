@@ -94,8 +94,12 @@ class Pedido {
 	}
 
 	setIngredientesEvitar(ingredientesEvitarArg) {
-		if(ingredientesEvitarArg.length > 0)
-			this.ingredientesEvitar = ingredientesEvitarArg;
+		let ing = ingredientesEvitarArg.split(",")
+
+		if(ing.length > 0)
+			ing.forEach(elemento => {
+					this.ingredientesEvitar.push(elemento)
+			})
 	}
 
 	setComentarioOpcionalPlato(comentarioOpcionalPlatoArg) {
