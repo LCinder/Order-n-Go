@@ -1,21 +1,43 @@
 
 
+const datos = require("../api/data/info.json")
 
 class Pedido {
 
-	constructor(platoIdArg, tipoPlatoArg, cantidadArg, precioArg, ingredientesEvitarArg, comentarioOpcionalPlatoArg, usuarioArg) {
+	//constructor(platoIdArg, tipoPlatoArg, cantidadArg, precioArg, ingredientesEvitarArg, comentarioOpcionalPlatoArg, usuarioArg) {
+	constructor(platoIdArg, cantidadArg, ingredientesEvitarArg, comentarioOpcionalPlatoArg, usuarioArg) {
 		this.platoId = platoIdArg;
-		this.platoNombre = this.getNombreForId(platoIdArg);
-		this.tipoPlato = tipoPlatoArg;
+		this.platoNombre = this.getNombreFromId(platoIdArg) //this.getNombreForId(platoIdArg);
+
+		if(datos[platoIdArg-1] == undefined)
+			this.tipoPlato = "Plato inventado"
+		else
+			this.tipoPlato = datos[platoIdArg-1].tipoPlato;
+
 		this.cantidad = cantidadArg;
-		this.precio = precioArg;
+
+		if(datos[platoIdArg-1] == undefined)
+			this.precio = 100
+		else
+			this.precio = datos[platoIdArg-1].precio;
+
+
 		if(ingredientesEvitarArg != null && ingredientesEvitarArg != "")
 			this.ingredientesEvitar = ingredientesEvitarArg;
 		else
 			this.ingredientesEvitar = []
-		this.comentarioOpcionalPlato = comentarioOpcionalPlatoArg;
-		this.usuario = usuarioArg;
+
+		if(comentarioOpcionalPlatoArg != null && comentarioOpcionalPlatoArg != "")
+			this.comentarioOpcionalPlato = comentarioOpcionalPlatoArg;
+		else
+			this.comentarioOpcionalPlato = []
+
+		if(usuarioArg != null && usuarioArg != "")
+			this.usuario = usuarioArg;
+		else
+			this.usuario = 1
 	}
+
 
 	/***** Gets *****/
 	getPlatoId() {
