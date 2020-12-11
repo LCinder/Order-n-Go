@@ -1,29 +1,120 @@
 
 {
-	"mesa": {
-		"mesaN": "1",
-		"personas": "2",
-		"cuenta": "false",
-		"ocupada": "true"
-	},
-	"pedidos": [
-		{
-			"plato": "10",
-			"tipoPlato": "Principal",
-			"cantidad": "1",
-			"precio": "20",
-			"ingredientesEvitar": "",
-			"comentarioOpcionalPlato": "Para compartir",
-			"usuario": "1"
+	"mesas":
+		[
+		 {
+			"mesaN": "1",
+			"personas": "2",
+			"cuenta": "false",
+			"ocupada": "true",
+			"pedidos": [
+				{
+					"platoId": "10",
+					"tipoPlato": "Principal",
+					"cantidad": "1",
+					"precio": "20",
+					"ingredientesEvitar": "",
+					"comentarioOpcionalPlato": "Para compartir",
+					"usuario": "1"
+				},
+				{
+					"platoId": "53",
+					"tipoPlato": "Secundario",
+					"cantidad": "2",
+					"precio": "10",
+					"ingredientesEvitar": "",
+					"comentarioOpcionalPlato": "",
+					"usuario": "1"
+				}
+			]
 		},
 		{
-			"plato": "53",
-			"tipoPlato": "Secundario",
-			"cantidad": "2",
-			"precio": "10",
-			"ingredientesEvitar": "",
-			"comentarioOpcionalPlato": "",
-			"usuario": "1"
-		}
+		 "mesaN": "2",
+		 "personas": "6",
+		 "cuenta": "false",
+		 "ocupada": "true",
+		 "pedidos": [
+			 {
+				 "platoId": "1",
+				 "tipoPlato": "Principal",
+				 "cantidad": "1",
+				 "precio": "10",
+				 "ingredientesEvitar": "",
+				 "comentarioOpcionalPlato": "",
+				 "usuario": "1"
+			 },
+			 {
+				 "platoId": "2",
+				 "tipoPlato": "Secundario",
+				 "cantidad": "1",
+				 "precio": "10",
+				 "ingredientesEvitar": "",
+				 "comentarioOpcionalPlato": "",
+				 "usuario": "1"
+			 },
+			 {
+				 "platoId": "3",
+				 "tipoPlato": "Postre",
+				 "cantidad": "1",
+				 "precio": "5",
+				 "ingredientesEvitar": "",
+				 "comentarioOpcionalPlato": "",
+				 "usuario": "1"
+			 }
+		 ]
+	 },
+	 {
+		"mesaN": "3",
+		"personas": "8",
+		"cuenta": "false",
+		"ocupada": "true",
+		"pedidos": [
+			{
+				"platoId": "9",
+				"tipoPlato": "Principal",
+				"cantidad": "1",
+				"precio": "2",
+				"ingredientesEvitar": "",
+				"comentarioOpcionalPlato": "Para compartir",
+				"usuario": "1"
+			},
+			{
+				"platoId": "21",
+				"tipoPlato": "Principal",
+				"cantidad": "2",
+				"precio": "15",
+				"ingredientesEvitar": "",
+				"comentarioOpcionalPlato": "",
+				"usuario": "2"
+			},
+			{
+				"platoId": "7",
+				"tipoPlato": "Principal",
+				"cantidad": "2",
+				"precio": "10",
+				"ingredientesEvitar": "",
+				"comentarioOpcionalPlato": "",
+				"usuario": "1"
+			},
+			{
+				"platoId": "23",
+				"tipoPlato": "Secundario",
+				"cantidad": "2",
+				"precio": "11",
+				"ingredientesEvitar": "",
+				"comentarioOpcionalPlato": "",
+				"usuario": "4"
+			},
+			{
+				"platoId": "43",
+				"tipoPlato": "Secundario",
+				"cantidad": "2",
+				"precio": "22",
+				"ingredientesEvitar": "",
+				"comentarioOpcionalPlato": "",
+				"usuario": "3"
+			}
+		]
+	}
 	]
 }
