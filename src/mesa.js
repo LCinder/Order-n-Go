@@ -164,8 +164,23 @@ class Mesa {
 		return cad;
 	}
 
-	borrarPedido(numeroPedido) {
-		this.pedidos.splice(numeroPedido)
+	mostrarPedido(id) {
+		let cad = ""
+		let n = 1, i = 1;
+
+		this.pedidos.forEach(elemento => {
+			i = elemento.getPlatoId()
+			if(elemento != null && elemento != undefined && i == id) {
+				cad += "Plato " + n + "\n---------------------\n" + elemento.toString() + "\n\n";
+				n++;
+			}
+			i++;
+		});
+
+		if(cad == "")
+			cad = "No existe el pedido " + id;
+
+		return cad;
 	}
 
 	sumaPrecioTotal() {
