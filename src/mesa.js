@@ -224,6 +224,46 @@ class Mesa {
 		}
 		return total;
 	}
+	/******************************************************************************/
+	/*******************************Modificaciones*********************************/
+	/******************************************************************************/
+	modificarPedidoCantidad(id, nuevaCantidad) {
+		for (let i=0; i < this.pedidos.length; i++) {
+			if(this.pedidos[i].getPlatoId() == id) {
+				this.pedidos[i].setCantidad(nuevaCantidad);
+				break;
+			}
+		}
+	}
+
+	modificarPedidoId(idAntiguo, id) {
+		for (let i=0; i < this.pedidos.length; i++) {
+			if(this.pedidos[i].getPlatoId() == idAntiguo) {
+				this.pedidos[i].setPlatoId(id);
+				break;
+			}
+		}
+	}
+
+	modificarPedidoIngredientes(id, ingredientes) {
+		for (let i=0; i < this.pedidos.length; i++) {
+			if(this.pedidos[i].getPlatoId() == id) {
+				this.pedidos[i].setIngredientesEvitar(ingredientes);
+				break;
+			}
+		}
+	}
+
+	modificarUsuarios(usuarios) {
+		this.setPersonas(usuarios)
+	}
+
+	pedirCuenta() {
+		this.setCuenta(true)
+	}
+	/******************************************************************************/
+	/******************************************************************************/
+	/******************************************************************************/
 
 };
 
