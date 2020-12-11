@@ -61,29 +61,35 @@ Enlace al archivo [iv.yaml](https://github.com/LCinder/Order-n-Go/blob/master/iv
 ---
 
 ## :chart_with_upwards_trend: Código :chart_with_upwards_trend:
-- Enlace para acceder a la clase  [Mesa](https://github.com/LCinder/Order-n-Go/blob/master/src/mesa.js) 
-- Enlace para acceder a la clase  [Pedido](https://github.com/LCinder/Order-n-Go/blob/master/src/pedido.js) 
+- Enlace para acceder a la clase  [Mesa](https://github.com/LCinder/Order-n-Go/blob/master/src/mesa.js)
+- Enlace para acceder a la clase  [Pedido](https://github.com/LCinder/Order-n-Go/blob/master/src/pedido.js)
 - Enlace para acceder a la carpeta [sources](https://github.com/LCinder/Order-n-Go/tree/master/src) que contiene todos los archivos necesarios para el mismo.
 
 ---
 
-## :whale2: Docker :whale2: 
+## :whale2: Docker :whale2:
 Archivo con [todo lo relacionado a Docker](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/docker.md)
 
 ---
 
-## :scroll: Integración Continua CI :scroll: 
+## :scroll: Integración Continua CI :scroll:
 
 Archivo con [todo lo relacionado a Integración Continua](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/integracionContinuaCI.md)
 
 ---
 
-## :satellite: Serverless :satellite: 
+## :satellite: Serverless :satellite:
+
+Archivo con [todo lo relacionado a Serverless](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/serverless.md)
 
 
-- Se incluye todo lo relacionado con el [despliegue y conexión entre GitHub y Vercel](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/despliegueServerless.md) y la integración con el proyecto general, además de la [creación de una HU](https://github.com/LCinder/Order-n-Go/issues/74) y el [issue que la resuelve](https://github.com/LCinder/Order-n-Go/issues/75) necesarias para el siguiente apartado.
+---
+
+## :book: Microservicios :book:
+
+Para la explicación del *microservicio* se incluye:
 
 
-- Creación de [un bot de Telegram y despliegue en una plataforma diferente.](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/botServerless.md)
+- Justificación técnica del [framework elegido para el microservicio](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/microserviciosRutasProyecto.md)
 
-- Repositorio donde se encuentra el [bot de Telegram](https://github.com/LCinder/bot-Order-n-Go)
+- Explicación del [diseño en general del API, las rutas, etc.](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/microservicios.md) creados en los archivos [modelo.js](https://github.com/LCinder/Order-n-Go/blob/master/src/modelo.js) y [routes.js](https://github.com/LCinder/Order-n-Go/blob/master/src/routes.js) 
