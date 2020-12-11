@@ -24,6 +24,13 @@ class Mesa {
 				this.cuenta = cuentaArg
 		}
 
+
+		this.pedidos = [];		// Array de objetos 'pedidos'
+		this.ocupada = ocupadaArg;	 // boolean para mesa ocupada o no
+		this.propina = {"haypropina": false, propinaCantidad: 0};
+		this.pagarSeparado = false;
+	}
+
 	/***** Gets *****/
 	getMesa() {
 		return this.mesa;
@@ -127,13 +134,20 @@ class Mesa {
 
 	toString() {
 		return "Mesa: " + this.mesa + "\n---------------------\n"
-		+ "\nPersonas: " + this.personas + "\nCuenta: " + hayCuenta()
+		+ "\nPersonas: " + this.personas + "\nCuenta: " + this.hayCuenta()
 		// + "\nPedidos: " + this.pedidos.forEach(elemento => console.log(elemento.toString() + "\n"))
-		+ "\nOcupada: " + estaOcupada();
+		+ "\nOcupada: " + this.estaOcupada();
 	}
 
-	incluirPedido(platoArg, tipoPlatoArg, cantidadArg, precioArg, ingredientesEvitarArg, comentarioOpcionalPlatoArg, usuarioArg) {
-		let pedidoNuevo = new pedido.Pedido(platoArg, tipoPlatoArg, cantidadArg, precioArg, ingredientesEvitarArg, comentarioOpcionalPlatoArg, usuarioArg)
+	//incluirPedido(platoArg, tipoPlatoArg, cantidadArg, precioArg, ingredientesEvitarArg, comentarioOpcionalPlatoArg, usuarioArg) {
+	incluirPedido(platoIdArg, cantidadArg, ingredientesEvitarArg, comentarioOpcionalPlatoArg, usuarioArg) {
+		let pedidoNuevo = new pedido.Pedido(platoIdArg, cantidadArg, ingredientesEvitarArg, comentarioOpcionalPlatoArg, usuarioArg)
+		this.pedidos.push(pedidoNuevo);
+	}
+
+	incluirPedidoFromJSON(p) {
+		let pedidoNuevo = new pedido.Pedido(p.platoId, p.cantidad,
+		p.ingredientesEvitar, p.comentarioOpcionalPlato, p.usuario)
 		this.pedidos.push(pedidoNuevo);
 	}
 
