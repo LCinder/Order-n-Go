@@ -104,13 +104,16 @@ Para ello usaremos **autocannon** que es una biblioteca de *Node.js* para realiz
 - Con *50 conexiones concurrentes*
 - Y con *500 peticiones lanzadas sin esperar confirmación,* ésto para *testear* la latencia.  
 
-Ejecutando para *Koa.js: *
+Ejecutando para *Koa.js:*
+
 ![Koa Benchmark](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/koaBenchmark.PNG)
 
-Ejecutando para *Restify.js: *
+Ejecutando para *Restify.js:*
+
 ![Restify Benchmark](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/restifyBenchmark.PNG)
 
-Ejecutando para *Fastify.js: *
+Ejecutando para *Fastify.js:*
+
 ![Fastify Benchmark](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/fastifyBenchmark.PNG)
 
 
