@@ -4,15 +4,15 @@
 
 ---
 
-Para crear todo lo relacionado con rutas, URI's, etc. primero debemos entender que queremos un proyecto del tipo Modelo-Vista-Controlador, es decir la lógica de negocio no estará realcionada con la Vista del usuario ni con nada más. Este desacople nos permitirá cambiar, modificar añadir o borrar cualquier cosa del código sin que afecte al resto de apartados en ningún aspecto, además de que el código queda mucho más limpio y organizado. Para ello se crea la clase [modelo]() que contiene todo el código necesario que se usará para las rutas en funciones específicas para cada una de las mismas, en donde todas devolverán **{valor: x, code: x}** donde *valor* será la cadena que contiene el resultado de aplicar la función (recibir pedidos, asegurar que se ha eliminado un pedido, etc.) y el código corresponde al estado devuelto siguiendo los [códigos de HTTP.](https://developer.mozilla.org/es/docs/Web/HTTP/Status)
+Para crear todo lo relacionado con rutas, URI's, etc. primero debemos entender que queremos un proyecto del tipo Modelo-Vista-Controlador, es decir la lógica de negocio no estará realcionada con la Vista del usuario ni con nada más. Este desacople nos permitirá cambiar, modificar añadir o borrar cualquier cosa del código sin que afecte al resto de apartados en ningún aspecto, además de que el código queda mucho más limpio y organizado. Para ello se crea la clase [modelo.js](https://github.com/LCinder/Order-n-Go/blob/master/src/modelo.js) que contiene todo el código necesario que se usará para las rutas en funciones específicas para cada una de las mismas, en donde todas devolverán **{valor: x, code: x}** donde *valor* será la cadena que contiene el resultado de aplicar la función (recibir pedidos, asegurar que se ha eliminado un pedido, etc.) y el código corresponde al estado devuelto siguiendo los [códigos de HTTP.](https://developer.mozilla.org/es/docs/Web/HTTP/Status)
 
-La clase [routes]() incluye todas las rutas a utilizar con los parámetros, etc. y toda la funcionalidad que debería realizarse, creando antes un objeto de la clase *modelo* anterior mediante la cuál se llamarán a las funciones.
+La clase [routes.js](https://github.com/LCinder/Order-n-Go/blob/master/src/routes.js) incluye todas las rutas a utilizar con los parámetros, etc. y toda la funcionalidad que debería realizarse, creando antes un objeto de la clase *modelo* anterior mediante la cuál se llamarán a las funciones.
 
 
 
 Se ha mejorado bastante el código para que ahora tenga más sentido crear un pedido, mesa, etc. Además, como la intención es que existan platos ya predefinidos con su id, nombre, precio, etc. para que el usuario simplemente los pida de una lista ya existente como en cualquier restaurante, se ha creado un fichero [infoPedidos.json]() que contiene esta información. Posteriormente podria almacenarse en una BBDD, o de cualquier otra manera, o incluir nombres de platos verdaderos con su id específico para que fuera más real.
 
-Además como ejemplo se ha creado otro fichero [info.json]() que contiene un ejemplo con las mesas, pedidos de las mismas, etc. como si se tratase de un instante concreto cualndo estuviera en funcionamiento el proyecto, todos los datos son inventados para que sirva como ejemplo.
+Además como ejemplo se ha creado otro fichero [info.json](https://github.com/LCinder/Order-n-Go/blob/master/src/infoPedidos.json) que contiene un ejemplo con las mesas, pedidos de las mismas, etc. como si se tratase de un instante concreto cualndo estuviera en funcionamiento el proyecto, todos los datos son inventados para que sirva como ejemplo.
 
 Se han creado también bastantes funcionalidades atendiendo a las **HU's,** creando una ruta por cada *HU* para satisfacerla. Las rutas se dividen en varias atendiendo a si realizamos peticiones para que devuelvan algo (*GET*) o si queremos añadir algo (*PUT*) o incluso si quereoms borrar algo (*DELETE.*)
 Cabe destacar que aunque a priori no tenga sentido ya que no existe persistencia de datos (ya que devolvemos siempre una cadena de texto), cuando si que exista no tendremos que ir cambiando el tipo de petición, sino que ya estarán bien establecidas.
@@ -36,7 +36,7 @@ Realizando peticiones **DELETE:**
 
 ---
 
-Como incluir aquí todo el código tanto de [routes]() como de [modelo]() sería una locura ya que haría que el documento fuera larguísimo, vamos a poner un ejemplo de cómo se ha realizado para la HU1, el código de ambas clases y una imagen de cómo funciona. Para el resto de HU's se incluye sólo la imagen de que funciona, ya que seguirán el mismo patrón en las 2 clases.
+Como incluir aquí todo el código tanto de [routes.js](https://github.com/LCinder/Order-n-Go/blob/master/src/routes.js) como de [modelo.js](https://github.com/LCinder/Order-n-Go/blob/master/src/modelo.js) sería una locura ya que haría que el documento fuera larguísimo, vamos a poner un ejemplo de cómo se ha realizado para la HU1, el código de ambas clases y una imagen de cómo funciona. Para el resto de HU's se incluye sólo la imagen de que funciona, ya que seguirán el mismo patrón en las 2 clases.
 
 Para todos los ejemplos se usará la **mesa 2** que contiene:
 - **Usuarios:** 6
