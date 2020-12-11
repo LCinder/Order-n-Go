@@ -129,33 +129,15 @@ class Pedido {
 		return res;
 	}
 
-	getIdForNombre(nombrePlato) {
-		let nombres = [];
-		nombres.push({plato: "Plato 1", id: 1})
-		nombres.push({plato: "Plato 2", id: 2})
-		nombres.push({plato: "Plato 3", id: 3})
-		nombres.push({plato: "Plato 4", id: 4})
-		nombres.push({plato: "Plato 5", id: 5})
-		nombres.push({plato: "Plato 6", id: 6})
-		nombres.push({plato: "Plato 7", id: 7})
-
-		return nombres.find(key => nombres[key].plato === nombrePlato)
+	getIdFromNombre(nombrePlato) {
+		return datos.find(key => datos[key].nombre === nombrePlato)
 	}
 
-	getNombreForId(id) {
-		let nombres = [];
-		nombres.push({plato: "Plato 1", id: 1})
-		nombres.push({plato: "Plato 2", id: 2})
-		nombres.push({plato: "Plato 3", id: 3})
-		nombres.push({plato: "Plato 4", id: 4})
-		nombres.push({plato: "Plato 5", id: 5})
-		nombres.push({plato: "Plato 6", id: 6})
-		nombres.push({plato: "Plato 7", id: 7})
-
-		if(nombres[id] == undefined)
+	getNombreFromId(id) {
+		if(datos[id] == undefined)
 			return "Plato " + id
 
-		return "nombres[id].plato";// nombres.find(key => nombres[id].plato === nombrePlato)
+		return datos[id].nombre;// nombres.find(key => nombres[id].plato === nombrePlato)
 	}
 
 };
