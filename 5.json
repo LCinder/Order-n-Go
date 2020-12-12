@@ -2,13 +2,15 @@ Los pedidos para la mesa: 1 son:
 Plato 1
 ---------------------
 Id Plato: 10
-Tipo Plato: Principal
+Nombre  Plato: Plato 10
+Tipo Plato: Plato inventado
 Cantidad: 1
 Comentario Opcional Plato: Para compartir
 
 Plato 2
 ---------------------
 Id Plato: 53
-Tipo Plato: Secundario
+Nombre  Plato: Plato 53
+Tipo Plato: Plato inventado
 Cantidad: 2
 
