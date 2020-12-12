@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "ava -v"
+    "test": "ava -v tests/index.test.js"
   },
   "repository": {
     "type": "git",
