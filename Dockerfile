@@ -29,5 +29,5 @@ WORKDIR /test
 #por tanto una vez instalamos todo cambiamos al user root
 USER root
 
-CMD ["npm", "test"]
-
+#CMD ["npm", "test"]
+CMD ["mocha", "tests/apiTest.js"]
