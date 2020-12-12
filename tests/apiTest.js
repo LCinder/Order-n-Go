@@ -97,4 +97,9 @@ describe("PUT /mesa/2/pagarPorSeparado", function () {
 			expect(response.status).to.eql(200)
 			expect(response.text).to.be.a("string").to.include("usuario")
 		});
+		
+		// Para cerrar el servidor cuando los test finalicen
+		after(async () => {
+			await fastify.close();
+		});
 });
