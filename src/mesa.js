@@ -210,6 +210,7 @@ class Mesa {
 
 		pedidos.forEach(e => (v.push(e.getUsuario())))
 
+
 		let usuarios = this.getValuesUnique(v);
 
 		for (let i=0; i < usuarios.length; i++) {
