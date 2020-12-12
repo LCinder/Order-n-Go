@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "ava -v"
+    "test": "ava -v",
   	"apiTest": "mocha tests/apiTest.js"
   },
   "repository": {
