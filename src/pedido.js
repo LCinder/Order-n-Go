@@ -97,9 +97,7 @@ class Pedido {
 		let ing = ingredientesEvitarArg.split(",")
 
 		if(ing.length > 0)
-			ing.forEach(elemento => {
-					this.ingredientesEvitar.push(elemento)
-			})
+			this.ingredientesEvitar = ingredientesEvitarArg
 	}
 
 	setComentarioOpcionalPlato(comentarioOpcionalPlatoArg) {
@@ -119,9 +117,7 @@ class Pedido {
 
 		if(this.ingredientesEvitar.length != 0 && this.ingredientesEvitar != undefined)
 			res += "\nIngredientes a Evitar: "
-			+ this.ingredientesEvitar.forEach(elemento => {
-					cad += elemento + ", ";
-			});
+			+ this.ingredientesEvitar;
 
 		if(this.comentarioOpcionalPlato  != 0 && this.comentarioOpcionalPlato != undefined)
 			res += "\nComentario Opcional Plato: " + this.comentarioOpcionalPlato;
