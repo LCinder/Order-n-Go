@@ -7,8 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "ava -v",
-  	"apiTest": "mocha tests/apiTest.js"
+    "test": "ava -v"
   },
   "repository": {
     "type": "git",
@@ -28,6 +27,7 @@
     "supertest": "^6.0.1"
   },
   "devDependencies": {
-    "ava": "^3.13.0"
+    "ava": "^3.13.0",
+    "mocha": "^8.2.1"
   }
 }
