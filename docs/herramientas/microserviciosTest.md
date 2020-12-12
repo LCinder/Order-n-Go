@@ -24,9 +24,7 @@ describe("GET /mesa/2", function () {
 
 Para ejecutarlos realizamos:
 
-`mocha tests/apiTest.js` aunque también se ha incluido en *scripts* de *package.json* un atajo para que sea más sencillo, por lo que también funciona si ejecutamos:
-
-`npm apiTest`
+`mocha tests/apiTest.js` 
 
 Después de ejecutar los test comprobamos que funcionan:
 
