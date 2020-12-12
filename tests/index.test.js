@@ -10,7 +10,7 @@ test ("Creacion mesa", t => {
 
 test ("Creacion pedido", t => {
 	let mesa1 = new mesa.Mesa(1, 5, false, true)
-	let plato1 = new pedido.Pedido(10, "Postre", 1, 5)
+	let plato1 = new pedido.Pedido(10, 1)
 	t.is((typeof plato1), "object")
 })
 
@@ -43,32 +43,32 @@ test ("Incluir pedido", t => {
 
 test ("Borrar pedido", t => {
 	let mesa2 = new mesa.Mesa(1, 10, false, true);
-	mesa2.incluirPedido(54, "Postre", 1, 5)
-	mesa2.incluirPedido(4, "Principal", 2, 7)
-	mesa2.borrarPedido(1)
+	mesa2.incluirPedido(54, 1)
+	mesa2.incluirPedido(4, 2)
+	mesa2.borrarPedido(4)
 	t.is(mesa2.getPedidos().length, 1)
 })
 
 test ("Incluir ingredientes a evitar", t => {
 	let mesa2 = new mesa.Mesa(1, 10, false, true);
-	mesa2.incluirPedido(54, "Postre", 1, 5, ["Ingrediente1", "Ingrediente2"])
+	mesa2.incluirPedido(54, 1, ["Ingrediente1", "Ingrediente2"])
 	t.is(mesa2.getPedidos()[0].getIngredientesEvitar().length, 2)
 })
 
 
 test ("Dar propina al finalizar servicio", t => {
 	let mesa2 = new mesa.Mesa(1, 10, false, true);
-	mesa2.incluirPedido(54, "Postre", 1, 5, ["Ingrediente1", "Ingrediente2"])
-	mesa2.incluirPedido(4, "Postre", 1, 10)
-	mesa2.incluirPedido(44, "Postre", 1, 5, ["Ingrediente1", "Ingrediente2"])
+	mesa2.incluirPedido(54, 1, ["Ingrediente1", "Ingrediente2"])
+	mesa2.incluirPedido(4, 1)
+	mesa2.incluirPedido(44, 1, ["Ingrediente1", "Ingrediente2"])
 	mesa2.darPropina(5)
-	t.is(mesa2.sumaPrecioTotal(), 25)
+	t.is(mesa2.sumaPrecioTotal(), 220)
 })
 
 
 test ("Incluir comentario opcional plato", t => {
 	let mesa2 = new mesa.Mesa(1, 10, false, true);
-	mesa2.incluirPedido(54, "Postre", 1, 5, ["Ingrediente1", "Ingrediente2"], "Para compartir")
+	mesa2.incluirPedido(54, 1, ["Ingrediente1", "Ingrediente2"], "Para compartir")
 	t.is(mesa2.getPedidos()[0].getComentarioOpcionalPlato(), "Para compartir")
 })
 
@@ -80,18 +80,18 @@ test ("Consulta si una mesa esta ocupada", t => {
 
 test ("Comprobar que hay propina", t => {
 	let mesa2 = new mesa.Mesa(1, 10, false, true);
-	mesa2.incluirPedido(4, "Postre", 1, 10)
+	mesa2.incluirPedido(4, 1)
 	t.is(mesa2.hayPropina(), false)
 })
 
 test ("Pagar por separado", t => {
 	let mesa2 = new mesa.Mesa(1, 10, false, true);
-	mesa2.incluirPedido(54, "Plato1", 1, 5, ["Ingrediente1", "Ingrediente2"], "Vacio", 1)
-	mesa2.incluirPedido(33, "Postre", 1, 5, ["Ingrediente1"], "Vacio", 1)
-	mesa2.incluirPedido(78, "Plato4", 1, 2, [], "Vacio", 1)
-	mesa2.incluirPedido(34, "Plato3", 1, 3, ["Ingrediente1", "Ingrediente2"], "Vacio", 1)
+	mesa2.incluirPedido(54, 1)
+	mesa2.incluirPedido(33, 1)
+	mesa2.incluirPedido(78, 1)
+	mesa2.incluirPedido(1, 1)
 
-	mesa2.incluirPedido(4, "Plato2", 2, 10, ["Ingrediente1", "Ingrediente2"], "Vacio", 2)
-	mesa2.incluirPedido(98, "Postre", 2, 1.2, ["Ingrediente1", "Ingrediente2"], "Vacio", 2)
-	t.is(mesa2.pagarPorSeparado()[0].precioTotal, 15)
+	mesa2.incluirPedido(4, 10, ["Ingrediente1", "Ingrediente2"], "Vacio", 2)
+	mesa2.incluirPedido(98, 2, ["Ingrediente1", "Ingrediente2"], "Vacio", 2)
+	t.is(mesa2.pagarPorSeparado()[0].precioTotal, 310)
 })
