@@ -5,3 +5,4 @@ lenguaje: Node.js
 test: tests/index.test.js
 taskfile: Gruntfile.js
 URL: https://order-n-go.vercel.app/api/test
+make: mocha tests/apiTest.js
