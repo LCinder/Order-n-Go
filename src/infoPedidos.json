@@ -1,45 +1,48 @@
 
 {
-	{
-		"platoId": "1",
-		"nombre": "Plato 1",
-		"tipoPlato": "Principal",
-		"precio": "10",
-		"usuario": "1"
-	},
-	{
-		"platoId": "2",
-		"nombre": "Plato 2",
-		"tipoPlato": "Principal",
-		"precio": "15",
-		"usuario": "1"
-	},
-	{
-		"platoId": "3",
-		"nombre": "Plato 3",
-		"tipoPlato": "Segundo",
-		"precio": "5",
-		"usuario": "1"
-	},
-	{
-		"platoId": "4",
-		"nombre": "Plato 4",
-		"tipoPlato": "Segundo",
-		"precio": "15",
-		"usuario": "1"
-	},
-	{
-		"platoId": "5",
-		"nombre": "Plato 5",
-		"tipoPlato": "Postre",
-		"precio": "7",
-		"usuario": "1"
-	},
-	{
-		"platoId": "6",
-		"nombre": "Plato 6",
-		"tipoPlato": "Postre",
-		"precio": "2",
-		"usuario": "1"
-	}
+	"platos":
+	[
+		{
+			"platoId": "1",
+			"nombre": "Plato 1",
+			"tipoPlato": "Principal",
+			"precio": "10",
+			"usuario": "1"
+		},
+		{
+			"platoId": "2",
+			"nombre": "Plato 2",
+			"tipoPlato": "Principal",
+			"precio": "15",
+			"usuario": "1"
+		},
+		{
+			"platoId": "3",
+			"nombre": "Plato 3",
+			"tipoPlato": "Segundo",
+			"precio": "5",
+			"usuario": "1"
+		},
+		{
+			"platoId": "4",
+			"nombre": "Plato 4",
+			"tipoPlato": "Segundo",
+			"precio": "15",
+			"usuario": "1"
+		},
+		{
+			"platoId": "5",
+			"nombre": "Plato 5",
+			"tipoPlato": "Postre",
+			"precio": "7",
+			"usuario": "1"
+		},
+		{
+			"platoId": "6",
+			"nombre": "Plato 6",
+			"tipoPlato": "Postre",
+			"precio": "2",
+			"usuario": "1"
+		}
+	]
 }
