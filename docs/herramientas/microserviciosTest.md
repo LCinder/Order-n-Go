@@ -24,7 +24,7 @@ describe("GET /mesa/2", function () {
 
 Para ejecutarlos realizamos:
 
-`mocha tests/apiTest.js` 
+`mocha tests/apiTest.js`
 
 Después de ejecutar los test comprobamos que funcionan:
 
