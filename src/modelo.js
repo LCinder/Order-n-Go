@@ -34,7 +34,7 @@ mesaGET(numero_mesa) {
 		+ " son: \n" + mesa.mostrarPedidos(), code: 200};
 	}
 	catch(err) {
-		return  {valor: "Mesa " + numeroMesa + " no existe" + err, code: 404};
+		return  {valor: "Mesa " + numeroMesa + " no existe\n\n" + err, code: 404};
 		//JSON.stringify(m); // JSON.stringify(req.params)
 	}
 }
@@ -51,7 +51,7 @@ pedidoGET(numero_mesa, idPedidoArg) {
 		+ mesa.getMesa() + " es: \n" + mesa.mostrarPedido(idPedido), code: 200};
 	}
 	catch(err) {
-		return  {valor: "El pedido " + idPedido + " no existe" + err, code: 404};
+		return  {valor: "El pedido " + idPedido + " no existe\n\n" + err, code: 404};
 	}
 }
 /******************************************************************************/
@@ -72,7 +72,7 @@ cantidadPUT(numero_mesa, idPedidoArg, cantidadArg) {
 
 	}
 	catch(err) {
-		return  {valor: "Cantidad no aplicable" + err, code: 404};
+		return  {valor: "Cantidad no aplicable\n\n" + err, code: 404};
 	}
 }
 /******************************************************************************/
@@ -93,7 +93,7 @@ pedidoIdPUT(numero_mesa, idPedidoArg, idArg) {
 
 	}
 	catch(err) {
-		return  {valor: "Pedido con id " + idPedidoArg + " no existe" + err, code: 404};
+		return  {valor: "Pedido con id " + idPedidoArg + " no existe\n\n" + err, code: 404};
 	}
 }
 /******************************************************************************/
@@ -112,7 +112,7 @@ nuevoPedidoPUT(numero_mesa, idNuevoPlato, cantidadArg) {
 		+ mesa.getMesa() + " es: \n" + mesa.mostrarPedido(idPedido), code: 201};
 	}
 	catch(err) {
-		return  {valor: "El nuevo pedido no se ha podido crear" + err, code: 404};
+		return  {valor: "El nuevo pedido no se ha podido crear\n\n" + err, code: 404};
 	}
 }
 /******************************************************************************/
@@ -129,11 +129,11 @@ cambiarIngredientesPUT(numero_mesa, idPedidoArg, ingredientesArg) {
 
 		return  {valor: "El pedido " + idPedido + " para la mesa: "
 		+ mesa.getMesa() + " es: \n"
-		+ mesa.mostrarPedido(idPedido), code: 201};
+		+ mesa.mostrarPedido(idPedido), code: 200};
 
 	}
 	catch (err) {
-		return {valor: "No se pueden cambiar los ingredientes" + err, code: 404}
+		return {valor: "No se pueden cambiar los ingredientes\n\n" + err, code: 404}
 	}
 }
 /******************************************************************************/
@@ -150,7 +150,7 @@ cambiarUsuariosPUT(numero_mesa, usuariosArg) {
 		return  {valor: "Mesa " + mesa.getMesa() + ": " + mesa.toString(), code: 201};
 	}
 	catch (err) {
-		return {valor:  "No se pueden cambiar los usuarios" + err, code: 404};
+		return {valor:  "No se pueden cambiar los usuarios\n\n" + err, code: 404};
 	}
 }
 /******************************************************************************/
@@ -167,7 +167,7 @@ pedirCuentaPUT(numero_mesa) {
 		+ mesa.toString(), code: 200};
 	}
 	catch (err) {
-		return {valor:  "No se puede pedir la cuenta" + err, code: 404};
+		return {valor:  "No se puede pedir la cuenta\n\n" + err, code: 404};
 	}
 }
 /******************************************************************************/
@@ -185,7 +185,7 @@ eliminarPedidoDELETE(numero_mesa, idPedidoArg) {
 		+ mesa.getMesa(), code: 200};
 	}
 	catch(err) {
-		return  {valor: "Pedido " + idPedido + " no existe" + err, code: 404};
+		return  {valor: "Pedido " + idPedido + " no existe\n\n" + err, code: 404};
 	}
 }
 /******************************************************************************/
@@ -205,7 +205,7 @@ pagarPorSeparadoPUT(numero_mesa) {
 		return {valor: cad, code: 200};
 	}
 	catch(err) {
-		return {valor: "No se puede pagar por separado" + err, code: 404};
+		return {valor: "No se puede pagar por separado\n\n" + err, code: 404};
 	}
 }
 /******************************************************************************/
