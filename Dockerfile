@@ -3,7 +3,7 @@ FROM alpine
 #creamos un usuario sin pass y le aplicamos todos los permisos  necesarios
 # para acceder a la carpeta node_modules e instalamos el gestor de paquetes de node
 # npm
-RUN adduser -S node && mkdir /node_modules && chown node /node_modules && apk add --update nodejs npm && npm i -g ava
+RUN adduser -S node && mkdir /node_modules && chown node /node_modules && apk add --update nodejs npm && npm i -g ava mocha chai supertest
 
 USER node
 
