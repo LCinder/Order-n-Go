@@ -29,3 +29,22 @@ Para ejecutarlos realizamos:
 Después de ejecutar los test comprobamos que funcionan:
 
 ![microserviciosApiTest](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/microserviciosApiTest.PNG)
+
+---
+
+## Subir imagen a Docker y enlazado a GitHub
+
+Al igual que hicimos en hitos anteriores, vamos a subir la imagen de docker de los tests de la API y vamos a enlazarla a GitHub como se indicaba en [el documento correspondiente](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/ghcr.md) incluyendo os pasos:
+
+- Crear el contenedor: `docker build -t docker.pkg.github.com/lcinder/order-n-go/apitest .`
+- Subir el contenedor: `docker push docker.pkg.github.com/lcinder/order-n-go/apitest`
+
+ Por lo que tendremos 2 imágenes de Docker, la anterior en donde se hacían los test del código y **apitest** que realiza los tests de la API que corresponden a **las Historias de Usuario ya indicadas en el archivo** [routes.js](https://github.com/LCinder/Order-n-Go/blob/master/src/routes.js), por lo que podremos hacer *pull* mediante:
+`docker pull docker.pkg.github.com/lcinder/order-n-go/apitest:latest` o con `docker pull lcinder/order-n-go/apitest:latest`
+
+ y ejecutarla con `docker run -t -v `pwd`:/test docker.pkg.github.com/lcinder/order-n-go/apitest:latest` o con `docker run -t -v `pwd`:/test lcinder/order-n-go/apitest:latest`
+
+ y obtendremos que los 11 test han pasado satisfactoriamente:
+
+
+ ![microserviciosTestFunciona](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/microserviciosTestFunciona.PNG)
