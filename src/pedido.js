@@ -1,6 +1,6 @@
 
 
-const datos = require("../api/data/info.json")
+const datos = require("./infoPedidos.json")
 
 class Pedido {
 
@@ -9,18 +9,18 @@ class Pedido {
 		this.platoId = platoIdArg;
 		this.platoNombre = this.getNombreFromId(platoIdArg) //this.getNombreForId(platoIdArg);
 
-		if(datos[platoIdArg-1] == undefined)
+		if(datos.platos[platoIdArg-1] == undefined)
 			this.tipoPlato = "Plato inventado"
 		else
-			this.tipoPlato = datos[platoIdArg-1].tipoPlato;
+			this.tipoPlato = datos.platos[platoIdArg-1].tipoPlato;
 
 		this.cantidad = cantidadArg;
 
-		if(datos[platoIdArg-1] == undefined)
+		if(datos.platos[platoIdArg-1] == undefined)
 			this.precio = 100
-		else
-			this.precio = datos[platoIdArg-1].precio;
 
+		else
+			this.precio = parseInt(datos.platos[platoIdArg-1].precio);
 
 		if(ingredientesEvitarArg != null && ingredientesEvitarArg != "")
 			this.ingredientesEvitar = ingredientesEvitarArg;
@@ -126,14 +126,14 @@ class Pedido {
 	}
 
 	getIdFromNombre(nombrePlato) {
-		return datos.find(key => datos[key].nombre === nombrePlato)
+		return datos.platos.find(key => datos.platos[key].nombre === nombrePlato)
 	}
 
 	getNombreFromId(id) {
 		if(datos[id] == undefined)
 			return "Plato " + id
 
-		return datos[id].nombre;// nombres.find(key => nombres[id].plato === nombrePlato)
+		return datos.platos[id].nombre;// nombres.find(key => nombres[id].plato === nombrePlato)
 	}
 
 };
