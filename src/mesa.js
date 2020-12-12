@@ -194,7 +194,9 @@ class Mesa {
 
 	sumaPrecioTotal() {
 		let precio = 0;
-		this.pedidos.forEach(e => precio += e.getPrecio());
+		this.pedidos.forEach(e =>
+			precio += parseInt(e.getPrecio())
+		);
 
 		if(this.hayPropina())
 			precio += this.getPropina()
@@ -210,14 +212,10 @@ class Mesa {
 
 		let usuarios = this.getValuesUnique(v);
 
-		//evitamos pasar por el for
-		if(usuarios.length <= 1)
-			return total;
-
 		for (let i=0; i < usuarios.length; i++) {
 			for (let j=0; j < pedidos.length; j++) {
 				if(usuarios[i] == pedidos[j].getUsuario())
-						precioUsuario += pedidos[j].getPrecio()
+					precioUsuario += pedidos[j].getPrecio()
 			}
 			total.push({usuario: i, precioTotal: precioUsuario});
 			precioUsuario = 0;
