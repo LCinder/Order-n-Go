@@ -1,0 +1,5 @@
+build:
+
+test: mocha tests/apiTest.js
+
+install:
