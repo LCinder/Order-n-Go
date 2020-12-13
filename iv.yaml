@@ -1,8 +1,10 @@
 entidad:
- - src/mesa.js
- - src/pedido.js
+  - src/dieta.js
+  - src/pedido.js
 lenguaje: Node.js
-test: tests/apiTest.js
-taskfile: Gruntfile.js
+test:
+  - tests/index.test.js
+  - tests/apiTest.js
+taskfile: package.json
 URL: https://order-n-go.vercel.app/api/test
 make: mocha tests/apiTest.js
