@@ -1,5 +1,0 @@
-build: echo "No se hace nada"
-
-test: mocha tests/apiTest.js
-
-install: echo "No se hace nada"
