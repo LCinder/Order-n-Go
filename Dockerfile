@@ -30,4 +30,4 @@ WORKDIR /test
 USER root
 
 #CMD ["npm", "test"]
-CMD ["mocha", "tests/apiTest.js"]
+CMD ["npm", "run apiTest"]
