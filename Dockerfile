@@ -30,4 +30,4 @@ WORKDIR /test
 USER root
 
 #CMD ["npm", "test"]
-CMD ["npm", "run apiTest"]
+CMD ["npm", "run", "apiTest"]
