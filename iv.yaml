@@ -1,5 +1,5 @@
 entidad:
-  - src/dieta.js
+  - src/mesa.js
   - src/pedido.js
 lenguaje: Node.js
 test:
