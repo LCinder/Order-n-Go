@@ -7,4 +7,4 @@ test:
   - tests/apiTest.js
 taskfile: package.json
 URL: https://order-n-go.vercel.app/api/test
-make: nom run apiTest
+make: npm run apiTest
