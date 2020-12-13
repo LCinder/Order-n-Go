@@ -29,5 +29,4 @@ WORKDIR /test
 #por tanto una vez instalamos todo cambiamos al user root
 USER root
 
-#CMD ["npm", "test"]
-CMD ["npm", "run", "apiTest"]
+CMD ["npm", "test"]
