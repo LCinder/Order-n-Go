@@ -26,7 +26,18 @@ class Mesa {
 
 
 		this.pedidos = [];		// Array de objetos 'pedidos'
-		this.ocupada = ocupadaArg;	 // boolean para mesa ocupada o no
+
+		if(ocupadaArg == undefined)
+			this.ocupada = false;
+		else {
+			if(cuentaArg == "true")
+				this.ocupada = true
+			else if(cuentaArg == "false")
+				this.ocupada = false
+			else
+				this.ocupada = cuentaArg
+		} // boolean para mesa ocupada o no
+		
 		this.propina = {"haypropina": false, propinaCantidad: 0};
 		this.pagarSeparado = false;
 	}

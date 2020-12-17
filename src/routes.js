@@ -9,16 +9,15 @@ let mesas = [];
 /******************************************************************************/
 /******************************************************************************/
 const start = async () => {
-		fastify.listen(port)
-		model.iniciar()
-
+	fastify.listen(port)
+	model.iniciar()
 }
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/
-fastify.get("/", async (req, res) => {
-	res.send("Funciona Fastify!").code(200);
-});
+// fastify.get("/", async (req, res) => {
+// 	res.send("Funciona Fastify!").code(200);
+// });
 /******************************************************************************/
 /******************************Historia de Usuario 9***************************/
 /******************************************************************************/
@@ -38,7 +37,7 @@ fastify.get("/mesa/:numero_mesa/pedido/:idPedido", async (req, res) => {
 /******************************************************************************/
 /******************************Historia de Usuario 4 Cantidad******************/
 /******************************************************************************/
-fastify.put("/mesa/:numero_mesa/pedido/:idPedido/cantidad/:cantidad", async (req, res) => {
+fastify.post("/mesa/:numero_mesa/pedido/:idPedido/cantidad/:cantidad", async (req, res) => {
 	let result = model.cantidadPUT(req.params.numero_mesa, req.params.idPedido,
 	req.params.cantidad)
 
@@ -47,7 +46,7 @@ fastify.put("/mesa/:numero_mesa/pedido/:idPedido/cantidad/:cantidad", async (req
 /******************************************************************************/
 /******************************Historia de Usuario 4 Id************************/
 /******************************************************************************/
-fastify.put("/mesa/:numero_mesa/pedido/:idPedido/id/:id", async (req, res) => {
+fastify.post("/mesa/:numero_mesa/pedido/:idPedido/id/:id", async (req, res) => {
 	let result = model.pedidoIdPUT(req.params.numero_mesa, req.params.idPedido,
 	req.params.id)
 
@@ -65,7 +64,7 @@ fastify.put("/mesa/:numero_mesa/nuevopedido/:idNuevoPlato/:cantidad", async (req
 /******************************************************************************/
 /******************************Historia de Usuario 5************************/
 /******************************************************************************/
-fastify.put("/mesa/:numero_mesa/pedido/:idPedido/ingredientes/:ingredientes", async (req, res) => {
+fastify.post("/mesa/:numero_mesa/pedido/:idPedido/ingredientes/:ingredientes", async (req, res) => {
 	let result = model.cambiarIngredientesPUT(req.params.numero_mesa, req.params.idPedido,
 	req.params.ingredientes)
 
@@ -74,7 +73,7 @@ fastify.put("/mesa/:numero_mesa/pedido/:idPedido/ingredientes/:ingredientes", as
 /******************************************************************************/
 /******************************Historia de Usuario 1***************************/
 /******************************************************************************/
-fastify.put("/mesa/:numero_mesa/usuarios/:usuarios", async (req, res) => {
+fastify.post("/mesa/:numero_mesa/usuarios/:usuarios", async (req, res) => {
 	let result = model.cambiarUsuariosPUT(req.params.numero_mesa,
 	req.params.usuarios)
 
@@ -100,7 +99,7 @@ fastify.delete("/mesa/:numero_mesa/pedido/:idPedido/eliminar", async (req, res) 
 /******************************************************************************/
 /******************************Historia de Usuario 8***************************/
 /******************************************************************************/
-fastify.put("/mesa/:numero_mesa/pagarPorSeparado", async (req, res) => {
+fastify.post("/mesa/:numero_mesa/pagarPorSeparado", async (req, res) => {
 	let result = model.pagarPorSeparadoPUT(req.params.numero_mesa)
 
 	res.send(result.valor).code(result.code);

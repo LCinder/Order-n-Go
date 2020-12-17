@@ -3,13 +3,13 @@ const supertest = require("supertest")("http://localhost:5000")
 const fastify = require("./../src/routes.js")
 const expect = require("chai").expect
 
-describe("GET /", function () {
-	it("Deberia devolver string Funciona", async function () {
-			const response = await supertest.get("/")
-			expect(response.status).to.eql(200)
-			expect(response.text).to.be.a("string").to.include("Funciona")
-		});
-});
+// describe("GET /", function () {
+// 	it("Deberia devolver string Funciona", async function () {
+// 			const response = await supertest.get("/")
+// 			expect(response.status).to.eql(200)
+// 			expect(response.text).to.be.a("string").to.include("Funciona")
+// 		});
+// });
 
 describe("GET /mesa/2", function () {
 	it("Muestra informacion mesa 2", async function () {
@@ -27,9 +27,17 @@ describe("GET /mesa/2/pedido/1", function () {
 		});
 });
 
-describe("PUT /mesa/2/pedido/1/cantidad/8", function () {
+describe("POST /mesa/2/pedido/1/cantidad/8", function () {
 	it("Cambia la cantidad del pedido 1 de 1 a 8", async function () {
-			const response = await supertest.put("/mesa/2/pedido/1/cantidad/8")
+			const response = await supertest.post("/mesa/2/pedido/1/cantidad/8")
+			expect(response.status).to.eql(200)
+			expect(response.text).to.be.a("string").to.include("8")
+		});
+});
+
+describe("GET /mesa/2/pedido/1/cantidad/8", function () {
+	it("Cambia la cantidad del pedido 1 de 1 a 8", async function () {
+			const response = await supertest.get("/mesa/2/pedido/1/cantidad/8")
 			expect(response.status).to.eql(200)
 			expect(response.text).to.be.a("string").to.include("8")
 		});
@@ -97,7 +105,7 @@ describe("PUT /mesa/2/pagarPorSeparado", function () {
 			expect(response.status).to.eql(200)
 			expect(response.text).to.be.a("string").to.include("usuario")
 		});
-		
+
 		// Para cerrar el servidor cuando los test finalicen
 		after(async () => {
 			await fastify.close();

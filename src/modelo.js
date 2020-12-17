@@ -2,11 +2,14 @@
 const datos = require("../api/data/info.json")
 const mesaClass = require("./mesa.js")
 const pedido = require("./pedido.js")
-let mesas = [];
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/
 class Model {
+
+constructor() {
+	this.mesas = []
+}
 
 iniciar() {
 	let m;
@@ -19,7 +22,7 @@ iniciar() {
 		for (let j=0; j < m.pedidos.length; j++)
 			mesa.incluirPedidoFromJSON(m.pedidos[j])
 
-		mesas.push(mesa)
+		this.mesas.push(mesa)
 	}
 }
 /******************************************************************************/
@@ -28,7 +31,7 @@ iniciar() {
 mesaGET(numero_mesa) {
 	try {
 		let numeroMesa = numero_mesa
-		let mesa = mesas[numeroMesa-1]
+		let mesa = this.mesas[numeroMesa-1]
 
 		return  {valor: "Los pedidos para la mesa: " + numeroMesa
 		+ " son: \n" + mesa.mostrarPedidos(), code: 200};
@@ -44,7 +47,7 @@ mesaGET(numero_mesa) {
 pedidoGET(numero_mesa, idPedidoArg) {
 	try {
 		let numeroMesa = numero_mesa
-		let mesa = mesas[numeroMesa-1]
+		let mesa = this.mesas[numeroMesa-1]
 		let idPedido = idPedidoArg
 
 		return  {valor: "El pedido " + idPedido + " para la mesa: "
@@ -60,7 +63,7 @@ pedidoGET(numero_mesa, idPedidoArg) {
 cantidadPUT(numero_mesa, idPedidoArg, cantidadArg) {
 	try {
 		let numeroMesa = numero_mesa
-		let mesa = mesas[numeroMesa-1]
+		let mesa = this.mesas[numeroMesa-1]
 		let idPedido = idPedidoArg
 		let cantidad = cantidadArg
 
@@ -81,7 +84,7 @@ cantidadPUT(numero_mesa, idPedidoArg, cantidadArg) {
 pedidoIdPUT(numero_mesa, idPedidoArg, idArg) {
 	try {
 		let numeroMesa = numero_mesa
-		let mesa = mesas[numeroMesa-1]
+		let mesa = this.mesas[numeroMesa-1]
 		let idPedido = idPedidoArg
 		let id = idArg
 
@@ -102,7 +105,7 @@ pedidoIdPUT(numero_mesa, idPedidoArg, idArg) {
 nuevoPedidoPUT(numero_mesa, idNuevoPlato, cantidadArg) {
 	try {
 		let numeroMesa = numero_mesa
-		let mesa = mesas[numeroMesa-1]
+		let mesa = this.mesas[numeroMesa-1]
 		let idPedido = idNuevoPlato
 		let cantidad = cantidadArg
 
@@ -121,7 +124,7 @@ nuevoPedidoPUT(numero_mesa, idNuevoPlato, cantidadArg) {
 cambiarIngredientesPUT(numero_mesa, idPedidoArg, ingredientesArg) {
 	try {
 		let numeroMesa = numero_mesa
-		let mesa = mesas[numeroMesa-1]
+		let mesa = this.mesas[numeroMesa-1]
 		let idPedido = idPedidoArg
 		let ingredientes = ingredientesArg
 
@@ -142,7 +145,7 @@ cambiarIngredientesPUT(numero_mesa, idPedidoArg, ingredientesArg) {
 cambiarUsuariosPUT(numero_mesa, usuariosArg) {
 	try {
 		let numeroMesa = numero_mesa
-		let mesa = mesas[numeroMesa-1]
+		let mesa = this.mesas[numeroMesa-1]
 		let usuarios = usuariosArg
 
 		mesa.modificarUsuarios(usuarios);
@@ -159,7 +162,7 @@ cambiarUsuariosPUT(numero_mesa, usuariosArg) {
 pedirCuentaPUT(numero_mesa) {
 	try {
 		let numeroMesa = numero_mesa
-		let mesa = mesas[numeroMesa-1]
+		let mesa = this.mesas[numeroMesa-1]
 
 		mesa.pedirCuenta();
 
@@ -176,7 +179,7 @@ pedirCuentaPUT(numero_mesa) {
 eliminarPedidoDELETE(numero_mesa, idPedidoArg) {
 	try {
 		let numeroMesa = numero_mesa
-		let mesa = mesas[numeroMesa-1]
+		let mesa = this.mesas[numeroMesa-1]
 		let idPedido = idPedidoArg
 
 		mesa.borrarPedido(idPedido);
@@ -194,7 +197,7 @@ eliminarPedidoDELETE(numero_mesa, idPedidoArg) {
 pagarPorSeparadoPUT(numero_mesa) {
 	try {
 		let numeroMesa = numero_mesa
-		let mesa = mesas[numeroMesa-1]
+		let mesa = this.mesas[numeroMesa-1]
 
 		let total = mesa.pagarPorSeparado();
 		let cad = "";
