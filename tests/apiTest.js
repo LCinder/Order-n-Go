@@ -64,9 +64,9 @@ describe("GET /mesa/2/pedido/1/id/8", function () {
 			expect(response.text).to.be.a("string").to.not.include("Id Plato: 1")
 		});
 });
-
-
-
+/******************************************************************************/
+/******************************Historia de Usuario 2***************************/
+/******************************************************************************/
 describe("PUT /mesa/2/nuevopedido/100/8", function () {
 	it("Crea un nuevo pedido con id 100 y cantidad 8", async function () {
 			const response = await supertest.put("/mesa/2/nuevopedido/100/8")
@@ -75,6 +75,13 @@ describe("PUT /mesa/2/nuevopedido/100/8", function () {
 		});
 });
 
+describe("GET /mesa/2/pedido/100", function () {
+	it("Compueba el nuevo pedido con id 100 y cantidad 8", async function () {
+			const response = await supertest.get("/mesa/2/pedido/100")
+			expect(response.status).to.eql(200)
+			expect(response.text).to.be.a("string").to.include("100").to.include("8")
+		});
+});
 
 describe("PUT /mesa/2/pedido/8/ingredientes/Curry,Otro", function () {
 	it("Incluye en el pedido 8 los ingredientes a evitar curry y otro", async function () {
