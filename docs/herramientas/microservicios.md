@@ -101,8 +101,8 @@ Y obtenemos como resultado:
 Ahora vamos a realizar *minibenchmarks* para comprobar cuál objetivamente es mejor, atendiendo al nº de peticiones que pueden recibir por segundo, latencia, etc.
 Para ello usaremos **autocannon** que es una biblioteca de *Node.js* para realizar este tipo de acciones, concretamente vamos a establecer que realice:
 - En un máximo de *50 s* el mayor nº de peticiones que pueda
-- Con *50 conexiones concurrentes*
-- Y con *500 peticiones lanzadas sin esperar confirmación,* ésto para *testear* la latencia.  
+- Con *20 conexiones concurrentes* ya que supondremos que se trata de un restaurante grande (con 20 mesas) en las que se podrían realizar hasta 20 conexiones concurrentes de las mesas todas conectadas a la vez
+- Y con *20 peticiones lanzadas sin esperar confirmación,* suponiendo lo de antes, que se raealizan 20 pedidos uno por cada mesa ya que es lo máximo a poder pedir en un instante determinado, ésto para *testear* la latencia.  
 
 Ejecutando para *Koa.js:*
 
@@ -119,6 +119,6 @@ Ejecutando para *Fastify.js:*
 
 
 
-Como se puede ver, *.js* es el más rápiod de los 3, ya que atendiendo al nº de peticiones realiza 5k peticiones más que *Fastify.js* y casi 200k más que *Restify.js* superando a éste por mucho. En cunto a **latencia media,** *Koa* y *Fastify* están muy próximos son prácticamente iguales, y *Restify* se queda muy atrás, al igual que en media de peticiones/s, por lo que *Restify* queda desclasificado. Entre los otros 2, sabiendo que tampoco ésto importa mucho ya que no vamos a erar un gran proyecto con muchísimas peticiones y sabiendo que están practicamente igualados en cuanto a peticiones/s, etc., elegiré **Fastify.js** como *framework* atendiendo a 2 cosas:
+Como se puede ver, *Koa.js* es el más rápido de los 3, ya que atendiendo al nº de peticiones realiza 114k peticiones más que *Fastify.js* y casi 250k más que *Restify.js* superando a éste por mucho. En cunto a **latencia media,** *Fastify* supera por mucho a los demás siendo muy inferior al de *Koa.js*, y *Restify* se queda muy atrás en media de peticiones/s, por lo que *Restify* queda desclasificado. Entre los otros 2, sabiendo que tampoco ésto importa mucho ya que no vamos a crear un gran proyecto con muchísimas peticiones y sabiendo que están practicamente igualados en cuanto a peticiones/s, etc., elegiré **Fastify.js** como *framework* atendiendo a 2 cosas:
 - *Koa.js* es muy usado por diferencia, y seguramente muchos compañeros lo usarán, por lo que quiero elegir alguno diferente.
 - Viendo la documentación me parece que la de **Fastify.js** es más clara, concisa y bien epxlicada, además con muchas opciones como respuestas asíncronas, etc.
