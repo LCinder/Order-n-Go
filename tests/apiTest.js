@@ -26,7 +26,9 @@ describe("GET /mesa/2/pedido/1", function () {
 			expect(response.text).to.be.a("string").to.include("Id Plato")
 		});
 });
-
+/******************************************************************************/
+/******************************Historia de Usuario 4 Cantidad******************/
+/******************************************************************************/
 describe("POST /mesa/2/pedido/1/cantidad/8", function () {
 	it("Cambia la cantidad del pedido 1 de 1 a 8", async function () {
 			const response = await supertest.post("/mesa/2/pedido/1/cantidad/8")
@@ -36,22 +38,33 @@ describe("POST /mesa/2/pedido/1/cantidad/8", function () {
 });
 
 describe("GET /mesa/2/pedido/1/cantidad/8", function () {
-	it("Cambia la cantidad del pedido 1 de 1 a 8", async function () {
+	it("Obtiene la cantidad del pedido 1 cambiado de 1 a 8", async function () {
 			const response = await supertest.get("/mesa/2/pedido/1/cantidad/8")
 			expect(response.status).to.eql(200)
 			expect(response.text).to.be.a("string").to.include("8")
 		});
 });
-
-
-describe("PUT /mesa/2/pedido/1/id/8", function () {
+/******************************************************************************/
+/******************************Historia de Usuario 4 Id************************/
+/******************************************************************************/
+describe("POST /mesa/2/pedido/1/id/8", function () {
 	it("Cambia el id del pedido 1 de 1 a 8", async function () {
-			const response = await supertest.put("/mesa/2/pedido/1/id/8")
+			const response = await supertest.post("/mesa/2/pedido/1/id/8")
 			expect(response.status).to.eql(200)
 			expect(response.text).to.be.a("string").to.include("8")
 			expect(response.text).to.be.a("string").to.not.include("Id Plato: 1")
 		});
 });
+
+describe("GET /mesa/2/pedido/1/id/8", function () {
+	it("Obtiene el id del pedido cambiado de 1 a 8", async function () {
+			const response = await supertest.get("/mesa/2/pedido/1")
+			expect(response.status).to.eql(200)
+			expect(response.text).to.be.a("string").to.include("8")
+			expect(response.text).to.be.a("string").to.not.include("Id Plato: 1")
+		});
+});
+
 
 
 describe("PUT /mesa/2/nuevopedido/100/8", function () {
