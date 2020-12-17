@@ -153,11 +153,25 @@ describe("GET /mesa/2/pedido/1", function () {
 			expect(response.status).to.eql(404)
 		});
 });
-
-
+/******************************************************************************/
+/******************************Historia de Usuario 8***************************/
+/******************************************************************************/
 describe("PUT /mesa/2/pagarPorSeparado", function () {
 	it("Devuelve la cantidad que debe pagar cada usuario", async function () {
 			const response = await supertest.put("/mesa/2/pagarPorSeparado")
+			expect(response.status).to.eql(200)
+			expect(response.text).to.be.a("string").to.include("usuario")
+		});
+
+		// Para cerrar el servidor cuando los test finalicen
+		after(async () => {
+			await fastify.close();
+		});
+});
+
+describe("GET /mesa/2", function () {
+	it("Obtiene pagarPorSeparado true", async function () {
+			const response = await supertest.get("/mesa/2")
 			expect(response.status).to.eql(200)
 			expect(response.text).to.be.a("string").to.include("usuario")
 		});

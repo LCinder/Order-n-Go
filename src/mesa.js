@@ -37,7 +37,7 @@ class Mesa {
 			else
 				this.ocupada = cuentaArg
 		} // boolean para mesa ocupada o no
-		
+
 		this.propina = {"haypropina": false, propinaCantidad: 0};
 		this.pagarSeparado = false;
 	}
@@ -132,6 +132,13 @@ class Mesa {
 			return "Cuenta no pedida";
 	}
 
+	hayPagarPorSeparado() {
+		if(this.cuenta)
+			return "Pagar por separado si";
+		else
+			return "Pagar por separado no";
+	}
+
 	estaOcupada() {
 		if(this.ocupada)
 			return "Mesa ocupada";
@@ -147,7 +154,8 @@ class Mesa {
 		return "Mesa: " + this.mesa + "\n---------------------\n"
 		+ "\nPersonas: " + this.personas + "\nCuenta: " + this.hayCuenta()
 		// + "\nPedidos: " + this.pedidos.forEach(elemento => console.log(elemento.toString() + "\n"))
-		+ "\nOcupada: " + this.estaOcupada();
+		+ "\nOcupada: " + this.estaOcupada()
+		+ "\nPagar por separado: " + this.hayPagarPorSeparado();
 	}
 
 	//incluirPedido(platoArg, tipoPlatoArg, cantidadArg, precioArg, ingredientesEvitarArg, comentarioOpcionalPlatoArg, usuarioArg) {
