@@ -82,7 +82,9 @@ describe("GET /mesa/2/pedido/100", function () {
 			expect(response.text).to.be.a("string").to.include("100").to.include("8")
 		});
 });
-
+/******************************************************************************/
+/******************************Historia de Usuario 5************************/
+/******************************************************************************/
 describe("PUT /mesa/2/pedido/8/ingredientes/Curry,Otro", function () {
 	it("Incluye en el pedido 8 los ingredientes a evitar curry y otro", async function () {
 			const response = await supertest.put("/mesa/2/pedido/8/ingredientes/Curry,Otro")
@@ -91,6 +93,13 @@ describe("PUT /mesa/2/pedido/8/ingredientes/Curry,Otro", function () {
 		});
 });
 
+describe("GET /mesa/2/pedido/8", function () {
+	it("Comprueba en el pedido 8 los ingredientes a evitar curry y otro", async function () {
+			const response = await supertest.put("/mesa/2/pedido/8")
+			expect(response.status).to.eql(200)
+			expect(response.text).to.be.a("string").to.include("Curry,Otro")
+		});
+});
 
 describe("PUT /mesa/2/usuarios/8", function () {
 	it("Cambia el numero de personas de la mesa 2 a 8", async function () {
