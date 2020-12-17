@@ -100,10 +100,20 @@ describe("GET /mesa/2/pedido/8", function () {
 			expect(response.text).to.be.a("string").to.include("Curry,Otro")
 		});
 });
-
+/******************************************************************************/
+/******************************Historia de Usuario 1***************************/
+/******************************************************************************/
 describe("PUT /mesa/2/usuarios/8", function () {
 	it("Cambia el numero de personas de la mesa 2 a 8", async function () {
 			const response = await supertest.put("/mesa/2/usuarios/8")
+			expect(response.status).to.eql(200)
+			expect(response.text).to.be.a("string").to.include("8")
+		});
+});
+
+describe("GET /mesa/2", function () {
+	it("Comrprueba que el numero de personas de la mesa 2 es 8", async function () {
+			const response = await supertest.get("/mesa/2")
 			expect(response.status).to.eql(200)
 			expect(response.text).to.be.a("string").to.include("8")
 		});
