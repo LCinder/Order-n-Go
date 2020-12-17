@@ -8,7 +8,9 @@ Para crear todo lo relacionado con rutas, URI's, etc. primero debemos entender q
 
 La clase [routes.js](https://github.com/LCinder/Order-n-Go/blob/master/src/routes.js) incluye todas las rutas a utilizar con los parámetros, etc. y toda la funcionalidad que debería realizarse, creando antes un objeto de la clase *modelo* anterior mediante la cuál se llamarán a las funciones.
 
+---
 
+## Avance en código
 
 Se ha mejorado bastante el código para que ahora tenga más sentido crear un pedido, mesa, etc. Además, como la intención es que existan platos ya predefinidos con su id, nombre, precio, etc. para que el usuario simplemente los pida de una lista ya existente como en cualquier restaurante, se ha creado un fichero [infoPedidos.json](https://github.com/LCinder/Order-n-Go/blob/master/src/infoPedidos.json) que contiene esta información. Posteriormente podria almacenarse en una BBDD, o de cualquier otra manera, o incluir nombres de platos verdaderos con su id específico para que fuera más real.
 
@@ -16,6 +18,10 @@ Además como ejemplo se ha creado otro fichero [info.json](https://github.com/LC
 
 Se han creado también bastantes funcionalidades atendiendo a las **HU's,** creando una ruta por cada *HU* para satisfacerla. Las rutas se dividen en varias atendiendo a si realizamos peticiones para que devuelvan algo (*GET*) o si queremos añadir algo (*PUT*) o incluso si quereoms borrar algo (*DELETE.*)
 Cabe destacar que aunque a priori no tenga sentido ya que no existe persistencia de datos (ya que devolvemos siempre una cadena de texto), cuando si que exista no tendremos que ir cambiando el tipo de petición, sino que ya estarán bien establecidas.
+
+---
+
+## Rutas API
 
 Las rutas a probar son:
 Realizando peticiones **GET:**
@@ -162,7 +168,11 @@ Se han tenido en cuenta  **buenas prácticas** en cuanto a *microservicios* como
 
 - **Utilización de modelo asíncrono de peticiones:** Para que no exista error en cuanto a peticiones como *GET* porque no se ha esperado a la petición, o a la hora de pasar los *test* ya que si hacemos *POST* sin modelo asíncrono y luego se comprueba que se ha cambiado puede dar error incluso habiéndose realizado correctamente el cambio. En el código y en caso de *Javascript* lo realizamos con **async** para funciones.
 
-- 
+- **Utilización de captura de errores** del tipo *try/catch* para evitar errores extraños, para ello hay que gestionar bien el error y haciendo referencia a otra buena práctica, devolver un mensaje y un código tanto si ha salido bien la petición como si ha habido error, por ejemplo en este último caso devolvemos mensaje *No existe mesa nº 2* en mi caso y error 404 que significa que no se ha encontrado.
+
+- **Separación de la lógica de negocio de las rutas para la API.** Ésto ya se ha comentado anteriormente pero es muy importante mantener una estructura MVC (Modelo-Vista-Controlador) para no tener que realizar modificaciones de las rutas en cualquier archivo olvidándonos de dónde habíamos puesto las rutas. En mi caso la funcionalidad se realiza en el archivo *modelo.js* que es llamado desde *rutas.js,* por lo que si hay algún error en el código sabré a dónde tengo que acudir para solventarlo.
+
+-
 
 
 
