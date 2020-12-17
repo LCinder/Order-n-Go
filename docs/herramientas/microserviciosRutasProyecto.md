@@ -152,3 +152,36 @@ Para los pedidos se pueden solicitar:
 - Un pedido en específico indicado por su ID: `curl --request GET http://localhost:5000/mesa/2/pedido/2`
 
 ![microserviciosHU92](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/microserviciosHU92.PNG)
+
+---
+
+
+## Buenas Prácticas
+
+Se han tenido en cuenta  **buenas prácticas** en cuanto a *microservicios* como por ejemplo:
+
+- **Utilización de modelo asíncrono de peticiones:** Para que no exista error en cuanto a peticiones como *GET* porque no se ha esperado a la petición, o a la hora de pasar los *test* ya que si hacemos *POST* sin modelo asíncrono y luego se comprueba que se ha cambiado puede dar error incluso habiéndose realizado correctamente el cambio. En el código y en caso de *Javascript* lo realizamos con **async** para funciones.
+
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
