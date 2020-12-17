@@ -121,9 +121,9 @@ describe("GET /mesa/2", function () {
 /******************************************************************************/
 /******************************Historia de Usuario 3***************************/
 /******************************************************************************/
-describe("POST /mesa/2/pedirCuenta", function () {
+describe("PUT /mesa/2/pedirCuenta", function () {
 	it("Cambia el boolean de pedir cuenta a true", async function () {
-			const response = await supertest.post("/mesa/2/pedirCuenta")
+			const response = await supertest.put("/mesa/2/pedirCuenta")
 			expect(response.status).to.eql(200)
 			expect(response.text).to.be.a("string").to.include("Cuenta pedida")
 		});
@@ -150,15 +150,16 @@ describe("DELETE /mesa/2/pedido/1/eliminar", function () {
 describe("GET /mesa/2/pedido/1", function () {
 	it("Obtiene el pedido 1 de la mesa 2 eliminado", async function () {
 			const response = await supertest.get("/mesa/2/pedido/1")
-			expect(response.status).to.eql(404)
+			expect(response.status).to.eql(200)
+			expect(response.text).to.be.a("string").to.include("No existe")
 		});
 });
 /******************************************************************************/
 /******************************Historia de Usuario 8***************************/
 /******************************************************************************/
-describe("PUT /mesa/2/pagarPorSeparado", function () {
+describe("POST /mesa/2/pagarPorSeparado", function () {
 	it("Devuelve que cada usuario quiere pagar por separado que debe pagar cada usuario", async function () {
-			const response = await supertest.put("/mesa/2/pagarPorSeparado")
+			const response = await supertest.post("/mesa/2/pagarPorSeparado")
 			expect(response.status).to.eql(200)
 			expect(response.text).to.be.a("string").to.include("usuario")
 		});
@@ -168,7 +169,7 @@ describe("GET /mesa/2", function () {
 	it("Obtiene pagarPorSeparado true", async function () {
 			const response = await supertest.get("/mesa/2")
 			expect(response.status).to.eql(200)
-			expect(response.text).to.be.a("string").to.include("usuario")
+			expect(response.text).to.be.a("string").to.include("Pagar por separado si")
 		});
 });
 /******************************************************************************/
@@ -181,11 +182,11 @@ describe("POST /mesa/2/pagarPorSeparado", function () {
 		});
 });
 
-describe("GET /mesa/2", function () {
+describe("GET /mesa/2/pagarSeparado", function () {
 	it("Obtiene pagarPorSeparado precio", async function () {
-			const response = await supertest.post("/mesa/2")
+			const response = await supertest.post("/mesa/2/pagarPorSeparado")
 			expect(response.status).to.eql(200)
-			expect(response.text).to.be.a("string").to.include("300")
+			expect(response.text).to.be.a("string").to.include("30")
 		});
 
 		// Para cerrar el servidor cuando los test finalicen
