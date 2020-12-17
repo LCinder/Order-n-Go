@@ -1,7 +1,5 @@
 language: node_js
 node_js:
-  - 10
-  - 11
   - 12
   - 13
   - 14
@@ -9,4 +7,4 @@ node_js:
 jobs:
   steps:
   TASK:
-    - script: docker build -t lcinder/order-n-go:3.0
+    - script: docker build -t lcinder/order-n-go:latest
