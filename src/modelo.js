@@ -33,7 +33,7 @@ mesaGET(numero_mesa) {
 		let numeroMesa = numero_mesa
 		let mesa = this.mesas[numeroMesa-1]
 
-		return  {valor: "Los pedidos para la mesa: " + numeroMesa
+		return  {valor: mesa.toString() + "\n\n" + "Los pedidos para la mesa: " + numeroMesa
 		+ " son: \n" + mesa.mostrarPedidos(), code: 200};
 	}
 	catch(err) {
