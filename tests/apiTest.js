@@ -118,8 +118,9 @@ describe("GET /mesa/2", function () {
 			expect(response.text).to.be.a("string").to.include("8")
 		});
 });
-
-
+/******************************************************************************/
+/******************************Historia de Usuario 1***************************/
+/******************************************************************************/
 describe("PUT /mesa/2/pedirCuenta", function () {
 	it("Cambia el boolean de pedir cuenta a true", async function () {
 			const response = await supertest.put("/mesa/2/pedirCuenta")
@@ -127,6 +128,15 @@ describe("PUT /mesa/2/pedirCuenta", function () {
 			expect(response.text).to.be.a("string").to.include("Cuenta pedida")
 		});
 });
+
+describe("GET /mesa/2", function () {
+	it("Cambia el boolean de pedir cuenta a true", async function () {
+			const response = await supertest.get("/mesa/2")
+			expect(response.status).to.eql(200)
+			expect(response.text).to.be.a("string").to.include("Cuenta pedida")
+		});
+});
+
 
 
 describe("DELETE /mesa/2/pedido/1/eliminar", function () {
