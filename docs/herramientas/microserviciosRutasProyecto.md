@@ -16,12 +16,15 @@ Se ha mejorado bastante el código para que ahora tenga más sentido crear un pe
 
 Además como ejemplo se ha creado otro fichero [info.json](https://github.com/LCinder/Order-n-Go/blob/master/api/data/info.json) que contiene un ejemplo con las mesas, pedidos de las mismas, etc. como si se tratase de un instante concreto cualndo estuviera en funcionamiento el proyecto, todos los datos son inventados para que sirva como ejemplo.
 
-Se han creado también bastantes funcionalidades atendiendo a las **HU's,** creando una ruta por cada *HU* para satisfacerla. Las rutas se dividen en varias atendiendo a si realizamos peticiones para que devuelvan algo (*GET*) o si queremos añadir algo (*PUT*) o incluso si quereoms borrar algo (*DELETE.*)
-Cabe destacar que aunque a priori no tenga sentido ya que no existe persistencia de datos (ya que devolvemos siempre una cadena de texto), cuando si que exista no tendremos que ir cambiando el tipo de petición, sino que ya estarán bien establecidas.
+Entre las mejoras del código, para *mesa.js* se puede ver en el [siguiente commit](https://github.com/LCinder/Order-n-Go/commit/b596d73607f209288b21df834cef2a3f46f57874) por ejemplo entre otros ya que para adaptarse a los ficheros *.json* explicados antes y crear todas las rutas para la API ha sido necesario realizar multitud de cambios, al igual que en el archivo *pedido.js* que en el [siguiente commit](https://github.com/LCinder/Order-n-Go/commit/1f50af5def356a43cd6c80d073f63145f058c6cc) por ejemplo entre otros se crean diversos métodos para poder crear pedidos obteniéndolos de archivos *.json.* Por tanto, también se ha moodificado el código **atendiendo a las HU's** ya que para crear las rutas y el archivo **modelo.js** para la API era necesario reajustar el código.
 
 ---
 
 ## Rutas API
+
+Se han creado también bastantes funcionalidades atendiendo a las **HU's,** creando una ruta por cada *HU* para satisfacerla. Las rutas se dividen en varias atendiendo a si realizamos peticiones para que devuelvan algo (*GET*) o si queremos añadir algo (*PUT*) o incluso si quereoms borrar algo (*DELETE.*)
+Cabe destacar que aunque a priori no tenga sentido ya que no existe persistencia de datos (ya que devolvemos siempre una cadena de texto), cuando si que exista no tendremos que ir cambiando el tipo de petición, sino que ya estarán bien establecidas.
+
 
 Las rutas a probar son:
 Realizando peticiones **GET:**
@@ -170,11 +173,11 @@ Se han tenido en cuenta  **buenas prácticas** en cuanto a *microservicios* como
 
 - **Utilización de captura de errores** del tipo *try/catch* para evitar errores extraños, para ello hay que gestionar bien el error y haciendo referencia a otra buena práctica, devolver un mensaje y un código tanto si ha salido bien la petición como si ha habido error, por ejemplo en este último caso devolvemos mensaje *No existe mesa nº 2* en mi caso y error 404 que significa que no se ha encontrado.
 
+- **Realización de los** *middleware* basándonos en lo anterior para evitar cualquier error que aborte la ejecución del programa, ya que lo *atraparemos* devolviendo un código de error específico acorde al tipo de error.
+
+
+
 - **Separación de la lógica de negocio de las rutas para la API.** Ésto ya se ha comentado anteriormente pero es muy importante mantener una estructura MVC (Modelo-Vista-Controlador) para no tener que realizar modificaciones de las rutas en cualquier archivo olvidándonos de dónde habíamos puesto las rutas. En mi caso la funcionalidad se realiza en el archivo *modelo.js* que es llamado desde *rutas.js,* por lo que si hay algún error en el código sabré a dónde tengo que acudir para solventarlo.
-
--
-
-
 
 
 
