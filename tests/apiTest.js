@@ -1,5 +1,5 @@
 
-const supertest = require("supertest")("http://localhost:5000")
+const supertest = require("supertest")("0.0.0.0:5000")
 const fastify = require("./../src/routes.js")
 const expect = require("chai").expect
 
