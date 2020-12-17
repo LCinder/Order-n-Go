@@ -155,7 +155,7 @@ class Mesa {
 		+ "\nPersonas: " + this.personas + "\nCuenta: " + this.hayCuenta()
 		// + "\nPedidos: " + this.pedidos.forEach(elemento => console.log(elemento.toString() + "\n"))
 		+ "\nOcupada: " + this.estaOcupada()
-		+ "\nPagar por separado: " + this.hayPagarPorSeparado();
+		+ "\n" + this.hayPagarPorSeparado();
 	}
 
 	//incluirPedido(platoArg, tipoPlatoArg, cantidadArg, precioArg, ingredientesEvitarArg, comentarioOpcionalPlatoArg, usuarioArg) {
