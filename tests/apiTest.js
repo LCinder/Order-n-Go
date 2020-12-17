@@ -112,14 +112,14 @@ describe("PUT /mesa/2/usuarios/8", function () {
 });
 
 describe("GET /mesa/2", function () {
-	it("Comrprueba que el numero de personas de la mesa 2 es 8", async function () {
+	it("Comprueba que el numero de personas de la mesa 2 es 8", async function () {
 			const response = await supertest.get("/mesa/2")
 			expect(response.status).to.eql(200)
 			expect(response.text).to.be.a("string").to.include("8")
 		});
 });
 /******************************************************************************/
-/******************************Historia de Usuario 1***************************/
+/******************************Historia de Usuario 3***************************/
 /******************************************************************************/
 describe("PUT /mesa/2/pedirCuenta", function () {
 	it("Cambia el boolean de pedir cuenta a true", async function () {
@@ -130,20 +130,27 @@ describe("PUT /mesa/2/pedirCuenta", function () {
 });
 
 describe("GET /mesa/2", function () {
-	it("Cambia el boolean de pedir cuenta a true", async function () {
+	it("Obtiene el boolean de pedir cuenta a true", async function () {
 			const response = await supertest.get("/mesa/2")
 			expect(response.status).to.eql(200)
 			expect(response.text).to.be.a("string").to.include("Cuenta pedida")
 		});
 });
-
-
-
+/******************************************************************************/
+/******************************Historia de Usuario 7***************************/
+/******************************************************************************/
 describe("DELETE /mesa/2/pedido/1/eliminar", function () {
 	it("Elimina el pedido 1 de la mesa 2", async function () {
 			const response = await supertest.delete("/mesa/2/pedido/1/eliminar")
 			expect(response.status).to.eql(200)
 			expect(response.text).to.be.a("string").to.include("eliminado")
+		});
+});
+
+describe("GET /mesa/2/pedido/1", function () {
+	it("Obtiene el pedido 1 de la mesa 2 eliminado", async function () {
+			const response = await supertest.get("/mesa/2/pedido/1")
+			expect(response.status).to.eql(404)
 		});
 });
 
