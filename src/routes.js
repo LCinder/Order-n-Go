@@ -2,14 +2,13 @@
 const fastify = require("fastify")();
 const modelo = require("./modelo.js")
 const model = new modelo.Model()
-const port = 5000
 
 let mesas = [];
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/
 const start = async () => {
-	fastify.listen(port)
+	fastify.listen(5000)
 	model.iniciar()
 }
 /******************************************************************************/
@@ -37,7 +36,7 @@ fastify.get("/:numero_mesa/:idPedido", async (req, res) => {
 /******************************************************************************/
 /******************************Historia de Usuario 4 Cantidad******************/
 /******************************************************************************/
-fastify.post("/:numero_mesa/:idPedido/cantidad/:cantidad", async (req, res) => {
+fastify.put("/:numero_mesa/:idPedido/cantidad/:cantidad", async (req, res) => {
 	let result = model.cantidadPUT(req.params.numero_mesa, req.params.idPedido,
 	req.params.cantidad)
 
@@ -46,7 +45,7 @@ fastify.post("/:numero_mesa/:idPedido/cantidad/:cantidad", async (req, res) => {
 /******************************************************************************/
 /******************************Historia de Usuario 4 Id************************/
 /******************************************************************************/
-fastify.post("/:numero_mesa/:idPedido/id/:id", async (req, res) => {
+fastify.put("/:numero_mesa/:idPedido/id/:id", async (req, res) => {
 	let result = model.pedidoIdPUT(req.params.numero_mesa, req.params.idPedido,
 	req.params.id)
 
@@ -55,7 +54,7 @@ fastify.post("/:numero_mesa/:idPedido/id/:id", async (req, res) => {
 /******************************************************************************/
 /******************************Historia de Usuario 2***************************/
 /******************************************************************************/
-fastify.put("/:numero_mesa/nuevopedido/:idNuevoPlato/:cantidad", async (req, res) => {
+fastify.post("/:numero_mesa/nuevopedido/:idNuevoPlato/:cantidad", async (req, res) => {
 	let result = model.nuevoPedidoPUT(req.params.numero_mesa, req.params.idNuevoPlato,
 	req.params.cantidad)
 
@@ -64,7 +63,7 @@ fastify.put("/:numero_mesa/nuevopedido/:idNuevoPlato/:cantidad", async (req, res
 /******************************************************************************/
 /******************************Historia de Usuario 5************************/
 /******************************************************************************/
-fastify.post("/:numero_mesa/:idPedido/ingredientes/:ingredientes", async (req, res) => {
+fastify.put("/:numero_mesa/:idPedido/ingredientes/:ingredientes", async (req, res) => {
 	let result = model.cambiarIngredientesPUT(req.params.numero_mesa, req.params.idPedido,
 	req.params.ingredientes)
 
@@ -73,7 +72,7 @@ fastify.post("/:numero_mesa/:idPedido/ingredientes/:ingredientes", async (req, r
 /******************************************************************************/
 /******************************Historia de Usuario 1***************************/
 /******************************************************************************/
-fastify.post("/:numero_mesa/usuarios/:usuarios", async (req, res) => {
+fastify.put("/:numero_mesa/usuarios/:usuarios", async (req, res) => {
 	let result = model.cambiarUsuariosPUT(req.params.numero_mesa,
 	req.params.usuarios)
 
@@ -99,7 +98,7 @@ fastify.delete("/:numero_mesa/:idPedido/eliminar", async (req, res) => {
 /******************************************************************************/
 /******************************Historia de Usuario 8***************************/
 /******************************************************************************/
-fastify.post("/:numero_mesa/pagarPorSeparado", async (req, res) => {
+fastify.put("/:numero_mesa/pagarPorSeparado", async (req, res) => {
 	let result = model.pagarPorSeparadoPUT(req.params.numero_mesa)
 
 	res.send(result.valor).code(result.code);
