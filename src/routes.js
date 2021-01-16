@@ -8,7 +8,7 @@ const model = new modelo.Model()
 /******************************************************************************/
 const start = async () => {
 	let puerto = process.env.PORT || 5000
-	fastify.listen(puerto)
+	fastify.listen({port: puerto, host: "0.0.0.0"})
 	model.iniciar()
 }
 /******************************************************************************/
