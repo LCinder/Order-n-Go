@@ -8,7 +8,8 @@
   },
   "scripts": {
     "testsrc": "ava -v tests/index.test.js",
-    "test": "mocha tests/apiTest.js"
+    "test": "mocha tests/apiTest.js",
+    "start": "mocha tests/apiTest.js"
   },
   "repository": {
     "type": "git",
