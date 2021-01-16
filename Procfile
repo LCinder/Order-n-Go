@@ -1,1 +1,1 @@
-web: npm start -p 5000
+web: npm start
