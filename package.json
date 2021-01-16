@@ -9,7 +9,7 @@
   "scripts": {
     "testsrc": "ava -v tests/index.test.js",
     "test": "mocha tests/apiTest.js",
-    "start": "mocha tests/apiTest.js"
+    "start": "node src/routes.js"
   },
   "repository": {
     "type": "git",
