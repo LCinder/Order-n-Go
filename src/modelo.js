@@ -2,6 +2,10 @@
 const datos = require("../api/data/info.json")
 const mesaClass = require("./mesa.js")
 const pedido = require("./pedido.js")
+
+const uri = process.env.MONGODB_URI
+const {MongoClient} = require("mongodb")
+const client = new MongoClient("mongodb+srv://lcinder:2mmwvba7@cluster0.cbipo.mongodb.net/mesas?retryWrites=true", {useUnifiedTopology: true})
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/
@@ -28,6 +32,7 @@ iniciar() {
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/
+
 mesaGET(numero_mesa) {
 	try {
 		let numeroMesa = numero_mesa
@@ -67,12 +72,22 @@ cantidadPUT(numero_mesa, idPedidoArg, cantidadArg) {
 		let idPedido = idPedidoArg
 		let cantidad = cantidadArg
 
-		mesa.modificarPedidoCantidad(idPedido, cantidad);
+		client.connect((err) => {
+		const db = client.db("mesas")
+			let mesaCursor = db.collection("mesa" + numero_mesa)
 
-		return  {valor: "El nuevo pedido " + idPedido + " para la mesa: "
-		+ mesa.getMesa() + " es: \n"
-		+ mesa.mostrarPedido(idPedido), code: 200};
+			const m = mesaCursor.updateOne({"pedidos.platoId": String(idPedido)},
+			{"$set": {"pedidos.$.cantidad": String(cantidad)}}, function(err, result) {
+				client.close()
+			});
+		});
 
+		//mesa.modificarPedidoCantidad(idPedido, cantidad);
+
+		// return  {valor: "El nuevo pedido " + idPedido + " para la mesa: "
+		// + mesa.getMesa() + " es: \n"
+		// + mesa.mostrarPedido(idPedido), code: 200};
+		return  {valor: "actualizado " + idPedido, code: 200};
 	}
 	catch(err) {
 		return  {valor: "Cantidad no aplicable\n\n" + err, code: 404};
