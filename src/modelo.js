@@ -136,10 +136,31 @@ nuevoPedidoPUT(numero_mesa, idNuevoPlato, cantidadArg) {
 		let idPedido = idNuevoPlato
 		let cantidad = cantidadArg
 
-		mesa.incluirPedido(idPedido, cantidad)
+		client.connect((err) => {
+		const db = client.db("mesas")
+			let mesaCursor = db.collection("mesa" + numero_mesa)
+			const p =  {
+				"platoId": String(idPedido),
+				"tipoPlato":"Principal",
+				"cantidad": String(cantidad),
+				"precio":"20",
+				"ingredientesEvitar":"",
+				"comentarioOpcionalPlato":"",
+				"usuario":"1"
+			}
 
-		return  {valor: "El nuevo pedido incluido para la mesa: "
-		+ mesa.getMesa() + " es: \n" + mesa.mostrarPedido(idPedido), code: 201};
+			const m = mesaCursor.updateOne({},
+			{"$push": {pedidos: p}}, function(err, result) {
+				client.close()
+			});
+		});
+
+		return  {valor: "actualizado " + idPedido, code: 201};
+
+		// mesa.incluirPedido(idPedido, cantidad)
+		//
+		// return  {valor: "El nuevo pedido incluido para la mesa: "
+		// + mesa.getMesa() + " es: \n" + mesa.mostrarPedido(idPedido), code: 201};
 	}
 	catch(err) {
 		return  {valor: "El nuevo pedido no se ha podido crear\n\n" + err, code: 404};
