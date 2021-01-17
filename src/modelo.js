@@ -268,10 +268,20 @@ eliminarPedidoDELETE(numero_mesa, idPedidoArg) {
 		let mesa = this.mesas[numeroMesa-1]
 		let idPedido = idPedidoArg
 
-		mesa.borrarPedido(idPedido);
+		client.connect((err) => {
+		const db = client.db("mesas")
+			let mesaCursor = db.collection("mesa" + numero_mesa)
 
-		return  {valor: "El pedido " + idPedido + " ha sido eliminado para la mesa: "
-		+ mesa.getMesa(), code: 200};
+			const m = mesaCursor.updateOne({"pedidos.platoId": String(idPedido)},
+			{"$pull": {"pedidos": {platoId: String(idPedido)}}}, function(err, result) {
+				client.close()
+			});
+		});
+		return  {valor: "borrado ", code: 200};
+		// mesa.borrarPedido(idPedido);
+		//
+		// return  {valor: "El pedido " + idPedido + " ha sido eliminado para la mesa: "
+		// + mesa.getMesa(), code: 200};
 	}
 	catch(err) {
 		return  {valor: "Pedido " + idPedido + " no existe\n\n" + err, code: 404};
