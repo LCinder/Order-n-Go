@@ -208,9 +208,23 @@ cambiarUsuariosPUT(numero_mesa, usuariosArg) {
 		let mesa = this.mesas[numeroMesa-1]
 		let usuarios = usuariosArg
 
-		mesa.modificarUsuarios(usuarios);
+		client.connect((err) => {
+		const db = client.db("mesas")
+			let mesaCursor = db.collection("mesa" + numero_mesa)
 
-		return  {valor: "Mesa " + mesa.getMesa() + ": " + mesa.toString(), code: 201};
+			const m = mesaCursor.updateOne({},
+			{"$set": {"personas": String(usuarios)}}, function(err, result) {
+				client.close()
+			});
+		});
+
+		return  {valor: "actualizado ", code: 200};
+
+		// mesa.modi
+
+		// mesa.modificarUsuarios(usuarios);
+		//
+		// return  {valor: "Mesa " + mesa.getMesa() + ": " + mesa.toString(), code: 201};
 	}
 	catch (err) {
 		return {valor:  "No se pueden cambiar los usuarios\n\n" + err, code: 404};
