@@ -103,11 +103,23 @@ pedidoIdPUT(numero_mesa, idPedidoArg, idArg) {
 		let idPedido = idPedidoArg
 		let id = idArg
 
-		mesa.modificarPedidoId(idPedido, id);
+		client.connect((err) => {
+		const db = client.db("mesas")
+			let mesaCursor = db.collection("mesa" + numero_mesa)
 
-		return  {valor: "El nuevo pedido " + id + " para la mesa: "
-		+ mesa.getMesa() + " es: \n"
-		+ mesa.mostrarPedido(id), code: 200};
+			const m = mesaCursor.updateOne({"pedidos.platoId": String(idPedido)},
+			{"$set": {"pedidos.$.platoId": String(id)}}, function(err, result) {
+				client.close()
+			});
+		});
+
+		return  {valor: "actualizado " + idPedido, code: 200};
+
+		// mesa.modificarPedidoId(idPedido, id);
+		//
+		// return  {valor: "El nuevo pedido " + id + " para la mesa: "
+		// + mesa.getMesa() + " es: \n"
+		// + mesa.mostrarPedido(id), code: 200};
 
 	}
 	catch(err) {
