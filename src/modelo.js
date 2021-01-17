@@ -238,10 +238,22 @@ pedirCuentaPUT(numero_mesa) {
 		let numeroMesa = numero_mesa
 		let mesa = this.mesas[numeroMesa-1]
 
-		mesa.pedirCuenta();
+		client.connect((err) => {
+		const db = client.db("mesas")
+			let mesaCursor = db.collection("mesa" + numero_mesa)
 
-		return  {valor: "Cuenta Pedida para la mesa " + mesa.getMesa() + ": "
-		+ mesa.toString(), code: 200};
+			const m = mesaCursor.updateOne({},
+			{"$set": {"pedirCuenta": "true"}}, function(err, result) {
+				client.close()
+			});
+		});
+
+		return  {valor: "actualizado ", code: 200};
+
+		// mesa.pedirCuenta();
+		//
+		// return  {valor: "Cuenta Pedida para la mesa " + mesa.getMesa() + ": "
+		// + mesa.toString(), code: 200};
 	}
 	catch (err) {
 		return {valor:  "No se puede pedir la cuenta\n\n" + err, code: 404};
