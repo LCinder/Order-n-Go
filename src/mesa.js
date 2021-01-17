@@ -153,7 +153,7 @@ class Mesa {
 	toString() {
 		return "Mesa: " + this.mesa + "\n---------------------\n"
 		+ "\nPersonas: " + this.personas + "\nCuenta: " + this.hayCuenta()
-		// + "\nPedidos: " + this.pedidos.forEach(elemento => console.log(elemento.toString() + "\n"))
+	 	+ "\nPedidos: " + this.pedidos.toString() + "\n"
 		+ "\nOcupada: " + this.estaOcupada()
 		+ "\n" + this.hayPagarPorSeparado();
 	}
@@ -278,6 +278,12 @@ class Mesa {
 
 	pedirCuenta() {
 		this.setCuenta(true)
+	}
+
+	convertJSONTOMesa(jsonOb) {
+		this.setMesa(jsonOb.mesaN);
+		this.setPersonas(jsonOb.personas);
+		this.incluirPedidoFromJSON(jsonOb.pedidos[0])
 	}
 	/******************************************************************************/
 	/******************************************************************************/
