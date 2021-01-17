@@ -2,8 +2,8 @@
 const fastify = require("fastify")();
 const modelo = require("./modelo.js")
 const uri = process.env.MONGODB_URI
-const MongoDB = require("mongodb")
-const client = new MongoDB(uri)
+const {MongoClient} = require("mongodb")
+const client = new MongoClient(uri)
 const model = new modelo.Model()
 
 /******************************************************************************/
@@ -14,7 +14,7 @@ const start = async () => {
 	fastify.listen({port: puerto, host: "0.0.0.0"})
 	model.iniciar()
 	await client.connect();
-	const db = client.db("orderngoDB")
+	const db = client.db("mesas")
 }
 /******************************************************************************/
 /******************************************************************************/
@@ -28,42 +28,48 @@ fastify.get("/status", async (req, res) => {
 fastify.get("/:numero_mesa", async (req, res) => {
 	let result = model.mesaGET(req.params.numero_mesa)
 
-	let mesa1 = db.collection("mesa1")
+	try {
+		let mesa1 = db.collection("mesa1")
 
-	let prueba = {
-	 "mesaN": "1",
-	 "personas": "2",
-	 "cuenta": "false",
-	 "ocupada": "true",
-	 "pedidos": [
-		 {
-			 "platoId": "10",
-			 "tipoPlato": "Principal",
-			 "cantidad": "1",
-			 "precio": "20",
-			 "ingredientesEvitar": "",
-			 "comentarioOpcionalPlato": "Para compartir",
-			 "usuario": "1"
-		 },
-		 {
-			 "platoId": "53",
-			 "tipoPlato": "Secundario",
-			 "cantidad": "2",
-			 "precio": "10",
-			 "ingredientesEvitar": "",
-			 "comentarioOpcionalPlato": "",
-			 "usuario": "1"
-		 }
-	 ]
+		let prueba = {
+		 "mesaN": "0",
+		 "personas": "2",
+		 "cuenta": "false",
+		 "ocupada": "true",
+		 "pedidos": [
+			 {
+				 "platoId": "11",
+				 "tipoPlato": "Principal",
+				 "cantidad": "1",
+				 "precio": "20",
+				 "ingredientesEvitar": "",
+				 "comentarioOpcionalPlato": "Para compartir",
+				 "usuario": "1"
+			 },
+			 {
+				 "platoId": "35",
+				 "tipoPlato": "Secundario",
+				 "cantidad": "2",
+				 "precio": "10",
+				 "ingredientesEvitar": "",
+				 "comentarioOpcionalPlato": "",
+				 "usuario": "1"
+			 }
+		 ]
+		}
+
+		const m = await mesa1.insertOne(prueba)
+
+	} catch(err) {
+
 	}
 
-	const m = col.insertOne(mesa1)
+	finally {
+		await client.close()
+	}
 
 	res.send(result.valor).code(result.code);
 
-	// finally {
-	// 	await client.close()
-	// }
 });
 /******************************************************************************/
 /******************************Historia de Usuario 9 (Pedido especifico)*******/
