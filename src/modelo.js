@@ -176,11 +176,23 @@ cambiarIngredientesPUT(numero_mesa, idPedidoArg, ingredientesArg) {
 		let idPedido = idPedidoArg
 		let ingredientes = ingredientesArg
 
-		mesa.modificarPedidoIngredientes(idPedido, ingredientes);
+		client.connect((err) => {
+		const db = client.db("mesas")
+			let mesaCursor = db.collection("mesa" + numero_mesa)
 
-		return  {valor: "El pedido " + idPedido + " para la mesa: "
-		+ mesa.getMesa() + " es: \n"
-		+ mesa.mostrarPedido(idPedido), code: 200};
+			const m = mesaCursor.updateOne({"pedidos.platoId": String(idPedido)},
+			{"$set": {"pedidos.$.ingredientesEvitar": String(ingredientes)}}, function(err, result) {
+				client.close()
+			});
+		});
+
+		return  {valor: "actualizado " + idPedido, code: 200};
+
+		// mesa.modificarPedidoIngredientes(idPedido, ingredientes);
+		//
+		// return  {valor: "El pedido " + idPedido + " para la mesa: "
+		// + mesa.getMesa() + " es: \n"
+		// + mesa.mostrarPedido(idPedido), code: 200};
 
 	}
 	catch (err) {
