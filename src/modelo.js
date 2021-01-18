@@ -59,7 +59,7 @@ async mesaGET(numero_mesa) {
 		return  {valor: "Mesa no existe\n\n" + err, code: 404};
 	}
 	finally {
-		client.close();
+		//client.close();
 	}
 }
 /******************************************************************************/
@@ -97,7 +97,7 @@ async pedidoGET(numero_mesa, idPedidoArg) {
 		return  {valor: "El pedido no existe\n\n" + err, code: 404};
 	}
 	finally {
-		client.close();
+		//client.close();
 	}
 }
 /******************************************************************************/
@@ -116,7 +116,7 @@ cantidadPUT(numero_mesa, idPedidoArg, cantidadArg) {
 
 			const m = mesaCursor.updateOne({"pedidos.platoId": String(idPedido)},
 			{"$set": {"pedidos.$.cantidad": String(cantidad)}}, function(err, result) {
-				client.close()
+				//client.close()
 			});
 		});
 
@@ -147,7 +147,7 @@ pedidoIdPUT(numero_mesa, idPedidoArg, idArg) {
 
 			const m = mesaCursor.updateOne({"pedidos.platoId": String(idPedido)},
 			{"$set": {"pedidos.$.platoId": String(id)}}, function(err, result) {
-				client.close()
+				//client.close()
 			});
 		});
 
@@ -189,7 +189,7 @@ nuevoPedidoPUT(numero_mesa, idNuevoPlato, cantidadArg) {
 
 			const m = mesaCursor.updateOne({},
 			{"$push": {pedidos: p}}, function(err, result) {
-				client.close()
+				//client.close()
 			});
 		});
 
@@ -220,7 +220,7 @@ cambiarIngredientesPUT(numero_mesa, idPedidoArg, ingredientesArg) {
 
 			const m = mesaCursor.updateOne({"pedidos.platoId": String(idPedido)},
 			{"$set": {"pedidos.$.ingredientesEvitar": String(ingredientes)}}, function(err, result) {
-				client.close()
+				//client.close()
 			});
 		});
 
@@ -252,7 +252,7 @@ cambiarUsuariosPUT(numero_mesa, usuariosArg) {
 
 			const m = mesaCursor.updateOne({},
 			{"$set": {"personas": String(usuarios)}}, function(err, result) {
-				client.close()
+				//client.close()
 			});
 		});
 
@@ -282,7 +282,7 @@ pedirCuentaPUT(numero_mesa) {
 
 			const m = mesaCursor.updateOne({},
 			{"$set": {"pedirCuenta": "true"}}, function(err, result) {
-				client.close()
+				//client.close()
 			});
 		});
 
@@ -312,7 +312,7 @@ eliminarPedidoDELETE(numero_mesa, idPedidoArg) {
 
 			const m = mesaCursor.updateOne({"pedidos.platoId": String(idPedido)},
 			{"$pull": {"pedidos": {platoId: String(idPedido)}}}, function(err, result) {
-				client.close()
+				//client.close()
 			});
 		});
 		return  {valor: "borrado ", code: 200};
