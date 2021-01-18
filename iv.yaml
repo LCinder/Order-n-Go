@@ -8,3 +8,12 @@ test:
 taskfile: package.json
 URL: https://order-n-go.vercel.app/api/test
 make: npm
+PaaS: https://orderngo.herokuapp.com
+  recurso:
+    nombre: 1/nuevopedido/101/2
+    metodo: POST
+    payload:
+      platoId: "101"
+      cantidad: "2"
+    IDs:
+      - "101"
