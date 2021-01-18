@@ -5,7 +5,7 @@ const pedido = require("./pedido.js")
 
 const uri = process.env.MONGODB_URI
 const {MongoClient} = require("mongodb")
-const client = new MongoClient("mongodb+srv://lcinder:2mmwvba7@cluster0.cbipo.mongodb.net/mesas?retryWrites=true", {useUnifiedTopology: true}, {userNewUrlParser: true})
+const client = new MongoClient(uri, {useUnifiedTopology: true}, {userNewUrlParser: true})
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/

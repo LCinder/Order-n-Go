@@ -86,8 +86,8 @@ Archivo con [todo lo relacionado a Serverless](https://github.com/LCinder/Order-
 
 ## :cloud: PaaS :cloud:
 
-- Explicación del [despliegue en PaaS](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/herokuPaaS#.md)
-- Configuración [despliegue automático](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/herokuPaaS#.md)
-- [Funcionamiento correcto del Paas](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/herokuPaaS#.md)
-- [Buenas prácticas en el diseño de la API](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/herokuPaaS#.md) y correspondencia con HU's
-- Uso de [BBDD y logs dentro del PaaS](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/herokuPaaS#.md) junto con pruebas
+- Explicación del [despliegue en PaaS](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/herokuPaaS.md#explicaci%C3%B3n-del-despliegue-en-paas)
+- Configuración [despliegue automático](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/herokuPaaS.md#configuración-despliegue-automático)
+- [Funcionamiento correcto del Paas](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/herokuPaaS.md#funcionamiento-correcto-del-paas)
+- [Buenas prácticas en el diseño de la API](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/herokuPaaS.md#buenas-prácticas-en-el-diseño-de-la-api-y-correspondencia-con-hus) y correspondencia con HU's
+- Uso de [BBDD y logs dentro del PaaS](https://github.com/LCinder/Order-n-Go/blob/master/docs/herramientas/herokuPaaS.md#uso-de-bbdd-y-logs-dentro-del-paas-junto-con-pruebas) junto con pruebas

@@ -73,15 +73,6 @@ describe("PUT /1/10/id/35 Reversion", function () {
 			expect(response.text).to.be.a("string").to.include("actualizado")
 		});
 });
-
-describe("GET /1/35 Reversion", function () {
-	it("Volvemos a obtener el id del pedido cambiado de 10 a 35", async function () {
-			const response = await supertest.get("/1/35")
-			expect(response.status).to.eql(200)
-			expect(response.text).to.be.a("string").to.include("Id Plato: 35")
-			expect(response.text).to.be.a("string").to.not.include("Id Plato: 10")
-		});
-});
 /******************************************************************************/
 /******************************Historia de Usuario 2***************************/
 /******************************************************************************/
@@ -108,6 +99,17 @@ describe("GET /1/35", function () {
 			const response = await supertest.get("/1/35")
 			expect(response.status).to.eql(200)
 			expect(response.text).to.be.a("string").to.include("Curry,Otro")
+		});
+});
+/******************************************************************************/
+/******************************Historia de Usuario 4 Reversion*****************/
+/******************************************************************************/
+describe("GET /1/35 Reversion", function () {
+	it("Volvemos a obtener el id del pedido cambiado de 10 a 35", async function () {
+			const response = await supertest.get("/1/35")
+			expect(response.status).to.eql(200)
+			expect(response.text).to.be.a("string").to.include("Id Plato: 35")
+			expect(response.text).to.be.a("string").to.not.include("Id Plato: 10")
 		});
 });
 /******************************************************************************/
