@@ -54,6 +54,96 @@ Ahora se mostrarán las diferentes peticiones atendiendo a las HU's y cómo se m
 
 
 
+- **Historia de Usuario 1:** Como usuario, quiero seleccionar el nº de personas a ocupar en mesa
+		Realizamos la ptición directamente a la URI de Heroku para cambiar el objeto Personas de la *BBDD*:
+
+		`curl --request PUT https://orderngo.herokuapp.com/1/usuarios/8`
+
+		![herokuHU1](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/herokuHU1.PNG)
+
+		Si ahora realizamos una petición **GET** de la mesa 1 obtenemos que el nº de personas ha sido cambiado.
+
+		![herokuHU1_1](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/herokuHU1_1.PNG)
+
+		Esto se realiza para todas las peticiones y cambios que se apliquen a la *BBDD* y luego se puede realizar **GET** para comprobar que todo funciona.
+
+- **Historia de Usuario 2:** Como usuario quiero poder realizar cualquier pedido
+
+	`curl --request POST https://orderngo.herokuapp.com/1/nuevopedido/100/8`
+
+	![herokuHU2](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/herokuHU2.PNG)
+
+	`curl --request GET https://orderngo.herokuapp.com/1`
+
+	![herokuHU2_1](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/herokuHU2_1.PNG)
+
+
+- **Historia de Usuario 3:** Como usuario quiero pagar la cuenta
+
+	`curl --request PUT https://orderngo.herokuapp.com/1/pedirCuenta`
+
+
+	![herokuHU3](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/herokuHU3.PNG)
+
+	`curl --request GET https://orderngo.herokuapp.com/1`
+
+	![herokuHU3_1](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/herokuHU3_1.PNG)
+
+
+- **Historia de Usuario 4:** Como usuario quiero poder cambiar los platos una vez realizado el pedido
+
+	`curl --request PUT https://orderngo.herokuapp.com/1/90/id/10`
+	![herokuHU4](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/herokuHU4.PNG)
+
+	`curl --request GET https://orderngo.herokuapp.com/1/10`
+
+	![herokuHU4_1](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/herokuHU4_1.PNG)
+
+	Cantidad del mismo: `curl --request PUT https://orderngo.herokuapp.com/1/10/cantidad/8`
+
+	![herokuHU41](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/herokuHU41.PNG)
+
+	`curl --request GET https://orderngo.herokuapp.com/1/10`
+
+	![herokuHU41_1](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/herokuHU41_1.PNG)
+
+
+- **Historia de Usuario 5:** Como usuario quiero cambiar los ingredientes de los platos a elegir
+
+	`curl --request PUT https://orderngo.herokuapp.com/1/10/ingredientes/Curry,Otro`
+
+	![herokuHU5](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/herokuHU5.PNG)
+
+	`curl --request GET https://orderngo.herokuapp.com/1/10`
+
+	![herokuHU5_1](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/herokuHU5_1.PNG)
+
+
+- **Historia de Usuario 7:** Como usuario quiero eliminar pedidos (platos) incluso después de haberlos seleccionado
+
+	`curl --request DELETE https://orderngo.herokuapp.com/1/10/eliminar`
+
+	![herokuHU7](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/herokuHU7.PNG)
+
+	`curl --request GET https://orderngo.herokuapp.com/1/10`
+
+	![herokuHU7_1](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/herokuHU7_1.PNG)
+
+
+- **Historia de Usuario 8:** Como usuario quiero pagar por separado
+
+	`curl --request PUT https://orderngo.herokuapp.com/1/pagarPorSeparado`
+
+	![herokuHU8](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/herokuHU8.PNG)
+
+
+
+- **Historia de Usuario 9:** Como usuario quiero saber qué pedidos he realizado
+
+	`curl --request GET https://orderngo.herokuapp.com/1/35`
+
+	![herokuHU9](https://github.com/LCinder/Order-n-Go/blob/master/docs/img/herokuHU9.PNG)
+
 ---
 
 
