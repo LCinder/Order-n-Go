@@ -8,7 +8,7 @@
   },
   "scripts": {
     "testsrc": "ava -v tests/index.test.js",
-    "test": "mocha tests/apiTest.js",
+    "test": "mocha tests/apiTest.js --timeout 10000",
     "start": "node src/routes.js"
   },
   "repository": {
