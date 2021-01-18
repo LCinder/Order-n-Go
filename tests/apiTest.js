@@ -3,25 +3,25 @@ const supertest = require("supertest")("0.0.0.0:5000")
 const fastify = require("./../src/routes.js")
 const expect = require("chai").expect
 
-// describe("GET /", function () {
-// 	it("Deberia devolver string Funciona", async function () {
-// 			const response = await supertest.get("/")
-// 			expect(response.status).to.eql(200)
-// 			expect(response.text).to.be.a("string").to.include("Funciona")
-// 		});
-// });
-
-describe("GET /2", function () {
-	it("Muestra informacion mesa 2", async function () {
-			const response = await supertest.get("/2")
+describe("GET /status", function () {
+	it("Deberia devolver string Funciona", async function () {
+			const response = await supertest.get("/status")
 			expect(response.status).to.eql(200)
-			expect(response.text).to.be.a("string").to.include("Plato")
+			expect(response.text).to.be.a("string").to.include("OK")
 		});
 });
 
-describe("GET /2/1", function () {
-	it("Muestra informacion pedido 1 de mesa 2", async function () {
-			const response = await supertest.get("/2/1")
+describe("GET /1", function () {
+	it("Muestra informacion mesa 1", async function () {
+			const response = await supertest.get("/1")
+			expect(response.status).to.eql(200)
+			expect(response.text).to.be.a("string").to.include("Mesa")
+		});
+});
+
+describe("GET /1/35", function () {
+	it("Muestra informacion pedido 35 de mesa 1", async function () {
+			const response = await supertest.get("/1/35")
 			expect(response.status).to.eql(200)
 			expect(response.text).to.be.a("string").to.include("Id Plato")
 		});
@@ -29,17 +29,17 @@ describe("GET /2/1", function () {
 /******************************************************************************/
 /******************************Historia de Usuario 4 Cantidad******************/
 /******************************************************************************/
-describe("PUT /2/1/cantidad/8", function () {
-	it("Cambia la cantidad del pedido 1 de 1 a 8", async function () {
-			const response = await supertest.put("/2/1/cantidad/8")
+describe("PUT /1/35/cantidad/8", function () {
+	it("Cambia la cantidad del pedido 35 de 1 a 8", async function () {
+			const response = await supertest.put("/1/35/cantidad/8")
 			expect(response.status).to.eql(200)
-			expect(response.text).to.be.a("string").to.include("8")
+			expect(response.text).to.include("actualizado")
 		});
 });
 
-describe("GET /2/1/cantidad/8", function () {
-	it("Obtiene la cantidad del pedido 1 cambiado de 1 a 8", async function () {
-			const response = await supertest.get("/2/1")
+describe("GET /1/35/cantidad/8", function () {
+	it("Obtiene la cantidad del pedido 35 cambiado de 1 a 8", async function () {
+			const response = await supertest.get("/1/35")
 			expect(response.status).to.eql(200)
 			expect(response.text).to.be.a("string").to.include("8")
 		});
@@ -47,56 +47,65 @@ describe("GET /2/1/cantidad/8", function () {
 /******************************************************************************/
 /******************************Historia de Usuario 4 Id************************/
 /******************************************************************************/
-describe("PUT /2/1/id/8", function () {
-	it("Cambia el id del pedido 1 de 1 a 8", async function () {
-			const response = await supertest.put("/2/1/id/8")
+describe("PUT /1/35/id/10", function () {
+	it("Cambia el id del pedido 35 a 10", async function () {
+			const response = await supertest.put("/1/35/id/10")
 			expect(response.status).to.eql(200)
-			expect(response.text).to.be.a("string").to.include("8")
-			expect(response.text).to.be.a("string").to.not.include("Id Plato: 1")
+			expect(response.text).to.be.a("string").to.include("actualizado")
 		});
 });
 
-describe("GET /2/8", function () {
-	it("Obtiene el id del pedido cambiado de 1 a 8", async function () {
-			const response = await supertest.get("/2/8")
+describe("GET /1/10", function () {
+	it("Obtiene el id del pedido cambiado de 35 a 10", async function () {
+			const response = await supertest.get("/1/10")
 			expect(response.status).to.eql(200)
-			expect(response.text).to.be.a("string").to.include("Id Plato: 8")
-			expect(response.text).to.be.a("string").to.not.include("Id Plato: 1")
+			expect(response.text).to.be.a("string").to.include("Id Plato: 10")
+			expect(response.text).to.be.a("string").to.not.include("Id Plato: 35")
+		});
+});
+/******************************************************************************/
+/******************************Historia de Usuario 4 Reversion*****************/
+/******************************************************************************/
+describe("PUT /1/10/id/35 Reversion", function () {
+	it("Cambiamos de nuevo el id del pedido 10 a 35 para dejarlo como estaba", async function () {
+			const response = await supertest.put("/1/10/id/35")
+			expect(response.status).to.eql(200)
+			expect(response.text).to.be.a("string").to.include("actualizado")
+		});
+});
+
+describe("GET /1/35 Reversion", function () {
+	it("Volvemos a obtener el id del pedido cambiado de 10 a 35", async function () {
+			const response = await supertest.get("/1/35")
+			expect(response.status).to.eql(200)
+			expect(response.text).to.be.a("string").to.include("Id Plato: 35")
+			expect(response.text).to.be.a("string").to.not.include("Id Plato: 10")
 		});
 });
 /******************************************************************************/
 /******************************Historia de Usuario 2***************************/
 /******************************************************************************/
-describe("POST /2/nuevopedido/100/8", function () {
+describe("POST /1/nuevopedido/100/8", function () {
 	it("Crea un nuevo pedido con id 100 y cantidad 8", async function () {
-			const response = await supertest.post("/2/nuevopedido/100/8")
+			const response = await supertest.post("/1/nuevopedido/100/8")
 			expect(response.status).to.eql(200)
-			expect(response.text).to.be.a("string").to.include("100").to.include("8")
-		});
-});
-
-describe("GET /2/100", function () {
-	it("Compueba el nuevo pedido con id 100 y cantidad 8", async function () {
-			const response = await supertest.get("/2/100")
-			expect(response.status).to.eql(200)
-			expect(response.text).to.be.a("string").to.include("Id Plato: 100")
-			.to.include("Cantidad: 8")
+			expect(response.text).to.be.a("string").to.include("actualizado");
 		});
 });
 /******************************************************************************/
 /******************************Historia de Usuario 5************************/
 /******************************************************************************/
-describe("PUT /2/100/ingredientes/Curry,Otro", function () {
+describe("PUT /1/35/ingredientes/Curry,Otro", function () {
 	it("Incluye en el pedido 8 los ingredientes a evitar curry y otro", async function () {
-			const response = await supertest.put("/2/100/ingredientes/Curry,Otro")
+			const response = await supertest.put("/1/35/ingredientes/Curry,Otro")
 			expect(response.status).to.eql(200)
-			expect(response.text).to.be.a("string").to.include("Curry,Otro")
+			expect(response.text).to.be.a("string").to.include("actualizado")
 		});
 });
 
-describe("GET /2/100", function () {
+describe("GET /1/35", function () {
 	it("Comprueba en el pedido 8 los ingredientes a evitar curry y otro", async function () {
-			const response = await supertest.get("/2/100")
+			const response = await supertest.get("/1/35")
 			expect(response.status).to.eql(200)
 			expect(response.text).to.be.a("string").to.include("Curry,Otro")
 		});
@@ -104,16 +113,16 @@ describe("GET /2/100", function () {
 /******************************************************************************/
 /******************************Historia de Usuario 1***************************/
 /******************************************************************************/
-describe("PUT /2/usuarios/8", function () {
-	it("Cambia el numero de personas de la mesa 2 a 8", async function () {
-			const response = await supertest.put("/2/usuarios/8")
+describe("PUT /1/usuarios/8", function () {
+	it("Cambia el numero de personas de la mesa 1 a 8", async function () {
+			const response = await supertest.put("/1/usuarios/8")
 			expect(response.status).to.eql(200)
 		});
 });
 
-describe("GET /2", function () {
-	it("Comprueba que el numero de personas de la mesa 2 es 8", async function () {
-			const response = await supertest.get("/2")
+describe("GET /1", function () {
+	it("Comprueba que el numero de personas de la mesa 1 es 8", async function () {
+			const response = await supertest.get("/1")
 			expect(response.status).to.eql(200)
 			expect(response.text).to.be.a("string").to.include("Personas: 8")
 		});
@@ -121,76 +130,65 @@ describe("GET /2", function () {
 /******************************************************************************/
 /******************************Historia de Usuario 3***************************/
 /******************************************************************************/
-describe("PUT /2/pedirCuenta", function () {
+describe("PUT /1/pedirCuenta", function () {
 	it("Cambia el boolean de pedir cuenta a true", async function () {
-			const response = await supertest.put("/2/pedirCuenta")
+			const response = await supertest.put("/1/pedirCuenta")
+			expect(response.status).to.eql(200)
+			expect(response.text).to.be.a("string").to.include("actualizado")
+		});
+});
+
+describe("GET /1", function () {
+	it("Obtiene el boolean de pedir cuenta a true", async function () {
+			const response = await supertest.get("/1")
 			expect(response.status).to.eql(200)
 			expect(response.text).to.be.a("string").to.include("Cuenta pedida")
 		});
 });
-
-describe("GET /2", function () {
-	it("Obtiene el boolean de pedir cuenta a true", async function () {
-			const response = await supertest.get("/2")
+/******************************************************************************/
+/******************************Historia de Usuario 2***************************/
+/******************************************************************************/
+describe("GET /1/100", function () {
+	it("Compueba el nuevo pedido con id 100 y cantidad 8", async function () {
+			const response = await supertest.get("/1/100")
 			expect(response.status).to.eql(200)
-			expect(response.text).to.be.a("string").to.include("Cuenta pedida")
+			expect(response.text).to.be.a("string").to.include("Id Plato: 100")
+			.to.include("Cantidad: 8")
 		});
 });
 /******************************************************************************/
 /******************************Historia de Usuario 7***************************/
 /******************************************************************************/
-describe("DELETE /2/1/eliminar", function () {
+describe("DELETE /1/100/eliminar", function () {
 	it("Elimina el pedido 1 de la mesa 2", async function () {
-			const response = await supertest.delete("/2/1/eliminar")
+			const response = await supertest.delete("/1/100/eliminar")
 			expect(response.status).to.eql(200)
-			expect(response.text).to.be.a("string").to.include("eliminado")
+			expect(response.text).to.be.a("string").to.include("borrado")
 		});
 });
 
-describe("GET /2/1", function () {
+describe("GET /1", function () {
 	it("Obtiene el pedido 1 de la mesa 2 eliminado", async function () {
-			const response = await supertest.get("/2/1")
+			const response = await supertest.get("/1")
 			expect(response.status).to.eql(200)
-			expect(response.text).to.be.a("string").to.include("No existe")
+			expect(response.text).to.be.a("string").to.not.include("100")
 		});
 });
 /******************************************************************************/
 /******************************Historia de Usuario 8***************************/
 /******************************************************************************/
-describe("PUT /2/pagarPorSeparado", function () {
+describe("PUT /1/pagarPorSeparado", function () {
 	it("Devuelve que cada usuario quiere pagar por separado que debe pagar cada usuario", async function () {
-			const response = await supertest.put("/2/pagarPorSeparado")
+			const response = await supertest.put("/1/pagarPorSeparado")
 			expect(response.status).to.eql(200)
 			expect(response.text).to.be.a("string").to.include("usuario")
 		});
 });
 
-describe("GET /2", function () {
+describe("GET /1", function () {
 	it("Obtiene pagarPorSeparado true", async function () {
-			const response = await supertest.get("/2")
+			const response = await supertest.get("/1")
 			expect(response.status).to.eql(200)
 			expect(response.text).to.be.a("string").to.include("Pagar por separado si")
-		});
-});
-/******************************************************************************/
-/******************************Historia de Usuario 8***************************/
-/******************************************************************************/
-describe("PUT /2/pagarPorSeparado", function () {
-	it("Devuelve la cantidad que debe pagar cada usuario", async function () {
-			const response = await supertest.put("/2/pagarPorSeparado")
-			expect(response.status).to.eql(200)
-		});
-});
-
-describe("GET /2/pagarSeparado", function () {
-	it("Obtiene pagarPorSeparado precio", async function () {
-			const response = await supertest.put("/2/pagarPorSeparado")
-			expect(response.status).to.eql(200)
-			expect(response.text).to.be.a("string").to.include("30")
-		});
-
-		// Para cerrar el servidor cuando los test finalicen
-		after(async () => {
-			await fastify.close();
 		});
 });
