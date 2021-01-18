@@ -10,10 +10,10 @@ URL: https://order-n-go.vercel.app/api/test
 make: npm
 PaaS: https://orderngo.herokuapp.com
 recurso:
-  nombre: 1/nuevopedido/101/2
-  metodo: POST
+  nombre: 1/35/cantidad/8
+  metodo: PUT
   payload:
-    platoId: "101"
-    cantidad: "2"
+    platoId: "35"
+    cantidad: "8"
   IDs:
-    - "101"
+    - "35"
