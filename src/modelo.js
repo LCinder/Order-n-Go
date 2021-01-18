@@ -5,7 +5,7 @@ const pedido = require("./pedido.js")
 
 const uri = process.env.MONGODB_URI
 const {MongoClient} = require("mongodb")
-const client = new MongoClient("mongodb+srv://lcinder:2mmwvba7@cluster0.cbipo.mongodb.net/mesas?retryWrites=true", {useUnifiedTopology: true})
+const client = new MongoClient("mongodb+srv://lcinder:2mmwvba7@cluster0.cbipo.mongodb.net/mesas?retryWrites=true", {useUnifiedTopology: true}, {userNewUrlParser: true})
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/
@@ -59,7 +59,7 @@ async mesaGET(numero_mesa) {
 		return  {valor: "Mesa no existe\n\n" + err, code: 404};
 	}
 	finally {
-		//client.close();
+		//client.close();;
 	}
 }
 /******************************************************************************/
@@ -68,10 +68,9 @@ async mesaGET(numero_mesa) {
 async pedidoGET(numero_mesa, idPedidoArg) {
 	try {
 		let numeroMesa = numero_mesa
-		let mesa = this.mesas[numeroMesa-1]
 		let idPedido = idPedidoArg
-		let datos;
-		let nuevaMesa =  new mesaClass.Mesa();
+		let mesa = this.mesas[numeroMesa-1]
+		let pedidoNuevo = new pedido.Pedido();
 
 		await client.connect()
 		.then(() => {
@@ -80,24 +79,24 @@ async pedidoGET(numero_mesa, idPedidoArg) {
 			return mesaCursor;
 		})
 		.then((mesaCursor) => {
-			const m = mesaCursor.findOne({"pedidos.platoId": String(idPedido)});
+			const m = mesaCursor.findOne({"pedidos.platoId": String(idPedido)},
+			{projection: {"pedidos.$": 1}});
 			return m;
 		})
 		.then((m) => {
 			let datos = JSON.parse(JSON.stringify(m));
-			console.log(datos)
+			datos = datos.pedidos[0];
+			pedidoNuevo = new pedido.Pedido(datos.platoId, datos.cantidad,
+			datos.ingredientesEvitar, datos.comentarioOpcionalPlato, datos.usuario)
+		})
 
-			let pedidoNuevo = new pedido.Pedido(m.platoId, m.cantidad,
-			m.ingredientesEvitar, m.comentarioOpcionalPlato, m.usuario)
-
-			return {valor: pedidoNuevo.toString(), code: 200};
-		});
+		return {valor: pedidoNuevo.toString(), code: 200};
 	}
 	catch(err) {
 		return  {valor: "El pedido no existe\n\n" + err, code: 404};
 	}
 	finally {
-		//client.close();
+		//client.close();;
 	}
 }
 /******************************************************************************/
@@ -116,8 +115,8 @@ cantidadPUT(numero_mesa, idPedidoArg, cantidadArg) {
 
 			const m = mesaCursor.updateOne({"pedidos.platoId": String(idPedido)},
 			{"$set": {"pedidos.$.cantidad": String(cantidad)}}, function(err, result) {
-				//client.close()
 			});
+			//client.close();
 		});
 
 		//mesa.modificarPedidoCantidad(idPedido, cantidad);
@@ -147,8 +146,8 @@ pedidoIdPUT(numero_mesa, idPedidoArg, idArg) {
 
 			const m = mesaCursor.updateOne({"pedidos.platoId": String(idPedido)},
 			{"$set": {"pedidos.$.platoId": String(id)}}, function(err, result) {
-				//client.close()
 			});
+			//client.close();
 		});
 
 		return  {valor: "actualizado " + idPedido, code: 200};
@@ -189,8 +188,8 @@ nuevoPedidoPUT(numero_mesa, idNuevoPlato, cantidadArg) {
 
 			const m = mesaCursor.updateOne({},
 			{"$push": {pedidos: p}}, function(err, result) {
-				//client.close()
 			});
+			//client.close();
 		});
 
 		return  {valor: "actualizado " + idPedido, code: 201};
@@ -220,8 +219,8 @@ cambiarIngredientesPUT(numero_mesa, idPedidoArg, ingredientesArg) {
 
 			const m = mesaCursor.updateOne({"pedidos.platoId": String(idPedido)},
 			{"$set": {"pedidos.$.ingredientesEvitar": String(ingredientes)}}, function(err, result) {
-				//client.close()
 			});
+			//client.close();
 		});
 
 		return  {valor: "actualizado " + idPedido, code: 200};
@@ -252,8 +251,8 @@ cambiarUsuariosPUT(numero_mesa, usuariosArg) {
 
 			const m = mesaCursor.updateOne({},
 			{"$set": {"personas": String(usuarios)}}, function(err, result) {
-				//client.close()
 			});
+			//client.close();
 		});
 
 		return  {valor: "actualizado ", code: 200};
@@ -281,9 +280,9 @@ pedirCuentaPUT(numero_mesa) {
 			let mesaCursor = db.collection("mesa" + numero_mesa)
 
 			const m = mesaCursor.updateOne({},
-			{"$set": {"pedirCuenta": "true"}}, function(err, result) {
-				//client.close()
+			{"$set": {"cuenta": "true"}}, function(err, result) {
 			});
+			//client.close();
 		});
 
 		return  {valor: "actualizado ", code: 200};
@@ -312,8 +311,8 @@ eliminarPedidoDELETE(numero_mesa, idPedidoArg) {
 
 			const m = mesaCursor.updateOne({"pedidos.platoId": String(idPedido)},
 			{"$pull": {"pedidos": {platoId: String(idPedido)}}}, function(err, result) {
-				//client.close()
 			});
+			//client.close();
 		});
 		return  {valor: "borrado ", code: 200};
 		// mesa.borrarPedido(idPedido);
