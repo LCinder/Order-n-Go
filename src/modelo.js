@@ -32,34 +32,72 @@ iniciar() {
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/
-
-mesaGET(numero_mesa) {
+async mesaGET(numero_mesa) {
 	try {
 		let numeroMesa = numero_mesa
 		let mesa = this.mesas[numeroMesa-1]
+		let nuevaMesa =  new mesaClass.Mesa();
 
-		return  {valor: mesa.toString() + "\n\n" + "Los pedidos para la mesa: " + numeroMesa
-		+ " son: \n" + mesa.mostrarPedidos(), code: 200};
+		await client.connect()
+		.then(() => {
+			const db = client.db("mesas");
+			const mesaCursor = db.collection("mesa" + numeroMesa);
+			return mesaCursor;
+		})
+		.then((mesaCursor) => {
+			const m = mesaCursor.findOne({});
+			return m;
+		})
+		.then((m) => {
+			let datos = JSON.parse(JSON.stringify(m));
+			console.log(m);
+			nuevaMesa.convertJSONTOMesa(datos);
+		});
+		return {valor: nuevaMesa.toString(), code: 200};
 	}
 	catch(err) {
-		return  {valor: "Mesa " + numeroMesa + " no existe\n\n" + err, code: 404};
-		//JSON.stringify(m); // JSON.stringify(req.params)
+		return  {valor: "Mesa no existe\n\n" + err, code: 404};
+	}
+	finally {
+		client.close();
 	}
 }
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/
-pedidoGET(numero_mesa, idPedidoArg) {
+async pedidoGET(numero_mesa, idPedidoArg) {
 	try {
 		let numeroMesa = numero_mesa
 		let mesa = this.mesas[numeroMesa-1]
 		let idPedido = idPedidoArg
+		let datos;
+		let nuevaMesa =  new mesaClass.Mesa();
 
-		return  {valor: "El pedido " + idPedido + " para la mesa: "
-		+ mesa.getMesa() + " es: \n" + mesa.mostrarPedido(idPedido), code: 200};
+		await client.connect()
+		.then(() => {
+			const db = client.db("mesas");
+			const mesaCursor = db.collection("mesa" + numeroMesa);
+			return mesaCursor;
+		})
+		.then((mesaCursor) => {
+			const m = mesaCursor.findOne({"pedidos.platoId": String(idPedido)});
+			return m;
+		})
+		.then((m) => {
+			let datos = JSON.parse(JSON.stringify(m));
+			console.log(datos)
+
+			let pedidoNuevo = new pedido.Pedido(m.platoId, m.cantidad,
+			m.ingredientesEvitar, m.comentarioOpcionalPlato, m.usuario)
+
+			return {valor: pedidoNuevo.toString(), code: 200};
+		});
 	}
 	catch(err) {
-		return  {valor: "El pedido " + idPedido + " no existe\n\n" + err, code: 404};
+		return  {valor: "El pedido no existe\n\n" + err, code: 404};
+	}
+	finally {
+		client.close();
 	}
 }
 /******************************************************************************/

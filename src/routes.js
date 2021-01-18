@@ -21,7 +21,7 @@ fastify.get("/status", async (req, res) => {
 /******************************Historia de Usuario 9***************************/
 /******************************************************************************/
 fastify.get("/:numero_mesa", async (req, res) => {
-	let result = model.mesaGET(req.params.numero_mesa)
+	let result = await model.mesaGET(req.params.numero_mesa)
 
 	res.send(result.valor).code(result.code);
 });
@@ -29,7 +29,7 @@ fastify.get("/:numero_mesa", async (req, res) => {
 /******************************Historia de Usuario 9 (Pedido especifico)*******/
 /******************************************************************************/
 fastify.get("/:numero_mesa/:idPedido", async (req, res) => {
-	let result = model.pedidoGET(req.params.numero_mesa, req.params.idPedido)
+	let result = await model.pedidoGET(req.params.numero_mesa, req.params.idPedido)
 
 	res.send(result.valor).code(result.code);
 });
