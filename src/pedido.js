@@ -25,12 +25,12 @@ class Pedido {
 		if(ingredientesEvitarArg != null && ingredientesEvitarArg != "")
 			this.ingredientesEvitar = ingredientesEvitarArg;
 		else
-			this.ingredientesEvitar = []
+			this.ingredientesEvitar = ""
 
 		if(comentarioOpcionalPlatoArg != null && comentarioOpcionalPlatoArg != "")
 			this.comentarioOpcionalPlato = comentarioOpcionalPlatoArg;
 		else
-			this.comentarioOpcionalPlato = []
+			this.comentarioOpcionalPlato = ""
 
 		if(usuarioArg != null && usuarioArg != "")
 			this.usuario = usuarioArg;
@@ -115,7 +115,7 @@ class Pedido {
 		res += "Id Plato: " + this.platoId + "\nNombre  Plato: " + this.platoNombre
 		+ "\nTipo Plato: " + this.tipoPlato + "\nCantidad: " + this.cantidad;
 
-		if(this.ingredientesEvitar.length != 0 && this.ingredientesEvitar != undefined)
+		if(this.ingredientesEvitar.length != "" && this.ingredientesEvitar != undefined)
 			res += "\nIngredientes a Evitar: "
 			+ this.ingredientesEvitar;
 
