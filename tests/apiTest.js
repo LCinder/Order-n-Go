@@ -193,4 +193,8 @@ describe("GET /1", function () {
 			expect(response.status).to.eql(200)
 			expect(response.text).to.be.a("string").to.include("Pagar por separado si")
 		});
+		// Para cerrar el servidor cuando los test finalicen
+		after(async () => {
+			await fastify.close();
+		});
 });
