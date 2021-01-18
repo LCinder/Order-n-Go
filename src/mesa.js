@@ -14,12 +14,12 @@ class Mesa {
 		this.personas = personasArg;
 
 		if(cuentaArg == undefined)
-			this.cuenta = false;
+			this.cuenta = "false";
 		else {
 			if(cuentaArg == "true")
-				this.cuenta = true
+				this.cuenta = "true"
 			else if(cuentaArg == "false")
-				this.cuenta = false
+				this.cuenta = "false"
 			else
 				this.cuenta = cuentaArg
 		}
@@ -28,18 +28,18 @@ class Mesa {
 		this.pedidos = [];		// Array de objetos 'pedidos'
 
 		if(ocupadaArg == undefined)
-			this.ocupada = false;
+			this.ocupada = "false";
 		else {
 			if(cuentaArg == "true")
-				this.ocupada = true
+				this.ocupada = "true"
 			else if(cuentaArg == "false")
-				this.ocupada = false
+				this.ocupada = "false"
 			else
 				this.ocupada = cuentaArg
 		} // boolean para mesa ocupada o no
 
-		this.propina = {"haypropina": false, propinaCantidad: 0};
-		this.pagarSeparado = false;
+		this.propina = {"haypropina": "false", propinaCantidad: 0};
+		this.pagarSeparado = "false";
 	}
 
 	/***** Gets *****/
@@ -126,21 +126,21 @@ class Mesa {
 	}
 
 	hayCuenta() {
-		if(this.cuenta)
+		if(this.cuenta == "true")
 			return "Cuenta pedida";
 		else
 			return "Cuenta no pedida";
 	}
 
 	hayPagarPorSeparado() {
-		if(this.cuenta)
+		if(this.cuenta == "true")
 			return "Pagar por separado si";
 		else
 			return "Pagar por separado no";
 	}
 
 	estaOcupada() {
-		if(this.ocupada)
+		if(this.ocupada == "true")
 			return "Mesa ocupada";
 		else
 			return "Mesa no ocupada";
@@ -277,12 +277,13 @@ class Mesa {
 	}
 
 	pedirCuenta() {
-		this.setCuenta(true)
+		this.setCuenta("true")
 	}
 
 	convertJSONTOMesa(jsonOb) {
 		this.setMesa(jsonOb.mesaN);
 		this.setPersonas(jsonOb.personas);
+		this.setCuenta(jsonOb.cuenta);
 		this.incluirPedidoFromJSON(jsonOb.pedidos[0])
 	}
 	/******************************************************************************/
